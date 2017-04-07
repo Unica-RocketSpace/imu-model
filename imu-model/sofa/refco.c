@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauRefco(double phpa, double tc, double rh, double wl,
-              double *refa, double *refb)
+void iauRefco(float phpa, float tc, float rh, float wl,
+              float *refa, float *refb)
 /*
 **  - - - - - - - - -
 **   i a u R e f c o
@@ -20,14 +20,14 @@ void iauRefco(double phpa, double tc, double rh, double wl,
 **  Status:  support function.
 **
 **  Given:
-**    phpa   double    pressure at the observer (hPa = millibar)
-**    tc     double    ambient temperature at the observer (deg C)
-**    rh     double    relative humidity at the observer (range 0-1)
-**    wl     double    wavelength (micrometers)
+**    phpa   float    pressure at the observer (hPa = millibar)
+**    tc     float    ambient temperature at the observer (deg C)
+**    rh     float    relative humidity at the observer (range 0-1)
+**    wl     float    wavelength (micrometers)
 **
 **  Returned:
-**    refa   double*   tan Z coefficient (radians)
-**    refb   double*   tan^3 Z coefficient (radians)
+**    refa   float*   tan Z coefficient (radians)
+**    refb   float*   tan^3 Z coefficient (radians)
 **
 **  Notes:
 **
@@ -158,7 +158,7 @@ void iauRefco(double phpa, double tc, double rh, double wl,
 */
 {
    int optic;
-   double p, t, r, w, ps, pw, tk, wlsq, gamma, beta;
+   float p, t, r, w, ps, pw, tk, wlsq, gamma, beta;
 
 
 /* Decide whether optical/IR or radio case:  switch at 100 microns. */

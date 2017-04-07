@@ -1,11 +1,11 @@
 #include "sofa.h"
 
-void iauP06e(double date1, double date2,
-             double *eps0, double *psia, double *oma, double *bpa,
-             double *bqa, double *pia, double *bpia,
-             double *epsa, double *chia, double *za, double *zetaa,
-             double *thetaa, double *pa,
-             double *gam, double *phi, double *psi)
+void iauP06e(float date1, float date2,
+             float *eps0, float *psia, float *oma, float *bpa,
+             float *bqa, float *pia, float *bpia,
+             float *epsa, float *chia, float *za, float *zetaa,
+             float *thetaa, float *pa,
+             float *gam, float *phi, float *psi)
 /*
 **  - - - - - - - -
 **   i a u P 0 6 e
@@ -19,25 +19,25 @@ void iauP06e(double date1, double date2,
 **  Status:  canonical models.
 **
 **  Given:
-**     date1,date2   double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (see Note 2):
-**     eps0          double   epsilon_0
-**     psia          double   psi_A
-**     oma           double   omega_A
-**     bpa           double   P_A
-**     bqa           double   Q_A
-**     pia           double   pi_A
-**     bpia          double   Pi_A
-**     epsa          double   obliquity epsilon_A
-**     chia          double   chi_A
-**     za            double   z_A
-**     zetaa         double   zeta_A
-**     thetaa        double   theta_A
-**     pa            double   p_A
-**     gam           double   F-W angle gamma_J2000
-**     phi           double   F-W angle phi_J2000
-**     psi           double   F-W angle psi_J2000
+**     eps0          float   epsilon_0
+**     psia          float   psi_A
+**     oma           float   omega_A
+**     bpa           float   P_A
+**     bqa           float   Q_A
+**     pia           float   pi_A
+**     bpia          float   Pi_A
+**     epsa          float   obliquity epsilon_A
+**     chia          float   chi_A
+**     za            float   z_A
+**     zetaa         float   zeta_A
+**     thetaa        float   theta_A
+**     pa            float   p_A
+**     gam           float   F-W angle gamma_J2000
+**     phi           float   F-W angle phi_J2000
+**     psi           float   F-W angle psi_J2000
 **
 **  Notes:
 **
@@ -132,7 +132,7 @@ void iauP06e(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t;
+   float t;
 
 
 /* Interval between fundamental date J2000.0 and given date (JC). */

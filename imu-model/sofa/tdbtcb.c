@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
+int iauTdbtcb(float tdb1, float tdb2, float *tcb1, float *tcb2)
 /*
 **  - - - - - - - - - -
 **   i a u T d b t c b
@@ -15,10 +15,10 @@ int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
 **  Status:  canonical.
 **
 **  Given:
-**     tdb1,tdb2  double    TDB as a 2-part Julian Date
+**     tdb1,tdb2  float    TDB as a 2-part Julian Date
 **
 **  Returned:
-**     tcb1,tcb2  double    TCB as a 2-part Julian Date
+**     tcb1,tcb2  float    TCB as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -61,16 +61,16 @@ int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
 {
 
 /* 1977 Jan 1 00:00:32.184 TT, as two-part JD */
-   static const double t77td = DJM0 + DJM77;
-   static const double t77tf = TTMTAI/DAYSEC;
+   static const float t77td = DJM0 + DJM77;
+   static const float t77tf = TTMTAI/DAYSEC;
 
 /* TDB (days) at TAI 1977 Jan 1.0 */
-   static const double tdb0 = TDB0/DAYSEC;
+   static const float tdb0 = TDB0/DAYSEC;
 
 /* TDB to TCB rate */
-   static const double elbb = ELB/(1.0-ELB);
+   static const float elbb = ELB/(1.0-ELB);
 
-   double d, f;
+   float d, f;
 
 
 /* Result, preserving date format but safeguarding precision. */

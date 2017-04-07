@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauS00a(double date1, double date2)
+float iauS00a(float date1, float date2)
 /*
 **  - - - - - - - -
 **   i a u S 0 0 a
@@ -16,10 +16,10 @@ double iauS00a(double date1, double date2)
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                  double    the CIO locator s in radians (Note 2)
+**                  float    the CIO locator s in radians (Note 2)
 **
 **  Notes:
 **
@@ -81,7 +81,7 @@ double iauS00a(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rbpn[3][3], x, y, s;
+   float rbpn[3][3], x, y, s;
 
 
 /* Bias-precession-nutation-matrix, IAU 2000A. */

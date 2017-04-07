@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauHfk5z(double rh, double dh, double date1, double date2,
-              double *r5, double *d5, double *dr5, double *dd5)
+void iauHfk5z(float rh, float dh, float date1, float date2,
+              float *r5, float *d5, float *dr5, float *dd5)
 /*
 **  - - - - - - - - -
 **   i a u H f k 5 z
@@ -16,15 +16,15 @@ void iauHfk5z(double rh, double dh, double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     rh            double    Hipparcos RA (radians)
-**     dh            double    Hipparcos Dec (radians)
-**     date1,date2   double    TDB date (Note 1)
+**     rh            float    Hipparcos RA (radians)
+**     dh            float    Hipparcos Dec (radians)
+**     date1,date2   float    TDB date (Note 1)
 **
 **  Returned (all FK5, equinox J2000.0, date date1+date2):
-**     r5            double    RA (radians)
-**     d5            double    Dec (radians)
-**     dr5           double    FK5 RA proper motion (rad/year, Note 4)
-**     dd5           double    Dec proper motion (rad/year, Note 4)
+**     r5            float    RA (radians)
+**     d5            float    Dec (radians)
+**     dr5           float    FK5 RA proper motion (rad/year, Note 4)
+**     dd5           float    Dec proper motion (rad/year, Note 4)
 **
 **  Notes:
 **
@@ -86,7 +86,7 @@ void iauHfk5z(double rh, double dh, double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, ph[3], r5h[3][3], s5h[3], sh[3], vst[3],
+   float t, ph[3], r5h[3][3], s5h[3], sh[3], vst[3],
    rst[3][3], r5ht[3][3], pv5e[2][3], vv[3],
    w, r, v;
 

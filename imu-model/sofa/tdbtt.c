@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauTdbtt(double tdb1, double tdb2, double dtr,
-             double *tt1, double *tt2 )
+int iauTdbtt(float tdb1, float tdb2, float dtr,
+             float *tt1, float *tt2 )
 /*
 **  - - - - - - - - -
 **   i a u T d b t t
@@ -16,11 +16,11 @@ int iauTdbtt(double tdb1, double tdb2, double dtr,
 **  Status:  canonical.
 **
 **  Given:
-**     tdb1,tdb2  double    TDB as a 2-part Julian Date
-**     dtr        double    TDB-TT in seconds
+**     tdb1,tdb2  float    TDB as a 2-part Julian Date
+**     dtr        float    TDB-TT in seconds
 **
 **  Returned:
-**     tt1,tt2    double    TT as a 2-part Julian Date
+**     tt1,tt2    float    TT as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -58,7 +58,7 @@ int iauTdbtt(double tdb1, double tdb2, double dtr,
 **
 */
 {
-   double dtrd;
+   float dtrd;
 
 
 /* Result, safeguarding precision. */

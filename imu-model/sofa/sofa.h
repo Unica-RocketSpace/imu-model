@@ -26,431 +26,431 @@ extern "C" {
 #endif
 
 /* Astronomy/Calendars */
-int iauCal2jd(int iy, int im, int id, double *djm0, double *djm);
-double iauEpb(double dj1, double dj2);
-void iauEpb2jd(double epb, double *djm0, double *djm);
-double iauEpj(double dj1, double dj2);
-void iauEpj2jd(double epj, double *djm0, double *djm);
-int iauJd2cal(double dj1, double dj2,
-                     int *iy, int *im, int *id, double *fd);
-int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4]);
+int iauCal2jd(int iy, int im, int id, float *djm0, float *djm);
+float iauEpb(float dj1, float dj2);
+void iauEpb2jd(float epb, float *djm0, float *djm);
+float iauEpj(float dj1, float dj2);
+void iauEpj2jd(float epj, float *djm0, float *djm);
+int iauJd2cal(float dj1, float dj2,
+                     int *iy, int *im, int *id, float *fd);
+int iauJdcalf(int ndp, float dj1, float dj2, int iymdf[4]);
 
 /* Astronomy/Astrometry */
-void iauAb(double pnat[3], double v[3], double s, double bm1,
-           double ppr[3]);
-void iauApcg(double date1, double date2,
-             double ebpv[2][3], double ehp[3],
+void iauAb(float pnat[3], float v[3], float s, float bm1,
+           float ppr[3]);
+void iauApcg(float date1, float date2,
+             float ebpv[2][3], float ehp[3],
              iauASTROM *astrom);
-void iauApcg13(double date1, double date2, iauASTROM *astrom);
-void iauApci(double date1, double date2,
-             double ebpv[2][3], double ehp[3],
-             double x, double y, double s,
+void iauApcg13(float date1, float date2, iauASTROM *astrom);
+void iauApci(float date1, float date2,
+             float ebpv[2][3], float ehp[3],
+             float x, float y, float s,
              iauASTROM *astrom);
-void iauApci13(double date1, double date2,
-               iauASTROM *astrom, double *eo);
-void iauApco(double date1, double date2,
-             double ebpv[2][3], double ehp[3],
-             double x, double y, double s, double theta,
-             double elong, double phi, double hm,
-             double xp, double yp, double sp,
-             double refa, double refb,
+void iauApci13(float date1, float date2,
+               iauASTROM *astrom, float *eo);
+void iauApco(float date1, float date2,
+             float ebpv[2][3], float ehp[3],
+             float x, float y, float s, float theta,
+             float elong, float phi, float hm,
+             float xp, float yp, float sp,
+             float refa, float refb,
              iauASTROM *astrom);
-int iauApco13(double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              iauASTROM *astrom, double *eo);
-void iauApcs(double date1, double date2, double pv[2][3],
-             double ebpv[2][3], double ehp[3],
+int iauApco13(float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              iauASTROM *astrom, float *eo);
+void iauApcs(float date1, float date2, float pv[2][3],
+             float ebpv[2][3], float ehp[3],
              iauASTROM *astrom);
-void iauApcs13(double date1, double date2, double pv[2][3],
+void iauApcs13(float date1, float date2, float pv[2][3],
                iauASTROM *astrom);
-void iauAper(double theta, iauASTROM *astrom);
-void iauAper13(double ut11, double ut12, iauASTROM *astrom);
-void iauApio(double sp, double theta,
-             double elong, double phi, double hm, double xp, double yp,
-             double refa, double refb,
+void iauAper(float theta, iauASTROM *astrom);
+void iauAper13(float ut11, float ut12, iauASTROM *astrom);
+void iauApio(float sp, float theta,
+             float elong, float phi, float hm, float xp, float yp,
+             float refa, float refb,
              iauASTROM *astrom);
-int iauApio13(double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
+int iauApio13(float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
               iauASTROM *astrom);
-void iauAtci13(double rc, double dc,
-               double pr, double pd, double px, double rv,
-               double date1, double date2,
-               double *ri, double *di, double *eo);
-void iauAtciq(double rc, double dc, double pr, double pd,
-              double px, double rv, iauASTROM *astrom,
-              double *ri, double *di);
-void iauAtciqn(double rc, double dc, double pr, double pd,
-               double px, double rv, iauASTROM *astrom,
-               int n, iauLDBODY b[], double *ri, double *di);
-void iauAtciqz(double rc, double dc, iauASTROM *astrom,
-               double *ri, double *di);
-int iauAtco13(double rc, double dc,
-              double pr, double pd, double px, double rv,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *aob, double *zob, double *hob,
-              double *dob, double *rob, double *eo);
-void iauAtic13(double ri, double di,
-               double date1, double date2,
-               double *rc, double *dc, double *eo);
-void iauAticq(double ri, double di, iauASTROM *astrom,
-              double *rc, double *dc);
-void iauAticqn(double ri, double di, iauASTROM *astrom,
-               int n, iauLDBODY b[], double *rc, double *dc);
-int iauAtio13(double ri, double di,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *aob, double *zob, double *hob,
-              double *dob, double *rob);
-void iauAtioq(double ri, double di, iauASTROM *astrom,
-              double *aob, double *zob,
-              double *hob, double *dob, double *rob);
-int iauAtoc13(const char *type, double ob1, double ob2,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *rc, double *dc);
-int iauAtoi13(const char *type, double ob1, double ob2,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *ri, double *di);
+void iauAtci13(float rc, float dc,
+               float pr, float pd, float px, float rv,
+               float date1, float date2,
+               float *ri, float *di, float *eo);
+void iauAtciq(float rc, float dc, float pr, float pd,
+              float px, float rv, iauASTROM *astrom,
+              float *ri, float *di);
+void iauAtciqn(float rc, float dc, float pr, float pd,
+               float px, float rv, iauASTROM *astrom,
+               int n, iauLDBODY b[], float *ri, float *di);
+void iauAtciqz(float rc, float dc, iauASTROM *astrom,
+               float *ri, float *di);
+int iauAtco13(float rc, float dc,
+              float pr, float pd, float px, float rv,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *aob, float *zob, float *hob,
+              float *dob, float *rob, float *eo);
+void iauAtic13(float ri, float di,
+               float date1, float date2,
+               float *rc, float *dc, float *eo);
+void iauAticq(float ri, float di, iauASTROM *astrom,
+              float *rc, float *dc);
+void iauAticqn(float ri, float di, iauASTROM *astrom,
+               int n, iauLDBODY b[], float *rc, float *dc);
+int iauAtio13(float ri, float di,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *aob, float *zob, float *hob,
+              float *dob, float *rob);
+void iauAtioq(float ri, float di, iauASTROM *astrom,
+              float *aob, float *zob,
+              float *hob, float *dob, float *rob);
+int iauAtoc13(const char *type, float ob1, float ob2,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *rc, float *dc);
+int iauAtoi13(const char *type, float ob1, float ob2,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *ri, float *di);
 void iauAtoiq(const char *type,
-              double ob1, double ob2, iauASTROM *astrom,
-              double *ri, double *di);
-void iauLd(double bm, double p[3], double q[3], double e[3],
-           double em, double dlim, double p1[3]);
-void iauLdn(int n, iauLDBODY b[], double ob[3], double sc[3],
-            double sn[3]);
-void iauLdsun(double p[3], double e[3], double em, double p1[3]);
-void iauPmpx(double rc, double dc, double pr, double pd,
-             double px, double rv, double pmt, double pob[3],
-             double pco[3]);
-int iauPmsafe(double ra1, double dec1, double pmr1, double pmd1,
-              double px1, double rv1,
-              double ep1a, double ep1b, double ep2a, double ep2b,
-              double *ra2, double *dec2, double *pmr2, double *pmd2,
-              double *px2, double *rv2);
-void iauPvtob(double elong, double phi, double height, double xp,
-              double yp, double sp, double theta, double pv[2][3]);
-void iauRefco(double phpa, double tc, double rh, double wl,
-              double *refa, double *refb);
+              float ob1, float ob2, iauASTROM *astrom,
+              float *ri, float *di);
+void iauLd(float bm, float p[3], float q[3], float e[3],
+           float em, float dlim, float p1[3]);
+void iauLdn(int n, iauLDBODY b[], float ob[3], float sc[3],
+            float sn[3]);
+void iauLdsun(float p[3], float e[3], float em, float p1[3]);
+void iauPmpx(float rc, float dc, float pr, float pd,
+             float px, float rv, float pmt, float pob[3],
+             float pco[3]);
+int iauPmsafe(float ra1, float dec1, float pmr1, float pmd1,
+              float px1, float rv1,
+              float ep1a, float ep1b, float ep2a, float ep2b,
+              float *ra2, float *dec2, float *pmr2, float *pmd2,
+              float *px2, float *rv2);
+void iauPvtob(float elong, float phi, float height, float xp,
+              float yp, float sp, float theta, float pv[2][3]);
+void iauRefco(float phpa, float tc, float rh, float wl,
+              float *refa, float *refb);
 
 /* Astronomy/Ephemerides */
-int iauEpv00(double date1, double date2,
-             double pvh[2][3], double pvb[2][3]);
-int iauPlan94(double date1, double date2, int np, double pv[2][3]);
+int iauEpv00(float date1, float date2,
+             float pvh[2][3], float pvb[2][3]);
+int iauPlan94(float date1, float date2, int np, float pv[2][3]);
 
 /* Astronomy/FundamentalArgs */
-double iauFad03(double t);
-double iauFae03(double t);
-double iauFaf03(double t);
-double iauFaju03(double t);
-double iauFal03(double t);
-double iauFalp03(double t);
-double iauFama03(double t);
-double iauFame03(double t);
-double iauFane03(double t);
-double iauFaom03(double t);
-double iauFapa03(double t);
-double iauFasa03(double t);
-double iauFaur03(double t);
-double iauFave03(double t);
+float iauFad03(float t);
+float iauFae03(float t);
+float iauFaf03(float t);
+float iauFaju03(float t);
+float iauFal03(float t);
+float iauFalp03(float t);
+float iauFama03(float t);
+float iauFame03(float t);
+float iauFane03(float t);
+float iauFaom03(float t);
+float iauFapa03(float t);
+float iauFasa03(float t);
+float iauFaur03(float t);
+float iauFave03(float t);
 
 /* Astronomy/PrecNutPolar */
-void iauBi00(double *dpsibi, double *depsbi, double *dra);
-void iauBp00(double date1, double date2,
-             double rb[3][3], double rp[3][3], double rbp[3][3]);
-void iauBp06(double date1, double date2,
-             double rb[3][3], double rp[3][3], double rbp[3][3]);
-void iauBpn2xy(double rbpn[3][3], double *x, double *y);
-void iauC2i00a(double date1, double date2, double rc2i[3][3]);
-void iauC2i00b(double date1, double date2, double rc2i[3][3]);
-void iauC2i06a(double date1, double date2, double rc2i[3][3]);
-void iauC2ibpn(double date1, double date2, double rbpn[3][3],
-               double rc2i[3][3]);
-void iauC2ixy(double date1, double date2, double x, double y,
-              double rc2i[3][3]);
-void iauC2ixys(double x, double y, double s, double rc2i[3][3]);
-void iauC2t00a(double tta, double ttb, double uta, double utb,
-               double xp, double yp, double rc2t[3][3]);
-void iauC2t00b(double tta, double ttb, double uta, double utb,
-               double xp, double yp, double rc2t[3][3]);
-void iauC2t06a(double tta, double ttb, double uta, double utb,
-               double xp, double yp, double rc2t[3][3]);
-void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
-               double rc2t[3][3]);
-void iauC2teqx(double rbpn[3][3], double gst, double rpom[3][3],
-               double rc2t[3][3]);
-void iauC2tpe(double tta, double ttb, double uta, double utb,
-              double dpsi, double deps, double xp, double yp,
-              double rc2t[3][3]);
-void iauC2txy(double tta, double ttb, double uta, double utb,
-              double x, double y, double xp, double yp,
-              double rc2t[3][3]);
-double iauEo06a(double date1, double date2);
-double iauEors(double rnpb[3][3], double s);
-void iauFw2m(double gamb, double phib, double psi, double eps,
-             double r[3][3]);
-void iauFw2xy(double gamb, double phib, double psi, double eps,
-              double *x, double *y);
-void iauLtp(double epj, double rp[3][3]);
-void iauLtpb(double epj, double rpb[3][3]);
-void iauLtpecl(double epj, double vec[3]);
-void iauLtpequ(double epj, double veq[3]);
-void iauNum00a(double date1, double date2, double rmatn[3][3]);
-void iauNum00b(double date1, double date2, double rmatn[3][3]);
-void iauNum06a(double date1, double date2, double rmatn[3][3]);
-void iauNumat(double epsa, double dpsi, double deps, double rmatn[3][3]);
-void iauNut00a(double date1, double date2, double *dpsi, double *deps);
-void iauNut00b(double date1, double date2, double *dpsi, double *deps);
-void iauNut06a(double date1, double date2, double *dpsi, double *deps);
-void iauNut80(double date1, double date2, double *dpsi, double *deps);
-void iauNutm80(double date1, double date2, double rmatn[3][3]);
-double iauObl06(double date1, double date2);
-double iauObl80(double date1, double date2);
-void iauP06e(double date1, double date2,
-             double *eps0, double *psia, double *oma, double *bpa,
-             double *bqa, double *pia, double *bpia,
-             double *epsa, double *chia, double *za, double *zetaa,
-             double *thetaa, double *pa,
-             double *gam, double *phi, double *psi);
-void iauPb06(double date1, double date2,
-             double *bzeta, double *bz, double *btheta);
-void iauPfw06(double date1, double date2,
-              double *gamb, double *phib, double *psib, double *epsa);
-void iauPmat00(double date1, double date2, double rbp[3][3]);
-void iauPmat06(double date1, double date2, double rbp[3][3]);
-void iauPmat76(double date1, double date2, double rmatp[3][3]);
-void iauPn00(double date1, double date2, double dpsi, double deps,
-             double *epsa,
-             double rb[3][3], double rp[3][3], double rbp[3][3],
-             double rn[3][3], double rbpn[3][3]);
-void iauPn00a(double date1, double date2,
-              double *dpsi, double *deps, double *epsa,
-              double rb[3][3], double rp[3][3], double rbp[3][3],
-              double rn[3][3], double rbpn[3][3]);
-void iauPn00b(double date1, double date2,
-              double *dpsi, double *deps, double *epsa,
-              double rb[3][3], double rp[3][3], double rbp[3][3],
-              double rn[3][3], double rbpn[3][3]);
-void iauPn06(double date1, double date2, double dpsi, double deps,
-             double *epsa,
-             double rb[3][3], double rp[3][3], double rbp[3][3],
-             double rn[3][3], double rbpn[3][3]);
-void iauPn06a(double date1, double date2,
-              double *dpsi, double *deps, double *epsa,
-              double rb[3][3], double rp[3][3], double rbp[3][3],
-              double rn[3][3], double rbpn[3][3]);
-void iauPnm00a(double date1, double date2, double rbpn[3][3]);
-void iauPnm00b(double date1, double date2, double rbpn[3][3]);
-void iauPnm06a(double date1, double date2, double rnpb[3][3]);
-void iauPnm80(double date1, double date2, double rmatpn[3][3]);
-void iauPom00(double xp, double yp, double sp, double rpom[3][3]);
-void iauPr00(double date1, double date2,
-             double *dpsipr, double *depspr);
-void iauPrec76(double date01, double date02,
-               double date11, double date12,
-               double *zeta, double *z, double *theta);
-double iauS00(double date1, double date2, double x, double y);
-double iauS00a(double date1, double date2);
-double iauS00b(double date1, double date2);
-double iauS06(double date1, double date2, double x, double y);
-double iauS06a(double date1, double date2);
-double iauSp00(double date1, double date2);
-void iauXy06(double date1, double date2, double *x, double *y);
-void iauXys00a(double date1, double date2,
-               double *x, double *y, double *s);
-void iauXys00b(double date1, double date2,
-               double *x, double *y, double *s);
-void iauXys06a(double date1, double date2,
-               double *x, double *y, double *s);
+void iauBi00(float *dpsibi, float *depsbi, float *dra);
+void iauBp00(float date1, float date2,
+             float rb[3][3], float rp[3][3], float rbp[3][3]);
+void iauBp06(float date1, float date2,
+             float rb[3][3], float rp[3][3], float rbp[3][3]);
+void iauBpn2xy(float rbpn[3][3], float *x, float *y);
+void iauC2i00a(float date1, float date2, float rc2i[3][3]);
+void iauC2i00b(float date1, float date2, float rc2i[3][3]);
+void iauC2i06a(float date1, float date2, float rc2i[3][3]);
+void iauC2ibpn(float date1, float date2, float rbpn[3][3],
+               float rc2i[3][3]);
+void iauC2ixy(float date1, float date2, float x, float y,
+              float rc2i[3][3]);
+void iauC2ixys(float x, float y, float s, float rc2i[3][3]);
+void iauC2t00a(float tta, float ttb, float uta, float utb,
+               float xp, float yp, float rc2t[3][3]);
+void iauC2t00b(float tta, float ttb, float uta, float utb,
+               float xp, float yp, float rc2t[3][3]);
+void iauC2t06a(float tta, float ttb, float uta, float utb,
+               float xp, float yp, float rc2t[3][3]);
+void iauC2tcio(float rc2i[3][3], float era, float rpom[3][3],
+               float rc2t[3][3]);
+void iauC2teqx(float rbpn[3][3], float gst, float rpom[3][3],
+               float rc2t[3][3]);
+void iauC2tpe(float tta, float ttb, float uta, float utb,
+              float dpsi, float deps, float xp, float yp,
+              float rc2t[3][3]);
+void iauC2txy(float tta, float ttb, float uta, float utb,
+              float x, float y, float xp, float yp,
+              float rc2t[3][3]);
+float iauEo06a(float date1, float date2);
+float iauEors(float rnpb[3][3], float s);
+void iauFw2m(float gamb, float phib, float psi, float eps,
+             float r[3][3]);
+void iauFw2xy(float gamb, float phib, float psi, float eps,
+              float *x, float *y);
+void iauLtp(float epj, float rp[3][3]);
+void iauLtpb(float epj, float rpb[3][3]);
+void iauLtpecl(float epj, float vec[3]);
+void iauLtpequ(float epj, float veq[3]);
+void iauNum00a(float date1, float date2, float rmatn[3][3]);
+void iauNum00b(float date1, float date2, float rmatn[3][3]);
+void iauNum06a(float date1, float date2, float rmatn[3][3]);
+void iauNumat(float epsa, float dpsi, float deps, float rmatn[3][3]);
+void iauNut00a(float date1, float date2, float *dpsi, float *deps);
+void iauNut00b(float date1, float date2, float *dpsi, float *deps);
+void iauNut06a(float date1, float date2, float *dpsi, float *deps);
+void iauNut80(float date1, float date2, float *dpsi, float *deps);
+void iauNutm80(float date1, float date2, float rmatn[3][3]);
+float iauObl06(float date1, float date2);
+float iauObl80(float date1, float date2);
+void iauP06e(float date1, float date2,
+             float *eps0, float *psia, float *oma, float *bpa,
+             float *bqa, float *pia, float *bpia,
+             float *epsa, float *chia, float *za, float *zetaa,
+             float *thetaa, float *pa,
+             float *gam, float *phi, float *psi);
+void iauPb06(float date1, float date2,
+             float *bzeta, float *bz, float *btheta);
+void iauPfw06(float date1, float date2,
+              float *gamb, float *phib, float *psib, float *epsa);
+void iauPmat00(float date1, float date2, float rbp[3][3]);
+void iauPmat06(float date1, float date2, float rbp[3][3]);
+void iauPmat76(float date1, float date2, float rmatp[3][3]);
+void iauPn00(float date1, float date2, float dpsi, float deps,
+             float *epsa,
+             float rb[3][3], float rp[3][3], float rbp[3][3],
+             float rn[3][3], float rbpn[3][3]);
+void iauPn00a(float date1, float date2,
+              float *dpsi, float *deps, float *epsa,
+              float rb[3][3], float rp[3][3], float rbp[3][3],
+              float rn[3][3], float rbpn[3][3]);
+void iauPn00b(float date1, float date2,
+              float *dpsi, float *deps, float *epsa,
+              float rb[3][3], float rp[3][3], float rbp[3][3],
+              float rn[3][3], float rbpn[3][3]);
+void iauPn06(float date1, float date2, float dpsi, float deps,
+             float *epsa,
+             float rb[3][3], float rp[3][3], float rbp[3][3],
+             float rn[3][3], float rbpn[3][3]);
+void iauPn06a(float date1, float date2,
+              float *dpsi, float *deps, float *epsa,
+              float rb[3][3], float rp[3][3], float rbp[3][3],
+              float rn[3][3], float rbpn[3][3]);
+void iauPnm00a(float date1, float date2, float rbpn[3][3]);
+void iauPnm00b(float date1, float date2, float rbpn[3][3]);
+void iauPnm06a(float date1, float date2, float rnpb[3][3]);
+void iauPnm80(float date1, float date2, float rmatpn[3][3]);
+void iauPom00(float xp, float yp, float sp, float rpom[3][3]);
+void iauPr00(float date1, float date2,
+             float *dpsipr, float *depspr);
+void iauPrec76(float date01, float date02,
+               float date11, float date12,
+               float *zeta, float *z, float *theta);
+float iauS00(float date1, float date2, float x, float y);
+float iauS00a(float date1, float date2);
+float iauS00b(float date1, float date2);
+float iauS06(float date1, float date2, float x, float y);
+float iauS06a(float date1, float date2);
+float iauSp00(float date1, float date2);
+void iauXy06(float date1, float date2, float *x, float *y);
+void iauXys00a(float date1, float date2,
+               float *x, float *y, float *s);
+void iauXys00b(float date1, float date2,
+               float *x, float *y, float *s);
+void iauXys06a(float date1, float date2,
+               float *x, float *y, float *s);
 
 /* Astronomy/RotationAndTime */
-double iauEe00(double date1, double date2, double epsa, double dpsi);
-double iauEe00a(double date1, double date2);
-double iauEe00b(double date1, double date2);
-double iauEe06a(double date1, double date2);
-double iauEect00(double date1, double date2);
-double iauEqeq94(double date1, double date2);
-double iauEra00(double dj1, double dj2);
-double iauGmst00(double uta, double utb, double tta, double ttb);
-double iauGmst06(double uta, double utb, double tta, double ttb);
-double iauGmst82(double dj1, double dj2);
-double iauGst00a(double uta, double utb, double tta, double ttb);
-double iauGst00b(double uta, double utb);
-double iauGst06(double uta, double utb, double tta, double ttb,
-                double rnpb[3][3]);
-double iauGst06a(double uta, double utb, double tta, double ttb);
-double iauGst94(double uta, double utb);
+float iauEe00(float date1, float date2, float epsa, float dpsi);
+float iauEe00a(float date1, float date2);
+float iauEe00b(float date1, float date2);
+float iauEe06a(float date1, float date2);
+float iauEect00(float date1, float date2);
+float iauEqeq94(float date1, float date2);
+float iauEra00(float dj1, float dj2);
+float iauGmst00(float uta, float utb, float tta, float ttb);
+float iauGmst06(float uta, float utb, float tta, float ttb);
+float iauGmst82(float dj1, float dj2);
+float iauGst00a(float uta, float utb, float tta, float ttb);
+float iauGst00b(float uta, float utb);
+float iauGst06(float uta, float utb, float tta, float ttb,
+                float rnpb[3][3]);
+float iauGst06a(float uta, float utb, float tta, float ttb);
+float iauGst94(float uta, float utb);
 
 /* Astronomy/SpaceMotion */
-int iauPvstar(double pv[2][3], double *ra, double *dec,
-              double *pmr, double *pmd, double *px, double *rv);
-int iauStarpv(double ra, double dec,
-              double pmr, double pmd, double px, double rv,
-              double pv[2][3]);
+int iauPvstar(float pv[2][3], float *ra, float *dec,
+              float *pmr, float *pmd, float *px, float *rv);
+int iauStarpv(float ra, float dec,
+              float pmr, float pmd, float px, float rv,
+              float pv[2][3]);
 
 /* Astronomy/StarCatalogs */
-void iauFk52h(double r5, double d5,
-              double dr5, double dd5, double px5, double rv5,
-              double *rh, double *dh,
-              double *drh, double *ddh, double *pxh, double *rvh);
-void iauFk5hip(double r5h[3][3], double s5h[3]);
-void iauFk5hz(double r5, double d5, double date1, double date2,
-              double *rh, double *dh);
-void iauH2fk5(double rh, double dh,
-              double drh, double ddh, double pxh, double rvh,
-              double *r5, double *d5,
-              double *dr5, double *dd5, double *px5, double *rv5);
-void iauHfk5z(double rh, double dh, double date1, double date2,
-              double *r5, double *d5, double *dr5, double *dd5);
-int iauStarpm(double ra1, double dec1,
-              double pmr1, double pmd1, double px1, double rv1,
-              double ep1a, double ep1b, double ep2a, double ep2b,
-              double *ra2, double *dec2,
-              double *pmr2, double *pmd2, double *px2, double *rv2);
+void iauFk52h(float r5, float d5,
+              float dr5, float dd5, float px5, float rv5,
+              float *rh, float *dh,
+              float *drh, float *ddh, float *pxh, float *rvh);
+void iauFk5hip(float r5h[3][3], float s5h[3]);
+void iauFk5hz(float r5, float d5, float date1, float date2,
+              float *rh, float *dh);
+void iauH2fk5(float rh, float dh,
+              float drh, float ddh, float pxh, float rvh,
+              float *r5, float *d5,
+              float *dr5, float *dd5, float *px5, float *rv5);
+void iauHfk5z(float rh, float dh, float date1, float date2,
+              float *r5, float *d5, float *dr5, float *dd5);
+int iauStarpm(float ra1, float dec1,
+              float pmr1, float pmd1, float px1, float rv1,
+              float ep1a, float ep1b, float ep2a, float ep2b,
+              float *ra2, float *dec2,
+              float *pmr2, float *pmd2, float *px2, float *rv2);
 
 /* Astronomy/EclipticCoordinates */
-void iauEceq06(double date1, double date2, double dl, double db,
-               double *dr, double *dd);
-void iauEcm06(double date1, double date2, double rm[3][3]);
-void iauEqec06(double date1, double date2, double dr, double dd,
-               double *dl, double *db);
-void iauLteceq(double epj, double dl, double db, double *dr, double *dd);
-void iauLtecm(double epj, double rm[3][3]);
-void iauLteqec(double epj, double dr, double dd, double *dl, double *db);
+void iauEceq06(float date1, float date2, float dl, float db,
+               float *dr, float *dd);
+void iauEcm06(float date1, float date2, float rm[3][3]);
+void iauEqec06(float date1, float date2, float dr, float dd,
+               float *dl, float *db);
+void iauLteceq(float epj, float dl, float db, float *dr, float *dd);
+void iauLtecm(float epj, float rm[3][3]);
+void iauLteqec(float epj, float dr, float dd, float *dl, float *db);
 
 /* Astronomy/GalacticCoordinates */
-void iauG2icrs(double dl, double db, double *dr, double *dd);
-void iauIcrs2g(double dr, double dd, double *dl, double *db);
+void iauG2icrs(float dl, float db, float *dr, float *dd);
+void iauIcrs2g(float dr, float dd, float *dl, float *db);
 
 /* Astronomy/GeodeticGeocentric */
-int iauEform(int n, double *a, double *f);
-int iauGc2gd(int n, double xyz[3],
-             double *elong, double *phi, double *height);
-int iauGc2gde(double a, double f, double xyz[3],
-              double *elong, double *phi, double *height);
-int iauGd2gc(int n, double elong, double phi, double height,
-             double xyz[3]);
-int iauGd2gce(double a, double f,
-              double elong, double phi, double height, double xyz[3]);
+int iauEform(int n, float *a, float *f);
+int iauGc2gd(int n, float xyz[3],
+             float *elong, float *phi, float *height);
+int iauGc2gde(float a, float f, float xyz[3],
+              float *elong, float *phi, float *height);
+int iauGd2gc(int n, float elong, float phi, float height,
+             float xyz[3]);
+int iauGd2gce(float a, float f,
+              float elong, float phi, float height, float xyz[3]);
 
 /* Astronomy/Timescales */
-int iauD2dtf(const char *scale, int ndp, double d1, double d2,
+int iauD2dtf(const char *scale, int ndp, float d1, float d2,
              int *iy, int *im, int *id, int ihmsf[4]);
-int iauDat(int iy, int im, int id, double fd, double *deltat);
-double iauDtdb(double date1, double date2,
-               double ut, double elong, double u, double v);
+int iauDat(int iy, int im, int id, float fd, float *deltat);
+float iauDtdb(float date1, float date2,
+               float ut, float elong, float u, float v);
 int iauDtf2d(const char *scale, int iy, int im, int id,
-             int ihr, int imn, double sec, double *d1, double *d2);
-int iauTaitt(double tai1, double tai2, double *tt1, double *tt2);
-int iauTaiut1(double tai1, double tai2, double dta,
-              double *ut11, double *ut12);
-int iauTaiutc(double tai1, double tai2, double *utc1, double *utc2);
-int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2);
-int iauTcgtt(double tcg1, double tcg2, double *tt1, double *tt2);
-int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2);
-int iauTdbtt(double tdb1, double tdb2, double dtr,
-             double *tt1, double *tt2);
-int iauTttai(double tt1, double tt2, double *tai1, double *tai2);
-int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2);
-int iauTttdb(double tt1, double tt2, double dtr,
-             double *tdb1, double *tdb2);
-int iauTtut1(double tt1, double tt2, double dt,
-             double *ut11, double *ut12);
-int iauUt1tai(double ut11, double ut12, double dta,
-              double *tai1, double *tai2);
-int iauUt1tt(double ut11, double ut12, double dt,
-             double *tt1, double *tt2);
-int iauUt1utc(double ut11, double ut12, double dut1,
-              double *utc1, double *utc2);
-int iauUtctai(double utc1, double utc2, double *tai1, double *tai2);
-int iauUtcut1(double utc1, double utc2, double dut1,
-              double *ut11, double *ut12);
+             int ihr, int imn, float sec, float *d1, float *d2);
+int iauTaitt(float tai1, float tai2, float *tt1, float *tt2);
+int iauTaiut1(float tai1, float tai2, float dta,
+              float *ut11, float *ut12);
+int iauTaiutc(float tai1, float tai2, float *utc1, float *utc2);
+int iauTcbtdb(float tcb1, float tcb2, float *tdb1, float *tdb2);
+int iauTcgtt(float tcg1, float tcg2, float *tt1, float *tt2);
+int iauTdbtcb(float tdb1, float tdb2, float *tcb1, float *tcb2);
+int iauTdbtt(float tdb1, float tdb2, float dtr,
+             float *tt1, float *tt2);
+int iauTttai(float tt1, float tt2, float *tai1, float *tai2);
+int iauTttcg(float tt1, float tt2, float *tcg1, float *tcg2);
+int iauTttdb(float tt1, float tt2, float dtr,
+             float *tdb1, float *tdb2);
+int iauTtut1(float tt1, float tt2, float dt,
+             float *ut11, float *ut12);
+int iauUt1tai(float ut11, float ut12, float dta,
+              float *tai1, float *tai2);
+int iauUt1tt(float ut11, float ut12, float dt,
+             float *tt1, float *tt2);
+int iauUt1utc(float ut11, float ut12, float dut1,
+              float *utc1, float *utc2);
+int iauUtctai(float utc1, float utc2, float *tai1, float *tai2);
+int iauUtcut1(float utc1, float utc2, float dut1,
+              float *ut11, float *ut12);
 
 /* VectorMatrix/AngleOps */
-void iauA2af(int ndp, double angle, char *sign, int idmsf[4]);
-void iauA2tf(int ndp, double angle, char *sign, int ihmsf[4]);
-int iauAf2a(char s, int ideg, int iamin, double asec, double *rad);
-double iauAnp(double a);
-double iauAnpm(double a);
-void iauD2tf(int ndp, double days, char *sign, int ihmsf[4]);
-int iauTf2a(char s, int ihour, int imin, double sec, double *rad);
-int iauTf2d(char s, int ihour, int imin, double sec, double *days);
+void iauA2af(int ndp, float angle, char *sign, int idmsf[4]);
+void iauA2tf(int ndp, float angle, char *sign, int ihmsf[4]);
+int iauAf2a(char s, int ideg, int iamin, float asec, float *rad);
+float iauAnp(float a);
+float iauAnpm(float a);
+void iauD2tf(int ndp, float days, char *sign, int ihmsf[4]);
+int iauTf2a(char s, int ihour, int imin, float sec, float *rad);
+int iauTf2d(char s, int ihour, int imin, float sec, float *days);
 
 /* VectorMatrix/BuildRotations */
-void iauRx(double phi, double r[3][3]);
-void iauRy(double theta, double r[3][3]);
-void iauRz(double psi, double r[3][3]);
+void iauRx(float phi, float r[3][3]);
+void iauRy(float theta, float r[3][3]);
+void iauRz(float psi, float r[3][3]);
 
 /* VectorMatrix/CopyExtendExtract */
-void iauCp(double p[3], double c[3]);
-void iauCpv(double pv[2][3], double c[2][3]);
-void iauCr(double r[3][3], double c[3][3]);
-void iauP2pv(double p[3], double pv[2][3]);
-void iauPv2p(double pv[2][3], double p[3]);
+void iauCp(float p[3], float c[3]);
+void iauCpv(float pv[2][3], float c[2][3]);
+void iauCr(float r[3][3], float c[3][3]);
+void iauP2pv(float p[3], float pv[2][3]);
+void iauPv2p(float pv[2][3], float p[3]);
 
 /* VectorMatrix/Initialization */
-void iauIr(double r[3][3]);
-void iauZp(double p[3]);
-void iauZpv(double pv[2][3]);
-void iauZr(double r[3][3]);
+void iauIr(float r[3][3]);
+void iauZp(float p[3]);
+void iauZpv(float pv[2][3]);
+void iauZr(float r[3][3]);
 
 /* VectorMatrix/MatrixOps */
-void iauRxr(double a[3][3], double b[3][3], double atb[3][3]);
-void iauTr(double r[3][3], double rt[3][3]);
+void iauRxr(float a[3][3], float b[3][3], float atb[3][3]);
+void iauTr(float r[3][3], float rt[3][3]);
 
 /* VectorMatrix/MatrixVectorProducts */
-void iauRxp(double r[3][3], double p[3], double rp[3]);
-void iauRxpv(double r[3][3], double pv[2][3], double rpv[2][3]);
-void iauTrxp(double r[3][3], double p[3], double trp[3]);
-void iauTrxpv(double r[3][3], double pv[2][3], double trpv[2][3]);
+void iauRxp(float r[3][3], float p[3], float rp[3]);
+void iauRxpv(float r[3][3], float pv[2][3], float rpv[2][3]);
+void iauTrxp(float r[3][3], float p[3], float trp[3]);
+void iauTrxpv(float r[3][3], float pv[2][3], float trpv[2][3]);
 
 /* VectorMatrix/RotationVectors */
-void iauRm2v(double r[3][3], double w[3]);
-void iauRv2m(double w[3], double r[3][3]);
+void iauRm2v(float r[3][3], float w[3]);
+void iauRv2m(float w[3], float r[3][3]);
 
 /* VectorMatrix/SeparationAndAngle */
-double iauPap(double a[3], double b[3]);
-double iauPas(double al, double ap, double bl, double bp);
-double iauSepp(double a[3], double b[3]);
-double iauSeps(double al, double ap, double bl, double bp);
+float iauPap(float a[3], float b[3]);
+float iauPas(float al, float ap, float bl, float bp);
+float iauSepp(float a[3], float b[3]);
+float iauSeps(float al, float ap, float bl, float bp);
 
 /* VectorMatrix/SphericalCartesian */
-void iauC2s(double p[3], double *theta, double *phi);
-void iauP2s(double p[3], double *theta, double *phi, double *r);
-void iauPv2s(double pv[2][3],
-             double *theta, double *phi, double *r,
-             double *td, double *pd, double *rd);
-void iauS2c(double theta, double phi, double c[3]);
-void iauS2p(double theta, double phi, double r, double p[3]);
-void iauS2pv(double theta, double phi, double r,
-             double td, double pd, double rd,
-             double pv[2][3]);
+void iauC2s(float p[3], float *theta, float *phi);
+void iauP2s(float p[3], float *theta, float *phi, float *r);
+void iauPv2s(float pv[2][3],
+             float *theta, float *phi, float *r,
+             float *td, float *pd, float *rd);
+void iauS2c(float theta, float phi, float c[3]);
+void iauS2p(float theta, float phi, float r, float p[3]);
+void iauS2pv(float theta, float phi, float r,
+             float td, float pd, float rd,
+             float pv[2][3]);
 
 /* VectorMatrix/VectorOps */
-double iauPdp(double a[3], double b[3]);
-double iauPm(double p[3]);
-void iauPmp(double a[3], double b[3], double amb[3]);
-void iauPn(double p[3], double *r, double u[3]);
-void iauPpp(double a[3], double b[3], double apb[3]);
-void iauPpsp(double a[3], double s, double b[3], double apsb[3]);
-void iauPvdpv(double a[2][3], double b[2][3], double adb[2]);
-void iauPvm(double pv[2][3], double *r, double *s);
-void iauPvmpv(double a[2][3], double b[2][3], double amb[2][3]);
-void iauPvppv(double a[2][3], double b[2][3], double apb[2][3]);
-void iauPvu(double dt, double pv[2][3], double upv[2][3]);
-void iauPvup(double dt, double pv[2][3], double p[3]);
-void iauPvxpv(double a[2][3], double b[2][3], double axb[2][3]);
-void iauPxp(double a[3], double b[3], double axb[3]);
-void iauS2xpv(double s1, double s2, double pv[2][3], double spv[2][3]);
-void iauSxp(double s, double p[3], double sp[3]);
-void iauSxpv(double s, double pv[2][3], double spv[2][3]);
+float iauPdp(float a[3], float b[3]);
+float iauPm(float p[3]);
+void iauPmp(float a[3], float b[3], float amb[3]);
+void iauPn(float p[3], float *r, float u[3]);
+void iauPpp(float a[3], float b[3], float apb[3]);
+void iauPpsp(float a[3], float s, float b[3], float apsb[3]);
+void iauPvdpv(float a[2][3], float b[2][3], float adb[2]);
+void iauPvm(float pv[2][3], float *r, float *s);
+void iauPvmpv(float a[2][3], float b[2][3], float amb[2][3]);
+void iauPvppv(float a[2][3], float b[2][3], float apb[2][3]);
+void iauPvu(float dt, float pv[2][3], float upv[2][3]);
+void iauPvup(float dt, float pv[2][3], float p[3]);
+void iauPvxpv(float a[2][3], float b[2][3], float axb[2][3]);
+void iauPxp(float a[3], float b[3], float axb[3]);
+void iauS2xpv(float s1, float s2, float pv[2][3], float spv[2][3]);
+void iauSxp(float s, float p[3], float sp[3]);
+void iauSxpv(float s, float pv[2][3], float spv[2][3]);
 
 #ifdef __cplusplus
 }

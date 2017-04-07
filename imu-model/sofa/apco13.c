@@ -1,9 +1,9 @@
 #include "sofa.h"
 
-int iauApco13(double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              iauASTROM *astrom, double *eo)
+int iauApco13(float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              iauASTROM *astrom, float *eo)
 /*
 **  - - - - - - - - - -
 **   i a u A p c o 1 3
@@ -25,37 +25,37 @@ int iauApco13(double utc1, double utc2, double dut1,
 **  Status:  support function.
 **
 **  Given:
-**     utc1   double     UTC as a 2-part...
-**     utc2   double     ...quasi Julian Date (Notes 1,2)
-**     dut1   double     UT1-UTC (seconds, Note 3)
-**     elong  double     longitude (radians, east +ve, Note 4)
-**     phi    double     latitude (geodetic, radians, Note 4)
-**     hm     double     height above ellipsoid (m, geodetic, Notes 4,6)
-**     xp,yp  double     polar motion coordinates (radians, Note 5)
-**     phpa   double     pressure at the observer (hPa = mB, Note 6)
-**     tc     double     ambient temperature at the observer (deg C)
-**     rh     double     relative humidity at the observer (range 0-1)
-**     wl     double     wavelength (micrometers, Note 7)
+**     utc1   float     UTC as a 2-part...
+**     utc2   float     ...quasi Julian Date (Notes 1,2)
+**     dut1   float     UT1-UTC (seconds, Note 3)
+**     elong  float     longitude (radians, east +ve, Note 4)
+**     phi    float     latitude (geodetic, radians, Note 4)
+**     hm     float     height above ellipsoid (m, geodetic, Notes 4,6)
+**     xp,yp  float     polar motion coordinates (radians, Note 5)
+**     phpa   float     pressure at the observer (hPa = mB, Note 6)
+**     tc     float     ambient temperature at the observer (deg C)
+**     rh     float     relative humidity at the observer (range 0-1)
+**     wl     float     wavelength (micrometers, Note 7)
 **
 **  Returned:
 **     astrom iauASTROM* star-independent astrometry parameters:
-**      pmt    double       PM time interval (SSB, Julian years)
-**      eb     double[3]    SSB to observer (vector, au)
-**      eh     double[3]    Sun to observer (unit vector)
-**      em     double       distance from Sun to observer (au)
-**      v      double[3]    barycentric observer velocity (vector, c)
-**      bm1    double       sqrt(1-|v|^2): reciprocal of Lorenz factor
-**      bpn    double[3][3] bias-precession-nutation matrix
-**      along  double       longitude + s' (radians)
-**      xpl    double       polar motion xp wrt local meridian (radians)
-**      ypl    double       polar motion yp wrt local meridian (radians)
-**      sphi   double       sine of geodetic latitude
-**      cphi   double       cosine of geodetic latitude
-**      diurab double       magnitude of diurnal aberration vector
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       refraction constant A (radians)
-**      refb   double       refraction constant B (radians)
-**     eo     double*    equation of the origins (ERA-GST)
+**      pmt    float       PM time interval (SSB, Julian years)
+**      eb     float[3]    SSB to observer (vector, au)
+**      eh     float[3]    Sun to observer (unit vector)
+**      em     float       distance from Sun to observer (au)
+**      v      float[3]    barycentric observer velocity (vector, c)
+**      bm1    float       sqrt(1-|v|^2): reciprocal of Lorenz factor
+**      bpn    float[3][3] bias-precession-nutation matrix
+**      along  float       longitude + s' (radians)
+**      xpl    float       polar motion xp wrt local meridian (radians)
+**      ypl    float       polar motion yp wrt local meridian (radians)
+**      sphi   float       sine of geodetic latitude
+**      cphi   float       cosine of geodetic latitude
+**      diurab float       magnitude of diurnal aberration vector
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       refraction constant A (radians)
+**      refb   float       refraction constant B (radians)
+**     eo     float*    equation of the origins (ERA-GST)
 **
 **  Returned (function value):
 **            int        status: +1 = dubious year (Note 2)
@@ -186,7 +186,7 @@ int iauApco13(double utc1, double utc2, double dut1,
 */
 {
    int j;
-   double tai1, tai2, tt1, tt2, ut11, ut12, ehpv[2][3], ebpv[2][3],
+   float tai1, tai2, tt1, tt2, ut11, ut12, ehpv[2][3], ebpv[2][3],
           r[3][3], x, y, s, theta, sp, refa, refb;
 
 

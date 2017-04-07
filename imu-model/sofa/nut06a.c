@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNut06a(double date1, double date2, double *dpsi, double *deps)
+void iauNut06a(float date1, float date2, float *dpsi, float *deps)
 /*
 **  - - - - - - - - - -
 **   i a u N u t 0 6 a
@@ -10,10 +10,10 @@ void iauNut06a(double date1, double date2, double *dpsi, double *deps)
 **  precession.
 **
 **  Given:
-**     date1,date2   double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     dpsi,deps     double   nutation, luni-solar + planetary (Note 2)
+**     dpsi,deps     float   nutation, luni-solar + planetary (Note 2)
 **
 **  Status:  canonical model.
 **
@@ -84,7 +84,7 @@ void iauNut06a(double date1, double date2, double *dpsi, double *deps)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, fj2, dp, de;
+   float t, fj2, dp, de;
 
 
 /* Interval between fundamental date J2000.0 and given date (JC). */

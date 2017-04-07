@@ -2,7 +2,7 @@
 #include <string.h>
 
 int iauDtf2d(const char *scale, int iy, int im, int id,
-             int ihr, int imn, double sec, double *d1, double *d2)
+             int ihr, int imn, float sec, float *d1, float *d2)
 /*
 **  - - - - - - - - -
 **   i a u D t f 2 d
@@ -21,10 +21,10 @@ int iauDtf2d(const char *scale, int iy, int im, int id,
 **     scale     char[]  time scale ID (Note 1)
 **     iy,im,id  int     year, month, day in Gregorian calendar (Note 2)
 **     ihr,imn   int     hour, minute
-**     sec       double  seconds
+**     sec       float  seconds
 **
 **  Returned:
-**     d1,d2     double  2-part Julian Date (Notes 3,4)
+**     d1,d2     float  2-part Julian Date (Notes 3,4)
 **
 **  Returned (function value):
 **               int     status: +3 = both of next two
@@ -88,7 +88,7 @@ int iauDtf2d(const char *scale, int iy, int im, int id,
 */
 {
    int js, iy2, im2, id2;
-   double dj, w, day, seclim, dat0, dat12, dat24, dleap, time;
+   float dj, w, day, seclim, dat0, dat12, dat24, dleap, time;
 
 
 /* Today's Julian Day Number. */
@@ -146,7 +146,7 @@ int iauDtf2d(const char *scale, int iy, int im, int id,
    if ( js < 0 ) return js;
 
 /* The time in days. */
-   time  = ( 60.0 * ( (double) ( 60 * ihr + imn ) ) + sec ) / day;
+   time  = ( 60.0 * ( (float) ( 60 * ihr + imn ) ) + sec ) / day;
 
 /* Return the date and time. */
    *d1 = dj;

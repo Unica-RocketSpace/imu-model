@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNutm80(double date1, double date2, double rmatn[3][3])
+void iauNutm80(float date1, float date2, float rmatn[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u N u t m 8 0
@@ -14,10 +14,10 @@ void iauNutm80(double date1, double date2, double rmatn[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2    double          TDB date (Note 1)
+**     date1,date2    float          TDB date (Note 1)
 **
 **  Returned:
-**     rmatn          double[3][3]    nutation matrix
+**     rmatn          float[3][3]    nutation matrix
 **
 **  Notes:
 **
@@ -57,7 +57,7 @@ void iauNutm80(double date1, double date2, double rmatn[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dpsi, deps, epsa;
+   float dpsi, deps, epsa;
 
 
 /* Nutation components and mean obliquity. */

@@ -24,31 +24,31 @@
 
 /* Star-independent astrometry parameters */
 typedef struct {
-   double pmt;        /* PM time interval (SSB, Julian years) */
-   double eb[3];      /* SSB to observer (vector, au) */
-   double eh[3];      /* Sun to observer (unit vector) */
-   double em;         /* distance from Sun to observer (au) */
-   double v[3];       /* barycentric observer velocity (vector, c) */
-   double bm1;        /* sqrt(1-|v|^2): reciprocal of Lorenz factor */
-   double bpn[3][3];  /* bias-precession-nutation matrix */
-   double along;      /* longitude + s' + dERA(DUT) (radians) */
-   double phi;        /* geodetic latitude (radians) */
-   double xpl;        /* polar motion xp wrt local meridian (radians) */
-   double ypl;        /* polar motion yp wrt local meridian (radians) */
-   double sphi;       /* sine of geodetic latitude */
-   double cphi;       /* cosine of geodetic latitude */
-   double diurab;     /* magnitude of diurnal aberration vector */
-   double eral;       /* "local" Earth rotation angle (radians) */
-   double refa;       /* refraction constant A (radians) */
-   double refb;       /* refraction constant B (radians) */
+   float pmt;        /* PM time interval (SSB, Julian years) */
+   float eb[3];      /* SSB to observer (vector, au) */
+   float eh[3];      /* Sun to observer (unit vector) */
+   float em;         /* distance from Sun to observer (au) */
+   float v[3];       /* barycentric observer velocity (vector, c) */
+   float bm1;        /* sqrt(1-|v|^2): reciprocal of Lorenz factor */
+   float bpn[3][3];  /* bias-precession-nutation matrix */
+   float along;      /* longitude + s' + dERA(DUT) (radians) */
+   float phi;        /* geodetic latitude (radians) */
+   float xpl;        /* polar motion xp wrt local meridian (radians) */
+   float ypl;        /* polar motion yp wrt local meridian (radians) */
+   float sphi;       /* sine of geodetic latitude */
+   float cphi;       /* cosine of geodetic latitude */
+   float diurab;     /* magnitude of diurnal aberration vector */
+   float eral;       /* "local" Earth rotation angle (radians) */
+   float refa;       /* refraction constant A (radians) */
+   float refb;       /* refraction constant B (radians) */
 } iauASTROM;
 /* (Vectors eb, eh, em and v are all with respect to BCRS axes.) */
 
 /* Body parameters for light deflection */
 typedef struct {
-   double bm;         /* mass of the body (solar masses) */
-   double dl;         /* deflection limiter (radians^2/2) */
-   double pv[2][3];   /* barycentric PV of the body (au, au/day) */
+   float bm;         /* mass of the body (solar masses) */
+   float dl;         /* deflection limiter (radians^2/2) */
+   float pv[2][3];   /* barycentric PV of the body (au, au/day) */
 } iauLDBODY;
 
 /* Pi */
@@ -131,13 +131,13 @@ typedef struct {
 /* = 2 * 1.32712440041e20 / (2.99792458e8)^2 / 1.49597870700e11 */
 #define SRS 1.97412574336e-8
 
-/* dint(A) - truncate to nearest whole number towards zero (double) */
+/* dint(A) - truncate to nearest whole number towards zero (float) */
 #define dint(A) ((A)<0.0?ceil(A):floor(A))
 
-/* dnint(A) - round to nearest whole number (double) */
+/* dnint(A) - round to nearest whole number (float) */
 #define dnint(A) ((A)<0.0?ceil((A)-0.5):floor((A)+0.5))
 
-/* dsign(A,B) - magnitude of A with sign of B (double) */
+/* dsign(A,B) - magnitude of A with sign of B (float) */
 #define dsign(A,B) ((B)<0.0?-fabs(A):fabs(A))
 
 /* max(A,B) - larger (most +ve) of two numbers (generic) */

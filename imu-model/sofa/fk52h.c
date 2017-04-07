@@ -1,9 +1,9 @@
 #include "sofa.h"
 
-void iauFk52h(double r5, double d5,
-              double dr5, double dd5, double px5, double rv5,
-              double *rh, double *dh,
-              double *drh, double *ddh, double *pxh, double *rvh)
+void iauFk52h(float r5, float d5,
+              float dr5, float dd5, float px5, float rv5,
+              float *rh, float *dh,
+              float *drh, float *ddh, float *pxh, float *rvh)
 /*
 **  - - - - - - - - -
 **   i a u F k 5 2 h
@@ -17,20 +17,20 @@ void iauFk52h(double r5, double d5,
 **  Status:  support function.
 **
 **  Given (all FK5, equinox J2000.0, epoch J2000.0):
-**     r5      double    RA (radians)
-**     d5      double    Dec (radians)
-**     dr5     double    proper motion in RA (dRA/dt, rad/Jyear)
-**     dd5     double    proper motion in Dec (dDec/dt, rad/Jyear)
-**     px5     double    parallax (arcsec)
-**     rv5     double    radial velocity (km/s, positive = receding)
+**     r5      float    RA (radians)
+**     d5      float    Dec (radians)
+**     dr5     float    proper motion in RA (dRA/dt, rad/Jyear)
+**     dd5     float    proper motion in Dec (dDec/dt, rad/Jyear)
+**     px5     float    parallax (arcsec)
+**     rv5     float    radial velocity (km/s, positive = receding)
 **
 **  Returned (all Hipparcos, epoch J2000.0):
-**     rh      double    RA (radians)
-**     dh      double    Dec (radians)
-**     drh     double    proper motion in RA (dRA/dt, rad/Jyear)
-**     ddh     double    proper motion in Dec (dDec/dt, rad/Jyear)
-**     pxh     double    parallax (arcsec)
-**     rvh     double    radial velocity (km/s, positive = receding)
+**     rh      float    RA (radians)
+**     dh      float    Dec (radians)
+**     drh     float    proper motion in RA (dRA/dt, rad/Jyear)
+**     ddh     float    proper motion in Dec (dDec/dt, rad/Jyear)
+**     pxh     float    parallax (arcsec)
+**     rvh     float    radial velocity (km/s, positive = receding)
 **
 **  Notes:
 **
@@ -66,7 +66,7 @@ void iauFk52h(double r5, double d5,
 */
 {
    int i;
-   double pv5[2][3], r5h[3][3], s5h[3], wxp[3], vv[3], pvh[2][3];
+   float pv5[2][3], r5h[3][3], s5h[3], wxp[3], vv[3], pvh[2][3];
 
 
 /* FK5 barycentric position/velocity pv-vector (normalized). */

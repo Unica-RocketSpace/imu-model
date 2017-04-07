@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauAnp(double a)
+float iauAnp(float a)
 /*
 **  - - - - - - -
 **   i a u A n p
@@ -14,10 +14,10 @@ double iauAnp(double a)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a        double     angle (radians)
+**     a        float     angle (radians)
 **
 **  Returned (function value):
-**              double     angle in range 0-2pi
+**              float     angle in range 0-2pi
 **
 **  This revision:  2013 June 18
 **
@@ -26,7 +26,7 @@ double iauAnp(double a)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double w;
+   float w;
 
 
    w = fmod(a, D2PI);

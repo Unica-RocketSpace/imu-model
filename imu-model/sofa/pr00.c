@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPr00(double date1, double date2, double *dpsipr, double *depspr)
+void iauPr00(float date1, float date2, float *dpsipr, float *depspr)
 /*
 **  - - - - - - - -
 **   i a u P r 0 0
@@ -15,10 +15,10 @@ void iauPr00(double date1, double date2, double *dpsipr, double *depspr)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2    double  TT as a 2-part Julian Date (Note 1)
+**     date1,date2    float  TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     dpsipr,depspr  double  precession corrections (Notes 2,3)
+**     dpsipr,depspr  float  precession corrections (Notes 2,3)
 **
 **  Notes:
 **
@@ -78,10 +78,10 @@ void iauPr00(double date1, double date2, double *dpsipr, double *depspr)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t;
+   float t;
 
 /* Precession and obliquity corrections (radians per century) */
-   static const double PRECOR = -0.29965 * DAS2R,
+   static const float PRECOR = -0.29965 * DAS2R,
                        OBLCOR = -0.02524 * DAS2R;
 
 

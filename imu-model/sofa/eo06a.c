@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEo06a(double date1, double date2)
+float iauEo06a(float date1, float date2)
 /*
 **  - - - - - - - - -
 **   i a u E o 0 6 a
@@ -14,10 +14,10 @@ double iauEo06a(double date1, double date2)
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                  double    equation of the origins in radians
+**                  float    equation of the origins in radians
 **
 **  Notes:
 **
@@ -66,7 +66,7 @@ double iauEo06a(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r[3][3], x, y, s, eo;
+   float r[3][3], x, y, s, eo;
 
 
 /* Classical nutation x precession x bias matrix. */

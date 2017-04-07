@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPnm06a(double date1, double date2, double rnpb[3][3])
+void iauPnm06a(float date1, float date2, float rnpb[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u P n m 0 6 a
@@ -15,10 +15,10 @@ void iauPnm06a(double date1, double date2, double rnpb[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double       TT as a 2-part Julian Date (Note 1)
+**     date1,date2 float       TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     rnpb        double[3][3] bias-precession-nutation matrix (Note 2)
+**     rnpb        float[3][3] bias-precession-nutation matrix (Note 2)
 **
 **  Notes:
 **
@@ -62,7 +62,7 @@ void iauPnm06a(double date1, double date2, double rnpb[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double gamb, phib, psib, epsa, dp, de;
+   float gamb, phib, psib, epsa, dp, de;
 
 
 /* Fukushima-Williams angles for frame bias and precession. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPpsp(double a[3], double s, double b[3], double apsb[3])
+void iauPpsp(float a[3], float s, float b[3], float apsb[3])
 /*
 **  - - - - - - - -
 **   i a u P p s p
@@ -14,12 +14,12 @@ void iauPpsp(double a[3], double s, double b[3], double apsb[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a      double[3]     first p-vector
-**     s      double        scalar (multiplier for b)
-**     b      double[3]     second p-vector
+**     a      float[3]     first p-vector
+**     s      float        scalar (multiplier for b)
+**     b      float[3]     second p-vector
 **
 **  Returned:
-**     apsb   double[3]     a + s*b
+**     apsb   float[3]     a + s*b
 **
 **  Note:
 **     It is permissible for any of a, b and apsb to be the same array.
@@ -35,7 +35,7 @@ void iauPpsp(double a[3], double s, double b[3], double apsb[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double sb[3];
+   float sb[3];
 
 
 /* s*b. */

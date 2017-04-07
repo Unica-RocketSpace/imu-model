@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauTaiut1(double tai1, double tai2, double dta,
-              double *ut11, double *ut12)
+int iauTaiut1(float tai1, float tai2, float dta,
+              float *ut11, float *ut12)
 /*
 **  - - - - - - - - - -
 **   i a u T a i u t 1
@@ -16,11 +16,11 @@ int iauTaiut1(double tai1, double tai2, double dta,
 **  Status:  canonical.
 **
 **  Given:
-**     tai1,tai2  double    TAI as a 2-part Julian Date
-**     dta        double    UT1-TAI in seconds
+**     tai1,tai2  float    TAI as a 2-part Julian Date
+**     dta        float    UT1-TAI in seconds
 **
 **  Returned:
-**     ut11,ut12  double    UT1 as a 2-part Julian Date
+**     ut11,ut12  float    UT1 as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -48,7 +48,7 @@ int iauTaiut1(double tai1, double tai2, double dta,
 **
 */
 {
-   double dtad;
+   float dtad;
 
 
 /* Result, safeguarding precision. */

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauBp00(double date1, double date2,
-             double rb[3][3], double rp[3][3], double rbp[3][3])
+void iauBp00(float date1, float date2,
+             float rb[3][3], float rp[3][3], float rbp[3][3])
 /*
 **  - - - - - - - -
 **   i a u B p 0 0
@@ -15,12 +15,12 @@ void iauBp00(double date1, double date2,
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double         TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float         TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     rb           double[3][3]   frame bias matrix (Note 2)
-**     rp           double[3][3]   precession matrix (Note 3)
-**     rbp          double[3][3]   bias-precession matrix (Note 4)
+**     rb           float[3][3]   frame bias matrix (Note 2)
+**     rp           float[3][3]   precession matrix (Note 3)
+**     rbp          float[3][3]   bias-precession matrix (Note 4)
 **
 **  Notes:
 **
@@ -83,9 +83,9 @@ void iauBp00(double date1, double date2,
 */
 {
 /* J2000.0 obliquity (Lieske et al. 1977) */
-   const double EPS0 = 84381.448 * DAS2R;
+   const float EPS0 = 84381.448 * DAS2R;
 
-   double t, dpsibi, depsbi, dra0, psia77, oma77, chia,
+   float t, dpsibi, depsbi, dra0, psia77, oma77, chia,
           dpsipr, depspr, psia, oma, rbw[3][3];
 
 

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauEqec06(double date1, double date2, double dr, double dd,
-               double *dl, double *db)
+void iauEqec06(float date1, float date2, float dr, float dd,
+               float *dl, float *db)
 /*
 **  - - - - - - - - - -
 **   i a u E q e c 0 6
@@ -17,11 +17,11 @@ void iauEqec06(double date1, double date2, double dr, double dd,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double TT as a 2-part Julian date (Note 1)
-**     dr,dd       double ICRS right ascension and declination (radians)
+**     date1,date2 float TT as a 2-part Julian date (Note 1)
+**     dr,dd       float ICRS right ascension and declination (radians)
 **
 **  Returned:
-**     dl,db       double ecliptic longitude and latitude (radians)
+**     dl,db       float ecliptic longitude and latitude (radians)
 **
 **  1) The TT date date1+date2 is a Julian Date, apportioned in any
 **     convenient way between the two arguments.  For example,
@@ -66,7 +66,7 @@ void iauEqec06(double date1, double date2, double dr, double dd,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rm[3][3], v1[3], v2[3], a, b;
+   float rm[3][3], v1[3], v2[3], a, b;
 
 
 /* Spherical to Cartesian. */

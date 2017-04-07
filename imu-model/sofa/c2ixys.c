@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauC2ixys(double x, double y, double s, double rc2i[3][3])
+void iauC2ixys(float x, float y, float s, float rc2i[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u C 2 i x y s
@@ -15,11 +15,11 @@ void iauC2ixys(double x, double y, double s, double rc2i[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     x,y      double         Celestial Intermediate Pole (Note 1)
-**     s        double         the CIO locator s (Note 2)
+**     x,y      float         Celestial Intermediate Pole (Note 1)
+**     s        float         the CIO locator s (Note 2)
 **
 **  Returned:
-**     rc2i     double[3][3]   celestial-to-intermediate matrix (Note 3)
+**     rc2i     float[3][3]   celestial-to-intermediate matrix (Note 3)
 **
 **  Notes:
 **
@@ -59,7 +59,7 @@ void iauC2ixys(double x, double y, double s, double rc2i[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r2, e, d;
+   float r2, e, d;
 
 
 /* Obtain the spherical angles E and d. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauSxpv(double s, double pv[2][3], double spv[2][3])
+void iauSxpv(float s, float pv[2][3], float spv[2][3])
 /*
 **  - - - - - - - -
 **   i a u S x p v
@@ -14,11 +14,11 @@ void iauSxpv(double s, double pv[2][3], double spv[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     s       double          scalar
-**     pv      double[2][3]    pv-vector
+**     s       float          scalar
+**     pv      float[2][3]    pv-vector
 **
 **  Returned:
-**     spv     double[2][3]    s * pv
+**     spv     float[2][3]    s * pv
 **
 **  Note:
 **     It is permissible for pv and spv to be the same array

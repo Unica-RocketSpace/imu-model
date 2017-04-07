@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-double iauGst06(double uta, double utb, double tta, double ttb,
-                double rnpb[3][3])
+float iauGst06(float uta, float utb, float tta, float ttb,
+                float rnpb[3][3])
 /*
 **  - - - - - - - - -
 **   i a u G s t 0 6
@@ -15,12 +15,12 @@ double iauGst06(double uta, double utb, double tta, double ttb,
 **  Status:  support function.
 **
 **  Given:
-**     uta,utb  double        UT1 as a 2-part Julian Date (Notes 1,2)
-**     tta,ttb  double        TT as a 2-part Julian Date (Notes 1,2)
-**     rnpb     double[3][3]  nutation x precession x bias matrix
+**     uta,utb  float        UT1 as a 2-part Julian Date (Notes 1,2)
+**     tta,ttb  float        TT as a 2-part Julian Date (Notes 1,2)
+**     rnpb     float[3][3]  nutation x precession x bias matrix
 **
 **  Returned (function value):
-**              double        Greenwich apparent sidereal time (radians)
+**              float        Greenwich apparent sidereal time (radians)
 **
 **  Notes:
 **
@@ -76,7 +76,7 @@ double iauGst06(double uta, double utb, double tta, double ttb,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double x, y, s, era, eors, gst;
+   float x, y, s, era, eors, gst;
 
 
 /* Extract CIP coordinates. */

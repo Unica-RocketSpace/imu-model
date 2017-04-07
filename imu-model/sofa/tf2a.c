@@ -1,7 +1,7 @@
 #include "sofa.h"
 #include <stdlib.h>
 
-int iauTf2a(char s, int ihour, int imin, double sec, double *rad)
+int iauTf2a(char s, int ihour, int imin, float sec, float *rad)
 /*
 **  - - - - - - - -
 **   i a u T f 2 a
@@ -18,10 +18,10 @@ int iauTf2a(char s, int ihour, int imin, double sec, double *rad)
 **     s         char    sign:  '-' = negative, otherwise positive
 **     ihour     int     hours
 **     imin      int     minutes
-**     sec       double  seconds
+**     sec       float  seconds
 **
 **  Returned:
-**     rad       double  angle in radians
+**     rad       float  angle in radians
 **
 **  Returned (function value):
 **               int     status:  0 = OK
@@ -49,8 +49,8 @@ int iauTf2a(char s, int ihour, int imin, double sec, double *rad)
 
 /* Compute the interval. */
    *rad  = ( s == '-' ? -1.0 : 1.0 ) *
-           ( 60.0 * ( 60.0 * ( (double) abs(ihour) ) +
-                             ( (double) abs(imin) ) ) +
+           ( 60.0 * ( 60.0 * ( (float) abs(ihour) ) +
+                             ( (float) abs(imin) ) ) +
                                         fabs(sec) ) * DS2R;
 
 /* Validate arguments and return status. */

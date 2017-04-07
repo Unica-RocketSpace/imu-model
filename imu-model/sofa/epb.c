@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEpb(double dj1, double dj2)
+float iauEpb(float dj1, float dj2)
 /*
 **  - - - - - - -
 **   i a u E p b
@@ -14,10 +14,10 @@ double iauEpb(double dj1, double dj2)
 **  Status:  support function.
 **
 **  Given:
-**     dj1,dj2    double     Julian Date (see note)
+**     dj1,dj2    float     Julian Date (see note)
 **
 **  Returned (function value):
-**                double     Besselian Epoch.
+**                float     Besselian Epoch.
 **
 **  Note:
 **
@@ -39,7 +39,7 @@ double iauEpb(double dj1, double dj2)
 */
 {
 /* J2000.0-B1900.0 (2415019.81352) in days */
-   const double D1900 = 36524.68648;
+   const float D1900 = 36524.68648;
 
    return 1900.0 + ((dj1 - DJ00) + (dj2 + D1900)) / DTY;
 

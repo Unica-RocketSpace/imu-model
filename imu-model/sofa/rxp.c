@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRxp(double r[3][3], double p[3], double rp[3])
+void iauRxp(float r[3][3], float p[3], float rp[3])
 /*
 **  - - - - - - -
 **   i a u R x p
@@ -14,11 +14,11 @@ void iauRxp(double r[3][3], double p[3], double rp[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    r-matrix
-**     p        double[3]       p-vector
+**     r        float[3][3]    r-matrix
+**     p        float[3]       p-vector
 **
 **  Returned:
-**     rp       double[3]       r * p
+**     rp       float[3]       r * p
 **
 **  Note:
 **     It is permissible for p and rp to be the same array.
@@ -33,7 +33,7 @@ void iauRxp(double r[3][3], double p[3], double rp[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double w, wrp[3];
+   float w, wrp[3];
    int i, j;
 
 

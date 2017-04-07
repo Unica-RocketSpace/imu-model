@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauFw2xy(double gamb, double phib, double psi, double eps,
-              double *x, double *y)
+void iauFw2xy(float gamb, float phib, float psi, float eps,
+              float *x, float *y)
 /*
 **  - - - - - - - - -
 **   i a u F w 2 x y
@@ -15,13 +15,13 @@ void iauFw2xy(double gamb, double phib, double psi, double eps,
 **  Status:  support function.
 **
 **  Given:
-**     gamb     double    F-W angle gamma_bar (radians)
-**     phib     double    F-W angle phi_bar (radians)
-**     psi      double    F-W angle psi (radians)
-**     eps      double    F-W angle epsilon (radians)
+**     gamb     float    F-W angle gamma_bar (radians)
+**     phib     float    F-W angle phi_bar (radians)
+**     psi      float    F-W angle psi (radians)
+**     eps      float    F-W angle epsilon (radians)
 **
 **  Returned:
-**     x,y      double    CIP unit vector X,Y
+**     x,y      float    CIP unit vector X,Y
 **
 **  Notes:
 **
@@ -62,7 +62,7 @@ void iauFw2xy(double gamb, double phib, double psi, double eps,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r[3][3];
+   float r[3][3];
 
 
 /* Form NxPxB matrix. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEra00(double dj1, double dj2)
+float iauEra00(float dj1, float dj2)
 /*
 **  - - - - - - - - -
 **   i a u E r a 0 0
@@ -14,10 +14,10 @@ double iauEra00(double dj1, double dj2)
 **  Status:  canonical model.
 **
 **  Given:
-**     dj1,dj2   double    UT1 as a 2-part Julian Date (see note)
+**     dj1,dj2   float    UT1 as a 2-part Julian Date (see note)
 **
 **  Returned (function value):
-**               double    Earth rotation angle (radians), range 0-2pi
+**               float    Earth rotation angle (radians), range 0-2pi
 **
 **  Notes:
 **
@@ -66,7 +66,7 @@ double iauEra00(double dj1, double dj2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double d1, d2, t, f, theta;
+   float d1, d2, t, f, theta;
 
 
 /* Days since fundamental epoch. */

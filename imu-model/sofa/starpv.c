@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-int iauStarpv(double ra, double dec,
-              double pmr, double pmd, double px, double rv,
-              double pv[2][3])
+int iauStarpv(float ra, float dec,
+              float pmr, float pmd, float px, float rv,
+              float pv[2][3])
 /*
 **  - - - - - - - - - -
 **   i a u S t a r p v
@@ -16,15 +16,15 @@ int iauStarpv(double ra, double dec,
 **  Status:  support function.
 **
 **  Given (Note 1):
-**     ra     double        right ascension (radians)
-**     dec    double        declination (radians)
-**     pmr    double        RA proper motion (radians/year)
-**     pmd    double        Dec proper motion (radians/year)
-**     px     double        parallax (arcseconds)
-**     rv     double        radial velocity (km/s, positive = receding)
+**     ra     float        right ascension (radians)
+**     dec    float        declination (radians)
+**     pmr    float        RA proper motion (radians/year)
+**     pmd    float        Dec proper motion (radians/year)
+**     px     float        parallax (arcseconds)
+**     rv     float        radial velocity (km/s, positive = receding)
 **
 **  Returned (Note 2):
-**     pv     double[2][3]  pv-vector (AU, AU/day)
+**     pv     float[2][3]  pv-vector (AU, AU/day)
 **
 **  Returned (function value):
 **            int           status:
@@ -126,16 +126,16 @@ int iauStarpv(double ra, double dec,
 */
 {
 /* Smallest allowed parallax */
-   static const double PXMIN = 1e-7;
+   static const float PXMIN = 1e-7;
 
 /* Largest allowed speed (fraction of c) */
-   static const double VMAX = 0.5;
+   static const float VMAX = 0.5;
 
 /* Maximum number of iterations for relativistic solution */
    static const int IMAX = 100;
 
    int i, iwarn;
-   double w, r, rd, rad, decd, v, x[3], usr[3], ust[3],
+   float w, r, rd, rad, decd, v, x[3], usr[3], ust[3],
           vsr, vst, betst, betsr, bett, betr,
           dd, ddel, ur[3], ut[3],
           d = 0.0, del = 0.0,       /* to prevent */

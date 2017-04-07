@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRm2v(double r[3][3], double w[3])
+void iauRm2v(float r[3][3], float w[3])
 /*
 **  - - - - - - - -
 **   i a u R m 2 v
@@ -14,10 +14,10 @@ void iauRm2v(double r[3][3], double w[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    rotation matrix
+**     r        float[3][3]    rotation matrix
 **
 **  Returned:
-**     w        double[3]       rotation vector (Note 1)
+**     w        float[3]       rotation vector (Note 1)
 **
 **  Notes:
 **
@@ -41,7 +41,7 @@ void iauRm2v(double r[3][3], double w[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double x, y, z, s2, c2, phi, f;
+   float x, y, z, s2, c2, phi, f;
 
 
    x = r[1][2] - r[2][1];

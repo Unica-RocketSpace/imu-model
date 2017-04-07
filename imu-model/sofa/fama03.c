@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFama03(double t)
+float iauFama03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a m a 0 3
@@ -15,10 +15,10 @@ double iauFama03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    mean longitude of Mars, radians (Note 2)
+**           float    mean longitude of Mars, radians (Note 2)
 **
 **  Notes:
 **
@@ -46,7 +46,7 @@ double iauFama03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of Mars (IERS Conventions 2003). */

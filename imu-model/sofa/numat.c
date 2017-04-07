@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNumat(double epsa, double dpsi, double deps, double rmatn[3][3])
+void iauNumat(float epsa, float dpsi, float deps, float rmatn[3][3])
 /*
 **  - - - - - - - - -
 **   i a u N u m a t
@@ -14,11 +14,11 @@ void iauNumat(double epsa, double dpsi, double deps, double rmatn[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     epsa        double         mean obliquity of date (Note 1)
-**     dpsi,deps   double         nutation (Note 2)
+**     epsa        float         mean obliquity of date (Note 1)
+**     dpsi,deps   float         nutation (Note 2)
 **
 **  Returned:
-**     rmatn       double[3][3]   nutation matrix (Note 3)
+**     rmatn       float[3][3]   nutation matrix (Note 3)
 **
 **  Notes:
 **

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauUtctai(double utc1, double utc2, double *tai1, double *tai2)
+int iauUtctai(float utc1, float utc2, float *tai1, float *tai2)
 /*
 **  - - - - - - - - - -
 **   i a u U t c t a i
@@ -15,10 +15,10 @@ int iauUtctai(double utc1, double utc2, double *tai1, double *tai2)
 **  Status:  canonical.
 **
 **  Given:
-**     utc1,utc2  double   UTC as a 2-part quasi Julian Date (Notes 1-4)
+**     utc1,utc2  float   UTC as a 2-part quasi Julian Date (Notes 1-4)
 **
 **  Returned:
-**     tai1,tai2  double   TAI as a 2-part Julian Date (Note 5)
+**     tai1,tai2  float   TAI as a 2-part Julian Date (Note 5)
 **
 **  Returned (function value):
 **                int      status: +1 = dubious year (Note 3)
@@ -73,7 +73,7 @@ int iauUtctai(double utc1, double utc2, double *tai1, double *tai2)
 {
    int big1;
    int iy, im, id, j, iyt, imt, idt;
-   double u1, u2, fd, dat0, dat12, w, dat24, dlod, dleap, z1, z2, a2;
+   float u1, u2, fd, dat0, dat12, w, dat24, dlod, dleap, z1, z2, a2;
 
 
 /* Put the two parts of the UTC into big-first order. */

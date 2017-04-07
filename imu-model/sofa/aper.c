@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauAper(double theta, iauASTROM *astrom)
+void iauAper(float theta, iauASTROM *astrom)
 /*
 **  - - - - - - - -
 **   i a u A p e r
@@ -15,43 +15,43 @@ void iauAper(double theta, iauASTROM *astrom)
 **  Status:  support function.
 **
 **  Given:
-**     theta   double      Earth rotation angle (radians, Note 2)
+**     theta   float      Earth rotation angle (radians, Note 2)
 **     astrom  iauASTROM*  star-independent astrometry parameters:
-**      pmt    double       not used
-**      eb     double[3]    not used
-**      eh     double[3]    not used
-**      em     double       not used
-**      v      double[3]    not used
-**      bm1    double       not used
-**      bpn    double[3][3] not used
-**      along  double       longitude + s' (radians)
-**      xpl    double       not used
-**      ypl    double       not used
-**      sphi   double       not used
-**      cphi   double       not used
-**      diurab double       not used
-**      eral   double       not used
-**      refa   double       not used
-**      refb   double       not used
+**      pmt    float       not used
+**      eb     float[3]    not used
+**      eh     float[3]    not used
+**      em     float       not used
+**      v      float[3]    not used
+**      bm1    float       not used
+**      bpn    float[3][3] not used
+**      along  float       longitude + s' (radians)
+**      xpl    float       not used
+**      ypl    float       not used
+**      sphi   float       not used
+**      cphi   float       not used
+**      diurab float       not used
+**      eral   float       not used
+**      refa   float       not used
+**      refb   float       not used
 **
 **  Returned:
 **     astrom  iauASTROM*  star-independent astrometry parameters:
-**      pmt    double       unchanged
-**      eb     double[3]    unchanged
-**      eh     double[3]    unchanged
-**      em     double       unchanged
-**      v      double[3]    unchanged
-**      bm1    double       unchanged
-**      bpn    double[3][3] unchanged
-**      along  double       unchanged
-**      xpl    double       unchanged
-**      ypl    double       unchanged
-**      sphi   double       unchanged
-**      cphi   double       unchanged
-**      diurab double       unchanged
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       unchanged
-**      refb   double       unchanged
+**      pmt    float       unchanged
+**      eb     float[3]    unchanged
+**      eh     float[3]    unchanged
+**      em     float       unchanged
+**      v      float[3]    unchanged
+**      bm1    float       unchanged
+**      bpn    float[3][3] unchanged
+**      along  float       unchanged
+**      xpl    float       unchanged
+**      ypl    float       unchanged
+**      sphi   float       unchanged
+**      cphi   float       unchanged
+**      diurab float       unchanged
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       unchanged
+**      refb   float       unchanged
 **
 **  Notes:
 **

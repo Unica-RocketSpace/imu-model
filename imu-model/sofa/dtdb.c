@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-double iauDtdb(double date1, double date2,
-               double ut, double elong, double u, double v)
+float iauDtdb(float date1, float date2,
+               float ut, float elong, float u, float v)
 /*
 **  - - - - - - - -
 **   i a u D t d b
@@ -46,14 +46,14 @@ double iauDtdb(double date1, double date2,
 **  Status:  support routine.
 **
 **  Given:
-**     date1,date2   double  date, TDB (Notes 1-3)
-**     ut            double  universal time (UT1, fraction of one day)
-**     elong         double  longitude (east positive, radians)
-**     u             double  distance from Earth spin axis (km)
-**     v             double  distance north of equatorial plane (km)
+**     date1,date2   float  date, TDB (Notes 1-3)
+**     ut            float  universal time (UT1, fraction of one day)
+**     elong         float  longitude (east positive, radians)
+**     u             float  distance from Earth spin axis (km)
+**     v             float  distance north of equatorial plane (km)
 **
 **  Returned (function value):
-**                   double  TDB-TT (seconds)
+**                   float  TDB-TT (seconds)
 **
 **  Notes:
 **
@@ -169,7 +169,7 @@ double iauDtdb(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, tsol, w, elsun, emsun, d, elj, els, wt, w0, w1, w2, w3, w4,
+   float t, tsol, w, elsun, emsun, d, elj, els, wt, w0, w1, w2, w3, w4,
           wf, wj;
    int j;
 
@@ -192,7 +192,7 @@ double iauDtdb(double date1, double date2,
 **  "   785-787  "   "  T**4
 */
 
-   static const double fairhd[787][3] = {
+   static const float fairhd[787][3] = {
    /* 1, 10 */
       { 1656.674564e-6,     6283.075849991,  6.240054195 },
       {   22.417471e-6,     5753.384884897,  4.296977442 },

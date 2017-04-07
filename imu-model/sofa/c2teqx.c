@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauC2teqx(double rbpn[3][3], double gst, double rpom[3][3],
-               double rc2t[3][3])
+void iauC2teqx(float rbpn[3][3], float gst, float rpom[3][3],
+               float rc2t[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u C 2 t e q x
@@ -17,12 +17,12 @@ void iauC2teqx(double rbpn[3][3], double gst, double rpom[3][3],
 **  Status:  support function.
 **
 **  Given:
-**     rbpn   double[3][3]  celestial-to-true matrix
-**     gst    double        Greenwich (apparent) Sidereal Time (radians)
-**     rpom   double[3][3]  polar-motion matrix
+**     rbpn   float[3][3]  celestial-to-true matrix
+**     gst    float        Greenwich (apparent) Sidereal Time (radians)
+**     rpom   float[3][3]  polar-motion matrix
 **
 **  Returned:
-**     rc2t   double[3][3]  celestial-to-terrestrial matrix (Note 2)
+**     rc2t   float[3][3]  celestial-to-terrestrial matrix (Note 2)
 **
 **  Notes:
 **
@@ -64,7 +64,7 @@ void iauC2teqx(double rbpn[3][3], double gst, double rpom[3][3],
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r[3][3];
+   float r[3][3];
 
 
 /* Construct the matrix. */

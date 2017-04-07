@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPv2p(double pv[2][3], double p[3])
+void iauPv2p(float pv[2][3], float p[3])
 /*
 **  - - - - - - - -
 **   i a u P v 2 p
@@ -14,10 +14,10 @@ void iauPv2p(double pv[2][3], double p[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     pv      double[2][3]     pv-vector
+**     pv      float[2][3]     pv-vector
 **
 **  Returned:
-**     p       double[3]        p-vector
+**     p       float[3]        p-vector
 **
 **  Called:
 **     iauCp        copy p-vector

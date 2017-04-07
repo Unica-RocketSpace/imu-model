@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEors(double rnpb[3][3], double s)
+float iauEors(float rnpb[3][3], float s)
 /*
 **  - - - - - - - -
 **   i a u E o r s
@@ -15,11 +15,11 @@ double iauEors(double rnpb[3][3], double s)
 **  Status:  support function.
 **
 **  Given:
-**     rnpb  double[3][3]  classical nutation x precession x bias matrix
-**     s     double        the quantity s (the CIO locator)
+**     rnpb  float[3][3]  classical nutation x precession x bias matrix
+**     s     float        the quantity s (the CIO locator)
 **
 **  Returned (function value):
-**           double        the equation of the origins in radians.
+**           float        the equation of the origins in radians.
 **
 **  Notes:
 **
@@ -45,7 +45,7 @@ double iauEors(double rnpb[3][3], double s)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double x, ax, xs, ys, zs, p, q, eo;
+   float x, ax, xs, ys, zs, p, q, eo;
 
 
 /* Evaluate Wallace & Capitaine (2006) expression (16). */

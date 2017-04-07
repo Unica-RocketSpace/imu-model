@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNut80(double date1, double date2, double *dpsi, double *deps)
+void iauNut80(float date1, float date2, float *dpsi, float *deps)
 /*
 **  - - - - - - - - -
 **   i a u N u t 8 0
@@ -14,11 +14,11 @@ void iauNut80(double date1, double date2, double *dpsi, double *deps)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2   double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     dpsi          double    nutation in longitude (radians)
-**     deps          double    nutation in obliquity (radians)
+**     dpsi          float    nutation in longitude (radians)
+**     deps          float    nutation in obliquity (radians)
 **
 **  Notes:
 **
@@ -60,11 +60,11 @@ void iauNut80(double date1, double date2, double *dpsi, double *deps)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, el, elp, f, d, om, dp, de, arg, s, c;
+   float t, el, elp, f, d, om, dp, de, arg, s, c;
    int j;
 
 /* Units of 0.1 milliarcsecond to radians */
-   const double U2R = DAS2R / 1e4;
+   const float U2R = DAS2R / 1e4;
 
 /* ------------------------------------------------ */
 /* Table of multiples of arguments and coefficients */
@@ -75,8 +75,8 @@ void iauNut80(double date1, double date2, double *dpsi, double *deps)
 
    static const struct {
       int nl,nlp,nf,nd,nom; /* coefficients of l,l',F,D,Om */
-      double sp,spt;        /* longitude sine, 1 and t coefficients */
-      double ce,cet;        /* obliquity cosine, 1 and t coefficients */
+      float sp,spt;        /* longitude sine, 1 and t coefficients */
+      float ce,cet;        /* obliquity cosine, 1 and t coefficients */
    } x[] = {
 
    /* 1-10 */
@@ -258,11 +258,11 @@ void iauNut80(double date1, double date2, double *dpsi, double *deps)
    for (j = NT-1; j >= 0; j--) {
 
    /* Form argument for current term. */
-      arg = (double)x[j].nl  * el
-          + (double)x[j].nlp * elp
-          + (double)x[j].nf  * f
-          + (double)x[j].nd  * d
-          + (double)x[j].nom * om;
+      arg = (float)x[j].nl  * el
+          + (float)x[j].nlp * elp
+          + (float)x[j].nf  * f
+          + (float)x[j].nd  * d
+          + (float)x[j].nom * om;
 
    /* Accumulate current nutation term. */
       s = x[j].sp + x[j].spt * t;

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauPvstar(double pv[2][3], double *ra, double *dec,
-              double *pmr, double *pmd, double *px, double *rv)
+int iauPvstar(float pv[2][3], float *ra, float *dec,
+              float *pmr, float *pmd, float *px, float *rv)
 /*
 **  - - - - - - - - - -
 **   i a u P v s t a r
@@ -15,15 +15,15 @@ int iauPvstar(double pv[2][3], double *ra, double *dec,
 **  Status:  support function.
 **
 **  Given (Note 1):
-**     pv     double[2][3]   pv-vector (AU, AU/day)
+**     pv     float[2][3]   pv-vector (AU, AU/day)
 **
 **  Returned (Note 2):
-**     ra     double         right ascension (radians)
-**     dec    double         declination (radians)
-**     pmr    double         RA proper motion (radians/year)
-**     pmd    double         Dec proper motion (radians/year)
-**     px     double         parallax (arcsec)
-**     rv     double         radial velocity (km/s, positive = receding)
+**     ra     float         right ascension (radians)
+**     dec    float         declination (radians)
+**     pmr    float         RA proper motion (radians/year)
+**     pmd    float         Dec proper motion (radians/year)
+**     px     float         parallax (arcsec)
+**     rv     float         radial velocity (km/s, positive = receding)
 **
 **  Returned (function value):
 **            int            status:
@@ -105,7 +105,7 @@ int iauPvstar(double pv[2][3], double *ra, double *dec,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r, x[3], vr, ur[3], vt, ut[3], bett, betr, d, w, del,
+   float r, x[3], vr, ur[3], vt, ut[3], bett, betr, d, w, del,
           usr[3], ust[3], a, rad, decd, rd;
 
 

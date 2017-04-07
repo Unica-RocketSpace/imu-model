@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLdsun(double p[3], double e[3], double em, double p1[3])
+void iauLdsun(float p[3], float e[3], float em, float p1[3])
 /*
 **  - - - - - - - - -
 **   i a u L d s u n
@@ -14,12 +14,12 @@ void iauLdsun(double p[3], double e[3], double em, double p1[3])
 **  Status:  support function.
 **
 **  Given:
-**     p      double[3]  direction from observer to star (unit vector)
-**     e      double[3]  direction from Sun to observer (unit vector)
-**     em     double     distance from Sun to observer (au)
+**     p      float[3]  direction from observer to star (unit vector)
+**     e      float[3]  direction from Sun to observer (unit vector)
+**     em     float     distance from Sun to observer (au)
 **
 **  Returned:
-**     p1     double[3]  observer to deflected star (unit vector)
+**     p1     float[3]  observer to deflected star (unit vector)
 **
 **  Notes:
 **
@@ -45,7 +45,7 @@ void iauLdsun(double p[3], double e[3], double em, double p1[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double em2, dlim;
+   float em2, dlim;
 
 
 /* Deflection limiter (smaller for distant observers). */

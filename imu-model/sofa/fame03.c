@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFame03(double t)
+float iauFame03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a m e 0 3
@@ -15,10 +15,10 @@ double iauFame03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    mean longitude of Mercury, radians (Note 2)
+**           float    mean longitude of Mercury, radians (Note 2)
 **
 **  Notes:
 **
@@ -46,7 +46,7 @@ double iauFame03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of Mercury (IERS Conventions 2003). */

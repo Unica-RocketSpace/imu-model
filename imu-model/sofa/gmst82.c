@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauGmst82(double dj1, double dj2)
+float iauGmst82(float dj1, float dj2)
 /*
 **  - - - - - - - - - -
 **   i a u G m s t 8 2
@@ -14,10 +14,10 @@ double iauGmst82(double dj1, double dj2)
 **  Status:  canonical model.
 **
 **  Given:
-**     dj1,dj2    double    UT1 Julian Date (see note)
+**     dj1,dj2    float    UT1 Julian Date (see note)
 **
 **  Returned (function value):
-**                double    Greenwich mean sidereal time (radians)
+**                float    Greenwich mean sidereal time (radians)
 **
 **  Notes:
 **
@@ -73,16 +73,16 @@ double iauGmst82(double dj1, double dj2)
 */
 {
 /* Coefficients of IAU 1982 GMST-UT1 model */
-   double A = 24110.54841  -  DAYSEC / 2.0;
-   double B = 8640184.812866;
-   double C = 0.093104;
-   double D =  -6.2e-6;
+   float A = 24110.54841  -  DAYSEC / 2.0;
+   float B = 8640184.812866;
+   float C = 0.093104;
+   float D =  -6.2e-6;
 
 /* Note: the first constant, A, has to be adjusted by 12 hours */
 /* because the UT1 is supplied as a Julian date, which begins  */
 /* at noon.                                                    */
 
-   double d1, d2, t, f, gmst;
+   float d1, d2, t, f, gmst;
 
 
 /* Julian centuries since fundamental epoch. */

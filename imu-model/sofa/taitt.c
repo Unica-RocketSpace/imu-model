@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauTaitt(double tai1, double tai2, double *tt1, double *tt2)
+int iauTaitt(float tai1, float tai2, float *tt1, float *tt2)
 /*
 **  - - - - - - - - -
 **   i a u T a i t t
@@ -15,10 +15,10 @@ int iauTaitt(double tai1, double tai2, double *tt1, double *tt2)
 **  Status:  canonical.
 **
 **  Given:
-**     tai1,tai2  double    TAI as a 2-part Julian Date
+**     tai1,tai2  float    TAI as a 2-part Julian Date
 **
 **  Returned:
-**     tt1,tt2    double    TT as a 2-part Julian Date
+**     tt1,tt2    float    TT as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -47,7 +47,7 @@ int iauTaitt(double tai1, double tai2, double *tt1, double *tt2)
 {
 
 /* TT minus TAI (days). */
-   static const double dtat = TTMTAI/DAYSEC;
+   static const float dtat = TTMTAI/DAYSEC;
 
 
 /* Result, safeguarding precision. */

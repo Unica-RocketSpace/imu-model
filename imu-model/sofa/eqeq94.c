@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEqeq94(double date1, double date2)
+float iauEqeq94(float date1, float date2)
 /*
 **  - - - - - - - - - -
 **   i a u E q e q 9 4
@@ -14,10 +14,10 @@ double iauEqeq94(double date1, double date2)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2   double     TDB date (Note 1)
+**     date1,date2   float     TDB date (Note 1)
 **
 **  Returned (function value):
-**                   double     equation of the equinoxes (Note 2)
+**                   float     equation of the equinoxes (Note 2)
 **
 **  Notes:
 **
@@ -63,7 +63,7 @@ double iauEqeq94(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t,  om,  dpsi,  deps,  eps0, ee;
+   float t,  om,  dpsi,  deps,  eps0, ee;
 
 
 /* Interval between fundamental epoch J2000.0 and given date (JC). */

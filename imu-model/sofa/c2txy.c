@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauC2txy(double tta, double ttb, double uta, double utb,
-              double x, double y, double xp, double yp,
-              double rc2t[3][3])
+void iauC2txy(float tta, float ttb, float uta, float utb,
+              float x, float y, float xp, float yp,
+              float rc2t[3][3])
 /*
 **  - - - - - - - - -
 **   i a u C 2 t x y
@@ -17,13 +17,13 @@ void iauC2txy(double tta, double ttb, double uta, double utb,
 **  Status:  support function.
 **
 **  Given:
-**     tta,ttb  double         TT as a 2-part Julian Date (Note 1)
-**     uta,utb  double         UT1 as a 2-part Julian Date (Note 1)
-**     x,y      double         Celestial Intermediate Pole (Note 2)
-**     xp,yp    double         coordinates of the pole (radians, Note 3)
+**     tta,ttb  float         TT as a 2-part Julian Date (Note 1)
+**     uta,utb  float         UT1 as a 2-part Julian Date (Note 1)
+**     x,y      float         Celestial Intermediate Pole (Note 2)
+**     xp,yp    float         coordinates of the pole (radians, Note 3)
 **
 **  Returned:
-**     rc2t     double[3][3]   celestial-to-terrestrial matrix (Note 4)
+**     rc2t     float[3][3]   celestial-to-terrestrial matrix (Note 4)
 **
 **  Notes:
 **
@@ -91,7 +91,7 @@ void iauC2txy(double tta, double ttb, double uta, double utb,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rc2i[3][3], era, sp, rpom[3][3];
+   float rc2i[3][3], era, sp, rpom[3][3];
 
 
 /* Form the celestial-to-intermediate matrix for this TT. */

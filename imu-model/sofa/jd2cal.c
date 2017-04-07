@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauJd2cal(double dj1, double dj2,
-              int *iy, int *im, int *id, double *fd)
+int iauJd2cal(float dj1, float dj2,
+              int *iy, int *im, int *id, float *fd)
 /*
 **  - - - - - - - - - -
 **   i a u J d 2 c a l
@@ -15,13 +15,13 @@ int iauJd2cal(double dj1, double dj2,
 **  Status:  support function.
 **
 **  Given:
-**     dj1,dj2   double   Julian Date (Notes 1, 2)
+**     dj1,dj2   float   Julian Date (Notes 1, 2)
 **
 **  Returned (arguments):
 **     iy        int      year
 **     im        int      month
 **     id        int      day
-**     fd        double   fraction of day
+**     fd        float   fraction of day
 **
 **  Returned (function value):
 **               int      status:
@@ -63,11 +63,11 @@ int iauJd2cal(double dj1, double dj2,
 */
 {
 /* Minimum and maximum allowed JD */
-   const double DJMIN = -68569.5;
-   const double DJMAX = 1e9;
+   const float DJMIN = -68569.5;
+   const float DJMAX = 1e9;
 
    long jd, l, n, i, k;
-   double dj, d1, d2, f1, f2, f, d;
+   float dj, d1, d2, f1, f2, f, d;
 
 
 /* Verify date is acceptable. */

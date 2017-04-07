@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauCr(double r[3][3], double c[3][3])
+void iauCr(float r[3][3], float c[3][3])
 /*
 **  - - - - - -
 **   i a u C r
@@ -14,10 +14,10 @@ void iauCr(double r[3][3], double c[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    r-matrix to be copied
+**     r        float[3][3]    r-matrix to be copied
 **
 **  Returned:
-**     c        double[3][3]    copy
+**     c        float[3][3]    copy
 **
 **  Called:
 **     iauCp        copy p-vector

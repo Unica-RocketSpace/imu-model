@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauIcrs2g ( double dr, double dd, double *dl, double *db )
+void iauIcrs2g ( float dr, float dd, float *dl, float *db )
 /*
 **  - - - - - - - - - -
 **   i a u I c r s 2 g
@@ -14,12 +14,12 @@ void iauIcrs2g ( double dr, double dd, double *dl, double *db )
 **  Status:  support routine.
 **
 **  Given:
-**     dr     double      ICRS right ascension (radians)
-**     dd     double      ICRS declination (radians)
+**     dr     float      ICRS right ascension (radians)
+**     dd     float      ICRS declination (radians)
 **
 **  Returned:
-**     dl     double      galactic longitude (radians)
-**     db     double      galactic latitude (radians)
+**     dl     float      galactic longitude (radians)
+**     db     float      galactic latitude (radians)
 **
 **  Notes:
 **
@@ -73,7 +73,7 @@ void iauIcrs2g ( double dr, double dd, double *dl, double *db )
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double v1[3], v2[3];
+   float v1[3], v2[3];
 
 /*
 **  L2,B2 system of galactic coordinates in the form presented in the
@@ -87,7 +87,7 @@ void iauIcrs2g ( double dr, double dd, double *dl, double *db )
 **  ICRS to galactic rotation matrix, obtained by computing
 **  R_3(-R) R_1(pi/2-Q) R_3(pi/2+P) to the full precision shown:
 */
-   double r[3][3] = { { -0.054875560416215368492398900454,
+   float r[3][3] = { { -0.054875560416215368492398900454,
                         -0.873437090234885048760383168409,
                         -0.483835015548713226831774175116 },
                       { +0.494109427875583673525222371358,

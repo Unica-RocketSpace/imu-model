@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauBp06(double date1, double date2,
-             double rb[3][3], double rp[3][3], double rbp[3][3])
+void iauBp06(float date1, float date2,
+             float rb[3][3], float rp[3][3], float rbp[3][3])
 /*
 **  - - - - - - - -
 **   i a u B p 0 6
@@ -15,12 +15,12 @@ void iauBp06(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double         TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float         TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     rb           double[3][3]   frame bias matrix (Note 2)
-**     rp           double[3][3]   precession matrix (Note 3)
-**     rbp          double[3][3]   bias-precession matrix (Note 4)
+**     rb           float[3][3]   frame bias matrix (Note 2)
+**     rp           float[3][3]   precession matrix (Note 3)
+**     rbp          float[3][3]   bias-precession matrix (Note 4)
 **
 **  Notes:
 **
@@ -76,7 +76,7 @@ void iauBp06(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double gamb, phib, psib, epsa, rbpw[3][3], rbt[3][3];
+   float gamb, phib, psib, epsa, rbpw[3][3], rbt[3][3];
 
 
 /* B matrix. */

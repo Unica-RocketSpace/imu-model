@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauGmst00(double uta, double utb, double tta, double ttb)
+float iauGmst00(float uta, float utb, float tta, float ttb)
 /*
 **  - - - - - - - - - -
 **   i a u G m s t 0 0
@@ -15,11 +15,11 @@ double iauGmst00(double uta, double utb, double tta, double ttb)
 **  Status:  canonical model.
 **
 **  Given:
-**     uta,utb    double    UT1 as a 2-part Julian Date (Notes 1,2)
-**     tta,ttb    double    TT as a 2-part Julian Date (Notes 1,2)
+**     uta,utb    float    UT1 as a 2-part Julian Date (Notes 1,2)
+**     tta,ttb    float    TT as a 2-part Julian Date (Notes 1,2)
 **
 **  Returned (function value):
-**                double    Greenwich mean sidereal time (radians)
+**                float    Greenwich mean sidereal time (radians)
 **
 **  Notes:
 **
@@ -80,7 +80,7 @@ double iauGmst00(double uta, double utb, double tta, double ttb)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, gmst;
+   float t, gmst;
 
 
 /* TT Julian centuries since J2000.0. */

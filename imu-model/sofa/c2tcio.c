@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
-               double rc2t[3][3])
+void iauC2tcio(float rc2i[3][3], float era, float rpom[3][3],
+               float rc2t[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u C 2 t c i o
@@ -17,12 +17,12 @@ void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
 **  Status:  support function.
 **
 **  Given:
-**     rc2i     double[3][3]    celestial-to-intermediate matrix
-**     era      double          Earth rotation angle (radians)
-**     rpom     double[3][3]    polar-motion matrix
+**     rc2i     float[3][3]    celestial-to-intermediate matrix
+**     era      float          Earth rotation angle (radians)
+**     rpom     float[3][3]    polar-motion matrix
 **
 **  Returned:
-**     rc2t     double[3][3]    celestial-to-terrestrial matrix
+**     rc2t     float[3][3]    celestial-to-terrestrial matrix
 **
 **  Notes:
 **
@@ -64,7 +64,7 @@ void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r[3][3];
+   float r[3][3];
 
 
 /* Construct the matrix. */

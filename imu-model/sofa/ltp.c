@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLtp(double epj, double rp[3][3])
+void iauLtp(float epj, float rp[3][3])
 /*
 **  - - - - - - -
 **   i a u L t p
@@ -14,10 +14,10 @@ void iauLtp(double epj, double rp[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     epj     double         Julian epoch (TT)
+**     epj     float         Julian epoch (TT)
 **
 **  Returned:
-**     rp      double[3][3]   precession matrix, J2000.0 to date
+**     rp      float[3][3]   precession matrix, J2000.0 to date
 **
 **  Notes:
 **
@@ -60,7 +60,7 @@ void iauLtp(double epj, double rp[3][3])
 */
 {
    int i;
-   double peqr[3], pecl[3], v[3], w, eqx[3];
+   float peqr[3], pecl[3], v[3], w, eqx[3];
 
 
 /* Equator pole (bottom row of matrix). */

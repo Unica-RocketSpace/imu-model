@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
+int iauTttcg(float tt1, float tt2, float *tcg1, float *tcg2)
 /*
 **  - - - - - - - - -
 **   i a u T t t c g
@@ -15,10 +15,10 @@ int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
 **  Status:  canonical.
 **
 **  Given:
-**     tt1,tt2    double    TT as a 2-part Julian Date
+**     tt1,tt2    float    TT as a 2-part Julian Date
 **
 **  Returned:
-**     tcg1,tcg2  double    TCG as a 2-part Julian Date
+**     tcg1,tcg2  float    TCG as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -46,10 +46,10 @@ int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
 {
 
 /* 1977 Jan 1 00:00:32.184 TT, as MJD */
-   static const double t77t = DJM77 + TTMTAI/DAYSEC;
+   static const float t77t = DJM77 + TTMTAI/DAYSEC;
 
 /* TT to TCG rate */
-   static const double elgg = ELG/(1.0-ELG);
+   static const float elgg = ELG/(1.0-ELG);
 
 
 /* Result, safeguarding precision. */

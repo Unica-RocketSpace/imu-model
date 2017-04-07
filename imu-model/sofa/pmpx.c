@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauPmpx(double rc, double dc, double pr, double pd,
-             double px, double rv, double pmt, double pob[3],
-             double pco[3])
+void iauPmpx(float rc, float dc, float pr, float pd,
+             float px, float rv, float pmt, float pob[3],
+             float pco[3])
 /*
 **  - - - - - - - -
 **   i a u P m p x
@@ -16,16 +16,16 @@ void iauPmpx(double rc, double dc, double pr, double pd,
 **  Status:  support function.
 **
 **  Given:
-**     rc,dc  double     ICRS RA,Dec at catalog epoch (radians)
-**     pr     double     RA proper motion (radians/year; Note 1)
-**     pd     double     Dec proper motion (radians/year)
-**     px     double     parallax (arcsec)
-**     rv     double     radial velocity (km/s, +ve if receding)
-**     pmt    double     proper motion time interval (SSB, Julian years)
-**     pob    double[3]  SSB to observer vector (au)
+**     rc,dc  float     ICRS RA,Dec at catalog epoch (radians)
+**     pr     float     RA proper motion (radians/year; Note 1)
+**     pd     float     Dec proper motion (radians/year)
+**     px     float     parallax (arcsec)
+**     rv     float     radial velocity (km/s, +ve if receding)
+**     pmt    float     proper motion time interval (SSB, Julian years)
+**     pob    float[3]  SSB to observer vector (au)
 **
 **  Returned:
-**     pco    double[3]  coordinate direction (BCRS unit vector)
+**     pco    float[3]  coordinate direction (BCRS unit vector)
 **
 **  Notes:
 **
@@ -59,13 +59,13 @@ void iauPmpx(double rc, double dc, double pr, double pd,
 */
 {
 /* Km/s to au/year */
-   const double VF = DAYSEC*DJM/DAU;
+   const float VF = DAYSEC*DJM/DAU;
 
 /* Light time for 1 au, Julian years */
-   const double AULTY = AULT/DAYSEC/DJY;
+   const float AULTY = AULT/DAYSEC/DJY;
 
    int i;
-   double sr, cr, sd, cd, x, y, z, p[3], dt, pxr, w, pdz, pm[3];
+   float sr, cr, sd, cd, x, y, z, p[3], dt, pxr, w, pdz, pm[3];
 
 
 /* Spherical coordinates to unit vector (and useful functions). */

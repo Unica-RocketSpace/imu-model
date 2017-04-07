@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFapa03(double t)
+float iauFapa03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a p a 0 3
@@ -15,10 +15,10 @@ double iauFapa03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    general precession in longitude, radians (Note 2)
+**           float    general precession in longitude, radians (Note 2)
 **
 **  Notes:
 **
@@ -47,7 +47,7 @@ double iauFapa03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* General accumulated precession in longitude. */

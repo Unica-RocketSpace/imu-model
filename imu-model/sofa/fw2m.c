@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauFw2m(double gamb, double phib, double psi, double eps,
-             double r[3][3])
+void iauFw2m(float gamb, float phib, float psi, float eps,
+             float r[3][3])
 /*
 **  - - - - - - - -
 **   i a u F w 2 m
@@ -15,13 +15,13 @@ void iauFw2m(double gamb, double phib, double psi, double eps,
 **  Status:  support function.
 **
 **  Given:
-**     gamb     double         F-W angle gamma_bar (radians)
-**     phib     double         F-W angle phi_bar (radians)
-**     psi      double         F-W angle psi (radians)
-**     eps      double         F-W angle epsilon (radians)
+**     gamb     float         F-W angle gamma_bar (radians)
+**     phib     float         F-W angle phi_bar (radians)
+**     psi      float         F-W angle psi (radians)
+**     eps      float         F-W angle epsilon (radians)
 **
 **  Returned:
-**     r        double[3][3]   rotation matrix
+**     r        float[3][3]   rotation matrix
 **
 **  Notes:
 **

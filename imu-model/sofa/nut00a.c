@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNut00a(double date1, double date2, double *dpsi, double *deps)
+void iauNut00a(float date1, float date2, float *dpsi, float *deps)
 /*
 **  - - - - - - - - - -
 **   i a u N u t 0 0 a
@@ -15,10 +15,10 @@ void iauNut00a(double date1, double date2, double *dpsi, double *deps)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2   double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     dpsi,deps     double   nutation, luni-solar + planetary (Note 2)
+**     dpsi,deps     float   nutation, luni-solar + planetary (Note 2)
 **
 **  Notes:
 **
@@ -161,13 +161,13 @@ void iauNut00a(double date1, double date2, double *dpsi, double *deps)
 */
 {
    int i;
-   double t, el, elp, f, d, om, arg, dp, de, sarg, carg,
+   float t, el, elp, f, d, om, arg, dp, de, sarg, carg,
           al, af, ad, aom, alme, alve, alea, alma,
           alju, alsa, alur, alne, apa, dpsils, depsls,
           dpsipl, depspl;
 
 /* Units of 0.1 microarcsecond to radians */
-   const double U2R = DAS2R / 1e7;
+   const float U2R = DAS2R / 1e7;
 
 /* ------------------------- */
 /* Luni-Solar nutation model */
@@ -178,8 +178,8 @@ void iauNut00a(double date1, double date2, double *dpsi, double *deps)
 
    static const struct {
       int nl,nlp,nf,nd,nom; /* coefficients of l,l',F,D,Om */
-      double sp,spt,cp;     /* longitude sin, t*sin, cos coefficients */
-      double ce,cet,se;     /* obliquity cos, t*cos, sin coefficients */
+      float sp,spt,cp;     /* longitude sin, t*sin, cos coefficients */
+      float ce,cet,se;     /* obliquity cos, t*cos, sin coefficients */
    } xls[] = {
 
    /* 1- 10 */
@@ -1899,11 +1899,11 @@ void iauNut00a(double date1, double date2, double *dpsi, double *deps)
    for (i = NLS-1; i >= 0; i--) {
 
    /* Argument and functions. */
-      arg = fmod((double)xls[i].nl  * el +
-                 (double)xls[i].nlp * elp +
-                 (double)xls[i].nf  * f +
-                 (double)xls[i].nd  * d +
-                 (double)xls[i].nom * om, D2PI);
+      arg = fmod((float)xls[i].nl  * el +
+                 (float)xls[i].nlp * elp +
+                 (float)xls[i].nf  * f +
+                 (float)xls[i].nd  * d +
+                 (float)xls[i].nom * om, D2PI);
       sarg = sin(arg);
       carg = cos(arg);
 
@@ -1963,25 +1963,25 @@ void iauNut00a(double date1, double date2, double *dpsi, double *deps)
    for (i = NPL-1; i >= 0; i--) {
 
    /* Argument and functions. */
-      arg = fmod((double)xpl[i].nl  * al   +
-                 (double)xpl[i].nf  * af   +
-                 (double)xpl[i].nd  * ad   +
-                 (double)xpl[i].nom * aom  +
-                 (double)xpl[i].nme * alme +
-                 (double)xpl[i].nve * alve +
-                 (double)xpl[i].nea * alea +
-                 (double)xpl[i].nma * alma +
-                 (double)xpl[i].nju * alju +
-                 (double)xpl[i].nsa * alsa +
-                 (double)xpl[i].nur * alur +
-                 (double)xpl[i].nne * alne +
-                 (double)xpl[i].npa * apa, D2PI);
+      arg = fmod((float)xpl[i].nl  * al   +
+                 (float)xpl[i].nf  * af   +
+                 (float)xpl[i].nd  * ad   +
+                 (float)xpl[i].nom * aom  +
+                 (float)xpl[i].nme * alme +
+                 (float)xpl[i].nve * alve +
+                 (float)xpl[i].nea * alea +
+                 (float)xpl[i].nma * alma +
+                 (float)xpl[i].nju * alju +
+                 (float)xpl[i].nsa * alsa +
+                 (float)xpl[i].nur * alur +
+                 (float)xpl[i].nne * alne +
+                 (float)xpl[i].npa * apa, D2PI);
       sarg = sin(arg);
       carg = cos(arg);
 
    /* Term. */
-      dp += (double)xpl[i].sp * sarg + (double)xpl[i].cp * carg;
-      de += (double)xpl[i].se * sarg + (double)xpl[i].ce * carg;
+      dp += (float)xpl[i].sp * sarg + (float)xpl[i].cp * carg;
+      de += (float)xpl[i].se * sarg + (float)xpl[i].ce * carg;
 
    }
 

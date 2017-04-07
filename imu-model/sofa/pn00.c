@@ -1,9 +1,9 @@
 #include "sofa.h"
 
-void iauPn00(double date1, double date2, double dpsi, double deps,
-             double *epsa,
-             double rb[3][3], double rp[3][3], double rbp[3][3],
-             double rn[3][3], double rbpn[3][3])
+void iauPn00(float date1, float date2, float dpsi, float deps,
+             float *epsa,
+             float rb[3][3], float rp[3][3], float rbp[3][3],
+             float rn[3][3], float rbpn[3][3])
 /*
 **  - - - - - - - -
 **   i a u P n 0 0
@@ -19,16 +19,16 @@ void iauPn00(double date1, double date2, double dpsi, double deps,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double          TT as a 2-part Julian Date (Note 1)
-**     dpsi,deps    double          nutation (Note 2)
+**     date1,date2  float          TT as a 2-part Julian Date (Note 1)
+**     dpsi,deps    float          nutation (Note 2)
 **
 **  Returned:
-**     epsa         double          mean obliquity (Note 3)
-**     rb           double[3][3]    frame bias matrix (Note 4)
-**     rp           double[3][3]    precession matrix (Note 5)
-**     rbp          double[3][3]    bias-precession matrix (Note 6)
-**     rn           double[3][3]    nutation matrix (Note 7)
-**     rbpn         double[3][3]    GCRS-to-true matrix (Note 8)
+**     epsa         float          mean obliquity (Note 3)
+**     rb           float[3][3]    frame bias matrix (Note 4)
+**     rp           float[3][3]    precession matrix (Note 5)
+**     rbp          float[3][3]    bias-precession matrix (Note 6)
+**     rn           float[3][3]    nutation matrix (Note 7)
+**     rbpn         float[3][3]    GCRS-to-true matrix (Note 8)
 **
 **  Notes:
 **
@@ -107,7 +107,7 @@ void iauPn00(double date1, double date2, double dpsi, double deps,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dpsipr, depspr, rbpw[3][3], rnw[3][3];
+   float dpsipr, depspr, rbpw[3][3], rnw[3][3];
 
 
 /* IAU 2000 precession-rate adjustments. */

@@ -1,8 +1,8 @@
 #include "sofa.h"
 
 void iauAtoiq(const char *type,
-              double ob1, double ob2, iauASTROM *astrom,
-              double *ri, double *di)
+              float ob1, float ob2, iauASTROM *astrom,
+              float *ri, float *di)
 /*
 **  - - - - - - - - -
 **   i a u A t o i q
@@ -20,29 +20,29 @@ void iauAtoiq(const char *type,
 **
 **  Given:
 **     type   char[]     type of coordinates: "R", "H" or "A" (Note 1)
-**     ob1    double     observed Az, HA or RA (radians; Az is N=0,E=90)
-**     ob2    double     observed ZD or Dec (radians)
+**     ob1    float     observed Az, HA or RA (radians; Az is N=0,E=90)
+**     ob2    float     observed ZD or Dec (radians)
 **     astrom iauASTROM* star-independent astrometry parameters:
-**      pmt    double       PM time interval (SSB, Julian years)
-**      eb     double[3]    SSB to observer (vector, au)
-**      eh     double[3]    Sun to observer (unit vector)
-**      em     double       distance from Sun to observer (au)
-**      v      double[3]    barycentric observer velocity (vector, c)
-**      bm1    double       sqrt(1-|v|^2): reciprocal of Lorenz factor
-**      bpn    double[3][3] bias-precession-nutation matrix
-**      along  double       longitude + s' (radians)
-**      xpl    double       polar motion xp wrt local meridian (radians)
-**      ypl    double       polar motion yp wrt local meridian (radians)
-**      sphi   double       sine of geodetic latitude
-**      cphi   double       cosine of geodetic latitude
-**      diurab double       magnitude of diurnal aberration vector
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       refraction constant A (radians)
-**      refb   double       refraction constant B (radians)
+**      pmt    float       PM time interval (SSB, Julian years)
+**      eb     float[3]    SSB to observer (vector, au)
+**      eh     float[3]    Sun to observer (unit vector)
+**      em     float       distance from Sun to observer (au)
+**      v      float[3]    barycentric observer velocity (vector, c)
+**      bm1    float       sqrt(1-|v|^2): reciprocal of Lorenz factor
+**      bpn    float[3][3] bias-precession-nutation matrix
+**      along  float       longitude + s' (radians)
+**      xpl    float       polar motion xp wrt local meridian (radians)
+**      ypl    float       polar motion yp wrt local meridian (radians)
+**      sphi   float       sine of geodetic latitude
+**      cphi   float       cosine of geodetic latitude
+**      diurab float       magnitude of diurnal aberration vector
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       refraction constant A (radians)
+**      refb   float       refraction constant B (radians)
 **
 **  Returned:
-**     ri     double*    CIRS right ascension (CIO-based, radians)
-**     di     double*    CIRS declination (radians)
+**     ri     float*    CIRS right ascension (CIO-based, radians)
+**     di     float*    CIRS declination (radians)
 **
 **  Notes:
 **
@@ -98,7 +98,7 @@ void iauAtoiq(const char *type,
 */
 {
    int c;
-   double c1, c2, sphi, cphi, ce, xaeo, yaeo, zaeo, v[3],
+   float c1, c2, sphi, cphi, ce, xaeo, yaeo, zaeo, v[3],
           xmhdo, ymhdo, zmhdo, az, sz, zdo, refa, refb, tz, dref,
           zdt, xaet, yaet, zaet, xmhda, ymhda, zmhda,
           f, xhd, yhd, zhd, xpl, ypl, w, hma;

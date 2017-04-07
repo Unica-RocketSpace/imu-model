@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPnm00b(double date1, double date2, double rbpn[3][3])
+void iauPnm00b(float date1, float date2, float rbpn[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u P n m 0 0 b
@@ -15,10 +15,10 @@ void iauPnm00b(double date1, double date2, double rbpn[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double       TT as a 2-part Julian Date (Note 1)
+**     date1,date2 float       TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     rbpn        double[3][3] bias-precession-nutation matrix (Note 2)
+**     rbpn        float[3][3] bias-precession-nutation matrix (Note 2)
 **
 **  Notes:
 **
@@ -65,7 +65,7 @@ void iauPnm00b(double date1, double date2, double rbpn[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dpsi, deps, epsa, rb[3][3], rp[3][3], rbp[3][3], rn[3][3];
+   float dpsi, deps, epsa, rb[3][3], rp[3][3], rbp[3][3], rn[3][3];
 
 
 /* Obtain the required matrix (discarding other results). */

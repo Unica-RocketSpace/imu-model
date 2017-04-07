@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauApcg(double date1, double date2,
-             double ebpv[2][3], double ehp[3],
+void iauApcg(float date1, float date2,
+             float ebpv[2][3], float ehp[3],
              iauASTROM *astrom)
 /*
 **  - - - - - - - -
@@ -22,29 +22,29 @@ void iauApcg(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1  double       TDB as a 2-part...
-**     date2  double       ...Julian Date (Note 1)
-**     ebpv   double[2][3] Earth barycentric pos/vel (au, au/day)
-**     ehp    double[3]    Earth heliocentric position (au)
+**     date1  float       TDB as a 2-part...
+**     date2  float       ...Julian Date (Note 1)
+**     ebpv   float[2][3] Earth barycentric pos/vel (au, au/day)
+**     ehp    float[3]    Earth heliocentric position (au)
 **
 **  Returned:
 **     astrom iauASTROM*   star-independent astrometry parameters:
-**      pmt    double       PM time interval (SSB, Julian years)
-**      eb     double[3]    SSB to observer (vector, au)
-**      eh     double[3]    Sun to observer (unit vector)
-**      em     double       distance from Sun to observer (au)
-**      v      double[3]    barycentric observer velocity (vector, c)
-**      bm1    double       sqrt(1-|v|^2): reciprocal of Lorenz factor
-**      bpn    double[3][3] bias-precession-nutation matrix
-**      along  double       unchanged
-**      xpl    double       unchanged
-**      ypl    double       unchanged
-**      sphi   double       unchanged
-**      cphi   double       unchanged
-**      diurab double       unchanged
-**      eral   double       unchanged
-**      refa   double       unchanged
-**      refb   double       unchanged
+**      pmt    float       PM time interval (SSB, Julian years)
+**      eb     float[3]    SSB to observer (vector, au)
+**      eh     float[3]    Sun to observer (unit vector)
+**      em     float       distance from Sun to observer (au)
+**      v      float[3]    barycentric observer velocity (vector, c)
+**      bm1    float       sqrt(1-|v|^2): reciprocal of Lorenz factor
+**      bpn    float[3][3] bias-precession-nutation matrix
+**      along  float       unchanged
+**      xpl    float       unchanged
+**      ypl    float       unchanged
+**      sphi   float       unchanged
+**      cphi   float       unchanged
+**      diurab float       unchanged
+**      eral   float       unchanged
+**      refa   float       unchanged
+**      refb   float       unchanged
 **
 **  Notes:
 **
@@ -115,7 +115,7 @@ void iauApcg(double date1, double date2,
 */
 {
 /* Geocentric observer */
-   double pv[2][3] = { { 0.0, 0.0, 0.0 },
+   float pv[2][3] = { { 0.0, 0.0, 0.0 },
                        { 0.0, 0.0, 0.0 } };
 
 

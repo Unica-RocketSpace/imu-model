@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauFk5hz(double r5, double d5, double date1, double date2,
-              double *rh, double *dh)
+void iauFk5hz(float r5, float d5, float date1, float date2,
+              float *rh, float *dh)
 /*
 **  - - - - - - - - -
 **   i a u F k 5 h z
@@ -16,13 +16,13 @@ void iauFk5hz(double r5, double d5, double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     r5           double   FK5 RA (radians), equinox J2000.0, at date
-**     d5           double   FK5 Dec (radians), equinox J2000.0, at date
-**     date1,date2  double   TDB date (Notes 1,2)
+**     r5           float   FK5 RA (radians), equinox J2000.0, at date
+**     d5           float   FK5 Dec (radians), equinox J2000.0, at date
+**     date1,date2  float   TDB date (Notes 1,2)
 **
 **  Returned:
-**     rh           double   Hipparcos RA (radians)
-**     dh           double   Hipparcos Dec (radians)
+**     rh           float   Hipparcos RA (radians)
+**     dh           float   Hipparcos Dec (radians)
 **
 **  Notes:
 **
@@ -81,7 +81,7 @@ void iauFk5hz(double r5, double d5, double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, p5e[3], r5h[3][3], s5h[3], vst[3], rst[3][3], p5[3],
+   float t, p5e[3], r5h[3][3], s5h[3], vst[3], rst[3][3], p5[3],
           ph[3], w;
 
 

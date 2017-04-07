@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauPlan94(double date1, double date2, int np, double pv[2][3])
+int iauPlan94(float date1, float date2, int np, float pv[2][3])
 /*
 **  - - - - - - - - - -
 **   i a u P l a n 9 4
@@ -16,13 +16,13 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 **  Neptune (but not the Earth itself).
 **
 **  Given:
-**     date1  double       TDB date part A (Note 1)
-**     date2  double       TDB date part B (Note 1)
+**     date1  float       TDB date part A (Note 1)
+**     date2  float       TDB date part B (Note 1)
 **     np     int          planet (1=Mercury, 2=Venus, 3=EMB, 4=Mars,
 **                             5=Jupiter, 6=Saturn, 7=Uranus, 8=Neptune)
 **
 **  Returned (argument):
-**     pv     double[2][3] planet p,v (heliocentric, J2000.0, AU,AU/d)
+**     pv     float[2][3] planet p,v (heliocentric, J2000.0, AU,AU/d)
 **
 **  Returned (function value):
 **            int          status: -1 = illegal NP (outside 1-8)
@@ -141,11 +141,11 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 **       *  Different error/warning status values are used.
 **
 **       *  A different Kepler's-equation-solver is used (avoiding
-**          use of double precision complex).
+**          use of float precision complex).
 **
 **       *  Polynomials in t are nested to minimize rounding errors.
 **
-**       *  Explicit double constants are used to avoid mixed-mode
+**       *  Explicit float constants are used to avoid mixed-mode
 **          expressions.
 **
 **     None of the above changes affects the result significantly.
@@ -170,22 +170,22 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 */
 {
 /* Gaussian constant */
-   static const double GK = 0.017202098950;
+   static const float GK = 0.017202098950;
 
 /* Sin and cos of J2000.0 mean obliquity (IAU 1976) */
-   static const double SINEPS = 0.3977771559319137;
-   static const double COSEPS = 0.9174820620691818;
+   static const float SINEPS = 0.3977771559319137;
+   static const float COSEPS = 0.9174820620691818;
 
 /* Maximum number of iterations allowed to solve Kepler's equation */
    static const int KMAX = 10;
 
    int jstat, i, k;
-   double t, da, dl, de, dp, di, dom, dmu, arga, argl, am,
+   float t, da, dl, de, dp, di, dom, dmu, arga, argl, am,
           ae, dae, ae2, at, r, v, si2, xq, xp, tl, xsw,
           xcw, xm2, xf, ci2, xms, xmc, xpxq2, x, y, z;
 
 /* Planetary inverse masses */
-   static const double amas[] = { 6023600.0,       /* Mercury */
+   static const float amas[] = { 6023600.0,       /* Mercury */
                                    408523.5,       /* Venus   */
                                    328900.5,       /* EMB     */
                                   3098710.0,       /* Mars    */
@@ -205,7 +205,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 **   omega   longitude of the ascending node (degree and arcsecond)
 */
 
-   static const double a[][3] = {
+   static const float a[][3] = {
        {  0.3870983098,           0.0,     0.0 },  /* Mercury */
        {  0.7233298200,           0.0,     0.0 },  /* Venus   */
        {  1.0000010178,           0.0,     0.0 },  /* EMB     */
@@ -216,7 +216,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
        { 30.1103868694,    -16635e-10, 686e-10 }   /* Neptune */
    };
 
-   static const double dlm[][3] = {
+   static const float dlm[][3] = {
        { 252.25090552, 5381016286.88982,  -1.92789 },
        { 181.97980085, 2106641364.33548,   0.59381 },
        { 100.46645683, 1295977422.83429,  -2.04411 },
@@ -227,7 +227,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
        { 304.34866548,    7865503.20744,   0.21103 }
    };
 
-   static const double e[][3] = {
+   static const float e[][3] = {
        { 0.2056317526,  0.0002040653,    -28349e-10 },
        { 0.0067719164, -0.0004776521,     98127e-10 },
        { 0.0167086342, -0.0004203654, -0.0000126734 },
@@ -238,7 +238,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
        { 0.0094557470,  0.0000603263,           0.0 }
    };
 
-   static const double pi[][3] = {
+   static const float pi[][3] = {
        {  77.45611904,  5719.11590,   -4.83016 },
        { 131.56370300,   175.48640, -498.48184 },
        { 102.93734808, 11612.35290,   53.27577 },
@@ -249,7 +249,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
        {  48.12027554,  1050.71912,   27.39717 }
    };
 
-   static const double dinc[][3] = {
+   static const float dinc[][3] = {
        { 7.00498625, -214.25629,   0.28977 },
        { 3.39466189,  -30.84437, -11.67836 },
        {        0.0,  469.97289,  -3.35053 },
@@ -260,7 +260,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
        { 1.76995259,    8.12333,   0.08135 }
    };
 
-   static const double omega[][3] = {
+   static const float omega[][3] = {
        {  48.33089304,  -4515.21727,  -31.79892 },
        {  76.67992019, -10008.48154,  -51.32614 },
        { 174.87317577,  -8679.27034,   15.34191 },
@@ -274,7 +274,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 /* Tables for trigonometric terms to be added to the mean elements of */
 /* the semi-major axes */
 
-   static const double kp[][9] = {
+   static const float kp[][9] = {
     {   69613, 75645, 88306, 59899, 15746, 71087, 142173,  3086,    0 },
     {   21863, 32794, 26934, 10931, 26250, 43725,  53867, 28939,    0 },
     {   16002, 21863, 32004, 10931, 14529, 16368,  15318, 32794,    0 },
@@ -285,7 +285,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
     {       0,   102,   106,     4,    98,  1367,    487,   204,    0 }
    };
 
-   static const double ca[][9] = {
+   static const float ca[][9] = {
     {       4,    -13,    11,   -9,    -9,   -3,     -1,     4,     0 },
     {    -156,     59,   -42,    6,    19,  -20,    -10,   -12,     0 },
     {      64,   -152,    62,   -8,    32,  -41,     19,   -11,     0 },
@@ -296,7 +296,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
     { -412235,-157046,-31430,37817, -9740,  -13,  -7449,  9644,     0 }
    };
 
-   static const double sa[][9] = {
+   static const float sa[][9] = {
     {     -29,    -1,     9,     6,    -6,     5,     4,     0,     0 },
     {     -48,  -125,   -26,   -37,    18,   -13,   -20,    -2,     0 },
     {    -150,   -46,    68,    54,    14,    24,   -28,    22,     0 },
@@ -310,7 +310,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
 /* Tables giving the trigonometric terms to be added to the mean */
 /* elements of the mean longitudes */
 
-   static const double kq[][10] = {
+   static const float kq[][10] = {
     {   3086,15746,69613,59899,75645,88306, 12661,  2658,    0,     0 },
     {  21863,32794,10931,   73, 4387,26934,  1473,  2157,    0,     0 },
     {     10,16002,21863,10931, 1473,32004,  4387,    73,    0,     0 },
@@ -321,7 +321,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
     {      4,  102,  106,    8,   98, 1367,   487,   204,    4,   102 }
    };
 
-   static const double cl[][10] = {
+   static const float cl[][10] = {
     {      21,   -95, -157,   41,   -5,   42,  23,  30,      0,     0 },
     {    -160,  -313, -235,   60,  -74,  -76, -27,  34,      0,     0 },
     {    -325,  -322,  -79,  232,  -52,   97,  55, -41,      0,     0 },
@@ -332,7 +332,7 @@ int iauPlan94(double date1, double date2, int np, double pv[2][3])
     {   89948,  2103, 8963, 2695, 3682, 1648, 866,-154,  -1963,  -283 }
    };
 
-   static const double sl[][10] = {
+   static const float sl[][10] = {
     {   -342,   136,  -23,   62,   66,  -52, -33,    17,     0,     0 },
     {    524,  -149,  -35,  117,  151,  122, -71,   -62,     0,     0 },
     {   -105,  -137,  258,   35, -116,  -88,-112,   -80,     0,     0 },

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEpj(double dj1, double dj2)
+float iauEpj(float dj1, float dj2)
 /*
 **  - - - - - - -
 **   i a u E p j
@@ -14,10 +14,10 @@ double iauEpj(double dj1, double dj2)
 **  Status:  support function.
 **
 **  Given:
-**     dj1,dj2    double     Julian Date (see note)
+**     dj1,dj2    float     Julian Date (see note)
 **
 **  Returned (function value):
-**                double     Julian Epoch
+**                float     Julian Epoch
 **
 **  Note:
 **
@@ -38,7 +38,7 @@ double iauEpj(double dj1, double dj2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double epj;
+   float epj;
 
 
    epj = 2000.0 + ((dj1 - DJ00) + dj2) / DJY;

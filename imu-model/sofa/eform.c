@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauEform ( int n, double *a, double *f )
+int iauEform ( int n, float *a, float *f )
 /*
 **  - - - - - - - - -
 **   i a u E f o r m
@@ -17,8 +17,8 @@ int iauEform ( int n, double *a, double *f )
 **     n    int         ellipsoid identifier (Note 1)
 **
 **  Returned:
-**     a    double      equatorial radius (meters, Note 2)
-**     f    double      flattening (Note 2)
+**     a    float      equatorial radius (meters, Note 2)
+**     f    float      flattening (Note 2)
 **
 **  Returned (function value):
 **          int         status:  0 = OK

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauSepp(double a[3], double b[3])
+float iauSepp(float a[3], float b[3])
 /*
 **  - - - - - - - -
 **   i a u S e p p
@@ -14,11 +14,11 @@ double iauSepp(double a[3], double b[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a      double[3]    first p-vector (not necessarily unit length)
-**     b      double[3]    second p-vector (not necessarily unit length)
+**     a      float[3]    first p-vector (not necessarily unit length)
+**     b      float[3]    second p-vector (not necessarily unit length)
 **
 **  Returned (function value):
-**            double       angular separation (radians, always positive)
+**            float       angular separation (radians, always positive)
 **
 **  Notes:
 **
@@ -42,7 +42,7 @@ double iauSepp(double a[3], double b[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double axb[3], ss, cs, s;
+   float axb[3], ss, cs, s;
 
 
 /* Sine of angle between the vectors, multiplied by the two moduli. */

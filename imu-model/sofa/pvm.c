@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPvm(double pv[2][3], double *r, double *s)
+void iauPvm(float pv[2][3], float *r, float *s)
 /*
 **  - - - - - - -
 **   i a u P v m
@@ -14,11 +14,11 @@ void iauPvm(double pv[2][3], double *r, double *s)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     pv     double[2][3]   pv-vector
+**     pv     float[2][3]   pv-vector
 **
 **  Returned:
-**     r      double         modulus of position component
-**     s      double         modulus of velocity component
+**     r      float         modulus of position component
+**     s      float         modulus of velocity component
 **
 **  Called:
 **     iauPm        modulus of p-vector

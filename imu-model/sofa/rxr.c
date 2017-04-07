@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRxr(double a[3][3], double b[3][3], double atb[3][3])
+void iauRxr(float a[3][3], float b[3][3], float atb[3][3])
 /*
 **  - - - - - - -
 **   i a u R x r
@@ -14,11 +14,11 @@ void iauRxr(double a[3][3], double b[3][3], double atb[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a        double[3][3]    first r-matrix
-**     b        double[3][3]    second r-matrix
+**     a        float[3][3]    first r-matrix
+**     b        float[3][3]    second r-matrix
 **
 **  Returned:
-**     atb      double[3][3]    a * b
+**     atb      float[3][3]    a * b
 **
 **  Note:
 **     It is permissible to re-use the same array for any of the
@@ -35,7 +35,7 @@ void iauRxr(double a[3][3], double b[3][3], double atb[3][3])
 */
 {
    int i, j, k;
-   double w, wm[3][3];
+   float w, wm[3][3];
 
 
    for (i = 0; i < 3; i++) {

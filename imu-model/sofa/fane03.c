@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFane03(double t)
+float iauFane03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a n e 0 3
@@ -15,10 +15,10 @@ double iauFane03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    mean longitude of Neptune, radians (Note 2)
+**           float    mean longitude of Neptune, radians (Note 2)
 **
 **  Notes:
 **
@@ -43,7 +43,7 @@ double iauFane03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of Neptune (IERS Conventions 2003). */

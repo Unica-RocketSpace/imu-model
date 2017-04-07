@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauPvtob(double elong, double phi, double hm,
-              double xp, double yp, double sp, double theta,
-              double pv[2][3])
+void iauPvtob(float elong, float phi, float hm,
+              float xp, float yp, float sp, float theta,
+              float pv[2][3])
 /*
 **  - - - - - - - - -
 **   i a u P v t o b
@@ -16,15 +16,15 @@ void iauPvtob(double elong, double phi, double hm,
 **  Status:  support function.
 **
 **  Given:
-**     elong   double       longitude (radians, east +ve, Note 1)
-**     phi     double       latitude (geodetic, radians, Note 1)
-**     hm      double       height above ref. ellipsoid (geodetic, m)
-**     xp,yp   double       coordinates of the pole (radians, Note 2)
-**     sp      double       the TIO locator s' (radians, Note 2)
-**     theta   double       Earth rotation angle (radians, Note 3)
+**     elong   float       longitude (radians, east +ve, Note 1)
+**     phi     float       latitude (geodetic, radians, Note 1)
+**     hm      float       height above ref. ellipsoid (geodetic, m)
+**     xp,yp   float       coordinates of the pole (radians, Note 2)
+**     sp      float       the TIO locator s' (radians, Note 2)
+**     theta   float       Earth rotation angle (radians, Note 3)
 **
 **  Returned:
-**     pv      double[2][3] position/velocity vector (m, m/s, CIRS)
+**     pv      float[2][3] position/velocity vector (m, m/s, CIRS)
 **
 **  Notes:
 **
@@ -74,9 +74,9 @@ void iauPvtob(double elong, double phi, double hm,
 */
 {
 /* Earth rotation rate in radians per UT1 second */
-   const double OM = 1.00273781191135448 * D2PI / DAYSEC;
+   const float OM = 1.00273781191135448 * D2PI / DAYSEC;
 
-   double xyzm[3], rpm[3][3], xyz[3], x, y, z, s, c;
+   float xyzm[3], rpm[3][3], xyz[3], x, y, z, s, c;
 
 
 /* Geodetic to geocentric transformation (WGS84). */

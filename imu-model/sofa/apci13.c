@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauApci13(double date1, double date2,
-               iauASTROM *astrom, double *eo)
+void iauApci13(float date1, float date2,
+               iauASTROM *astrom, float *eo)
 /*
 **  - - - - - - - - - -
 **   i a u A p c i 1 3
@@ -22,28 +22,28 @@ void iauApci13(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1  double      TDB as a 2-part...
-**     date2  double      ...Julian Date (Note 1)
+**     date1  float      TDB as a 2-part...
+**     date2  float      ...Julian Date (Note 1)
 **
 **  Returned:
 **     astrom iauASTROM*  star-independent astrometry parameters:
-**      pmt    double       PM time interval (SSB, Julian years)
-**      eb     double[3]    SSB to observer (vector, au)
-**      eh     double[3]    Sun to observer (unit vector)
-**      em     double       distance from Sun to observer (au)
-**      v      double[3]    barycentric observer velocity (vector, c)
-**      bm1    double       sqrt(1-|v|^2): reciprocal of Lorenz factor
-**      bpn    double[3][3] bias-precession-nutation matrix
-**      along  double       unchanged
-**      xpl    double       unchanged
-**      ypl    double       unchanged
-**      sphi   double       unchanged
-**      cphi   double       unchanged
-**      diurab double       unchanged
-**      eral   double       unchanged
-**      refa   double       unchanged
-**      refb   double       unchanged
-**     eo     double*     equation of the origins (ERA-GST)
+**      pmt    float       PM time interval (SSB, Julian years)
+**      eb     float[3]    SSB to observer (vector, au)
+**      eh     float[3]    Sun to observer (unit vector)
+**      em     float       distance from Sun to observer (au)
+**      v      float[3]    barycentric observer velocity (vector, c)
+**      bm1    float       sqrt(1-|v|^2): reciprocal of Lorenz factor
+**      bpn    float[3][3] bias-precession-nutation matrix
+**      along  float       unchanged
+**      xpl    float       unchanged
+**      ypl    float       unchanged
+**      sphi   float       unchanged
+**      cphi   float       unchanged
+**      diurab float       unchanged
+**      eral   float       unchanged
+**      refa   float       unchanged
+**      refb   float       unchanged
+**     eo     float*     equation of the origins (ERA-GST)
 **
 **  Notes:
 **
@@ -122,7 +122,7 @@ void iauApci13(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double ehpv[2][3], ebpv[2][3], r[3][3], x, y, s;
+   float ehpv[2][3], ebpv[2][3], r[3][3], x, y, s;
 
 
 /* Earth barycentric & heliocentric position/velocity (au, au/d). */

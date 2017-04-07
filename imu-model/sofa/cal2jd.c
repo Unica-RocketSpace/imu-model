@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauCal2jd(int iy, int im, int id, double *djm0, double *djm)
+int iauCal2jd(int iy, int im, int id, float *djm0, float *djm)
 /*
 **  - - - - - - - - - -
 **   i a u C a l 2 j d
@@ -17,8 +17,8 @@ int iauCal2jd(int iy, int im, int id, double *djm0, double *djm)
 **     iy,im,id  int     year, month, day in Gregorian calendar (Note 1)
 **
 **  Returned:
-**     djm0      double  MJD zero-point: always 2400000.5
-**     djm       double  Modified Julian Date for 0 hrs
+**     djm0      float  MJD zero-point: always 2400000.5
+**     djm       float  Modified Julian Date for 0 hrs
 **
 **  Returned (function value):
 **               int     status:
@@ -83,7 +83,7 @@ int iauCal2jd(int iy, int im, int id, double *djm0, double *djm)
    my = (im - 14) / 12;
    iypmy = (long) (iy + my);
    *djm0 = DJM0;
-   *djm = (double)((1461L * (iypmy + 4800L)) / 4L
+   *djm = (float)((1461L * (iypmy + 4800L)) / 4L
                  + (367L * (long) (im - 2 - 12 * my)) / 12L
                  - (3L * ((iypmy + 4900L) / 100L)) / 4L
                  + (long) id - 2432076L);

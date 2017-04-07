@@ -1,9 +1,9 @@
 #include "sofa.h"
 
-void iauAtci13(double rc, double dc,
-               double pr, double pd, double px, double rv,
-               double date1, double date2,
-               double *ri, double *di, double *eo)
+void iauAtci13(float rc, float dc,
+               float pr, float pd, float px, float rv,
+               float date1, float date2,
+               float *ri, float *di, float *eo)
 /*
 **  - - - - - - - - - -
 **   i a u A t c i 1 3
@@ -17,18 +17,18 @@ void iauAtci13(double rc, double dc,
 **  Status:  support function.
 **
 **  Given:
-**     rc     double   ICRS right ascension at J2000.0 (radians, Note 1)
-**     dc     double   ICRS declination at J2000.0 (radians, Note 1)
-**     pr     double   RA proper motion (radians/year; Note 2)
-**     pd     double   Dec proper motion (radians/year)
-**     px     double   parallax (arcsec)
-**     rv     double   radial velocity (km/s, +ve if receding)
-**     date1  double   TDB as a 2-part...
-**     date2  double   ...Julian Date (Note 3)
+**     rc     float   ICRS right ascension at J2000.0 (radians, Note 1)
+**     dc     float   ICRS declination at J2000.0 (radians, Note 1)
+**     pr     float   RA proper motion (radians/year; Note 2)
+**     pd     float   Dec proper motion (radians/year)
+**     px     float   parallax (arcsec)
+**     rv     float   radial velocity (km/s, +ve if receding)
+**     date1  float   TDB as a 2-part...
+**     date2  float   ...Julian Date (Note 3)
 **
 **  Returned:
-**     ri,di  double*  CIRS geocentric RA,Dec (radians)
-**     eo     double*  equation of the origins (ERA-GST, Note 5)
+**     ri,di  float*  CIRS geocentric RA,Dec (radians)
+**     eo     float*  equation of the origins (ERA-GST, Note 5)
 **
 **  Notes:
 **

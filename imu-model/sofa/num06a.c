@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNum06a(double date1, double date2, double rmatn[3][3])
+void iauNum06a(float date1, float date2, float rmatn[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u N u m 0 6 a
@@ -14,10 +14,10 @@ void iauNum06a(double date1, double date2, double rmatn[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2   double          TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float          TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     rmatn         double[3][3]    nutation matrix
+**     rmatn         float[3][3]    nutation matrix
 **
 **  Notes:
 **
@@ -63,7 +63,7 @@ void iauNum06a(double date1, double date2, double rmatn[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double eps, dp, de;
+   float eps, dp, de;
 
 
 /* Mean obliquity. */

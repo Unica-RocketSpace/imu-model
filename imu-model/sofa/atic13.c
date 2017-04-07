@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauAtic13(double ri, double di, double date1, double date2,
-               double *rc, double *dc, double *eo)
+void iauAtic13(float ri, float di, float date1, float date2,
+               float *rc, float *dc, float *eo)
 /*
 **  - - - - - - - - - -
 **   i a u A t i c 1 3
@@ -15,13 +15,13 @@ void iauAtic13(double ri, double di, double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     ri,di  double  CIRS geocentric RA,Dec (radians)
-**     date1  double  TDB as a 2-part...
-**     date2  double  ...Julian Date (Note 1)
+**     ri,di  float  CIRS geocentric RA,Dec (radians)
+**     date1  float  TDB as a 2-part...
+**     date2  float  ...Julian Date (Note 1)
 **
 **  Returned:
-**     rc,dc  double  ICRS astrometric RA,Dec (radians)
-**     eo     double  equation of the origins (ERA-GST, Note 4)
+**     rc,dc  float  ICRS astrometric RA,Dec (radians)
+**     eo     float  equation of the origins (ERA-GST, Note 4)
 **
 **  Notes:
 **

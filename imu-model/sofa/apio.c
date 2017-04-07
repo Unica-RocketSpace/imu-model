@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauApio(double sp, double theta,
-             double elong, double phi, double hm, double xp, double yp,
-             double refa, double refb,
+void iauApio(float sp, float theta,
+             float elong, float phi, float hm, float xp, float yp,
+             float refa, float refb,
              iauASTROM *astrom)
 /*
 **  - - - - - - - -
@@ -20,33 +20,33 @@ void iauApio(double sp, double theta,
 **  Status:  support function.
 **
 **  Given:
-**     sp     double      the TIO locator s' (radians, Note 1)
-**     theta  double      Earth rotation angle (radians)
-**     elong  double      longitude (radians, east +ve, Note 2)
-**     phi    double      geodetic latitude (radians, Note 2)
-**     hm     double      height above ellipsoid (m, geodetic Note 2)
-**     xp,yp  double      polar motion coordinates (radians, Note 3)
-**     refa   double      refraction constant A (radians, Note 4)
-**     refb   double      refraction constant B (radians, Note 4)
+**     sp     float      the TIO locator s' (radians, Note 1)
+**     theta  float      Earth rotation angle (radians)
+**     elong  float      longitude (radians, east +ve, Note 2)
+**     phi    float      geodetic latitude (radians, Note 2)
+**     hm     float      height above ellipsoid (m, geodetic Note 2)
+**     xp,yp  float      polar motion coordinates (radians, Note 3)
+**     refa   float      refraction constant A (radians, Note 4)
+**     refb   float      refraction constant B (radians, Note 4)
 **
 **  Returned:
 **     astrom iauASTROM*  star-independent astrometry parameters:
-**      pmt    double       unchanged
-**      eb     double[3]    unchanged
-**      eh     double[3]    unchanged
-**      em     double       unchanged
-**      v      double[3]    unchanged
-**      bm1    double       unchanged
-**      bpn    double[3][3] unchanged
-**      along  double       longitude + s' (radians)
-**      xpl    double       polar motion xp wrt local meridian (radians)
-**      ypl    double       polar motion yp wrt local meridian (radians)
-**      sphi   double       sine of geodetic latitude
-**      cphi   double       cosine of geodetic latitude
-**      diurab double       magnitude of diurnal aberration vector
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       refraction constant A (radians)
-**      refb   double       refraction constant B (radians)
+**      pmt    float       unchanged
+**      eb     float[3]    unchanged
+**      eh     float[3]    unchanged
+**      em     float       unchanged
+**      v      float[3]    unchanged
+**      bm1    float       unchanged
+**      bpn    float[3][3] unchanged
+**      along  float       longitude + s' (radians)
+**      xpl    float       polar motion xp wrt local meridian (radians)
+**      ypl    float       polar motion yp wrt local meridian (radians)
+**      sphi   float       sine of geodetic latitude
+**      cphi   float       cosine of geodetic latitude
+**      diurab float       magnitude of diurnal aberration vector
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       refraction constant A (radians)
+**      refb   float       refraction constant B (radians)
 **
 **  Notes:
 **
@@ -125,7 +125,7 @@ void iauApio(double sp, double theta,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double sl, cl, pv[2][3];
+   float sl, cl, pv[2][3];
 
 
 /* Longitude with adjustment for TIO locator s'. */

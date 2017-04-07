@@ -1,10 +1,10 @@
 #include "sofa.h"
 
-int iauStarpm(double ra1, double dec1,
-              double pmr1, double pmd1, double px1, double rv1,
-              double ep1a, double ep1b, double ep2a, double ep2b,
-              double *ra2, double *dec2,
-              double *pmr2, double *pmd2, double *px2, double *rv2)
+int iauStarpm(float ra1, float dec1,
+              float pmr1, float pmd1, float px1, float rv1,
+              float ep1a, float ep1b, float ep2a, float ep2b,
+              float *ra2, float *dec2,
+              float *pmr2, float *pmd2, float *px2, float *rv2)
 /*
 **  - - - - - - - - - -
 **   i a u S t a r p m
@@ -18,24 +18,24 @@ int iauStarpm(double ra1, double dec1,
 **  Status:  support function.
 **
 **  Given:
-**     ra1    double     right ascension (radians), before
-**     dec1   double     declination (radians), before
-**     pmr1   double     RA proper motion (radians/year), before
-**     pmd1   double     Dec proper motion (radians/year), before
-**     px1    double     parallax (arcseconds), before
-**     rv1    double     radial velocity (km/s, +ve = receding), before
-**     ep1a   double     "before" epoch, part A (Note 1)
-**     ep1b   double     "before" epoch, part B (Note 1)
-**     ep2a   double     "after" epoch, part A (Note 1)
-**     ep2b   double     "after" epoch, part B (Note 1)
+**     ra1    float     right ascension (radians), before
+**     dec1   float     declination (radians), before
+**     pmr1   float     RA proper motion (radians/year), before
+**     pmd1   float     Dec proper motion (radians/year), before
+**     px1    float     parallax (arcseconds), before
+**     rv1    float     radial velocity (km/s, +ve = receding), before
+**     ep1a   float     "before" epoch, part A (Note 1)
+**     ep1b   float     "before" epoch, part B (Note 1)
+**     ep2a   float     "after" epoch, part A (Note 1)
+**     ep2b   float     "after" epoch, part B (Note 1)
 **
 **  Returned:
-**     ra2    double     right ascension (radians), after
-**     dec2   double     declination (radians), after
-**     pmr2   double     RA proper motion (radians/year), after
-**     pmd2   double     Dec proper motion (radians/year), after
-**     px2    double     parallax (arcseconds), after
-**     rv2    double     radial velocity (km/s, +ve = receding), after
+**     ra2    float     right ascension (radians), after
+**     dec2   float     declination (radians), after
+**     pmr2   float     RA proper motion (radians/year), after
+**     pmd2   float     Dec proper motion (radians/year), after
+**     px2    float     parallax (arcseconds), after
+**     rv2    float     radial velocity (km/s, +ve = receding), after
 **
 **  Returned (function value):
 **            int        status:
@@ -118,7 +118,7 @@ int iauStarpm(double ra1, double dec1,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double pv1[2][3], tl1, dt, pv[2][3], r2, rdv, v2, c2mv2, tl2,
+   float pv1[2][3], tl1, dt, pv[2][3], r2, rdv, v2, c2mv2, tl2,
           pv2[2][3];
    int j1, j2, j;
 

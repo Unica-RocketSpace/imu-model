@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPnm80(double date1, double date2, double rmatpn[3][3])
+void iauPnm80(float date1, float date2, float rmatpn[3][3])
 /*
 **  - - - - - - - - -
 **   i a u P n m 8 0
@@ -15,10 +15,10 @@ void iauPnm80(double date1, double date2, double rmatpn[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2    double         TDB date (Note 1)
+**     date1,date2    float         TDB date (Note 1)
 **
 **  Returned:
-**     rmatpn         double[3][3]   combined precession/nutation matrix
+**     rmatpn         float[3][3]   combined precession/nutation matrix
 **
 **  Notes:
 **
@@ -64,7 +64,7 @@ void iauPnm80(double date1, double date2, double rmatpn[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rmatp[3][3], rmatn[3][3];
+   float rmatp[3][3], rmatn[3][3];
 
 
 /* Precession matrix, J2000.0 to date. */

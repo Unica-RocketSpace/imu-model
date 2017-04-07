@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPvppv(double a[2][3], double b[2][3], double apb[2][3])
+void iauPvppv(float a[2][3], float b[2][3], float apb[2][3])
 /*
 **  - - - - - - - - -
 **   i a u P v p p v
@@ -14,11 +14,11 @@ void iauPvppv(double a[2][3], double b[2][3], double apb[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a        double[2][3]      first pv-vector
-**     b        double[2][3]      second pv-vector
+**     a        float[2][3]      first pv-vector
+**     b        float[2][3]      second pv-vector
 **
 **  Returned:
-**     apb      double[2][3]      a + b
+**     apb      float[2][3]      a + b
 **
 **  Note:
 **     It is permissible to re-use the same array for any of the

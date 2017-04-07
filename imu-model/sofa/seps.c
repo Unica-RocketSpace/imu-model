@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauSeps(double al, double ap, double bl, double bp)
+float iauSeps(float al, float ap, float bl, float bp)
 /*
 **  - - - - - - - -
 **   i a u S e p s
@@ -14,13 +14,13 @@ double iauSeps(double al, double ap, double bl, double bp)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     al     double       first longitude (radians)
-**     ap     double       first latitude (radians)
-**     bl     double       second longitude (radians)
-**     bp     double       second latitude (radians)
+**     al     float       first longitude (radians)
+**     ap     float       first latitude (radians)
+**     bl     float       second longitude (radians)
+**     bp     float       second latitude (radians)
 **
 **  Returned (function value):
-**            double       angular separation (radians)
+**            float       angular separation (radians)
 **
 **  Called:
 **     iauS2c       spherical coordinates to unit vector
@@ -33,7 +33,7 @@ double iauSeps(double al, double ap, double bl, double bp)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double ac[3], bc[3], s;
+   float ac[3], bc[3], s;
 
 
 /* Spherical to Cartesian. */

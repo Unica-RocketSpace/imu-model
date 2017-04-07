@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPom00(double xp, double yp, double sp, double rpom[3][3])
+void iauPom00(float xp, float yp, float sp, float rpom[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u P o m 0 0
@@ -14,11 +14,11 @@ void iauPom00(double xp, double yp, double sp, double rpom[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     xp,yp    double    coordinates of the pole (radians, Note 1)
-**     sp       double    the TIO locator s' (radians, Note 2)
+**     xp,yp    float    coordinates of the pole (radians, Note 1)
+**     sp       float    the TIO locator s' (radians, Note 2)
 **
 **  Returned:
-**     rpom     double[3][3]   polar-motion matrix (Note 3)
+**     rpom     float[3][3]   polar-motion matrix (Note 3)
 **
 **  Notes:
 **

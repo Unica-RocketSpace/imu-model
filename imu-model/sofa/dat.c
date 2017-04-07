@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauDat(int iy, int im, int id, double fd, double *deltat )
+int iauDat(int iy, int im, int id, float fd, float *deltat )
 /*
 **  - - - - - - -
 **   i a u D a t
@@ -49,10 +49,10 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **     iy     int      UTC:  year (Notes 1 and 2)
 **     im     int            month (Note 2)
 **     id     int            day (Notes 2 and 3)
-**     fd     double         fraction of day (Note 4)
+**     fd     float         fraction of day (Note 4)
 **
 **  Returned:
-**     deltat double   TAI minus UTC, seconds
+**     deltat float   TAI minus UTC, seconds
 **
 **  Returned (function value):
 **            int      status (Note 5):
@@ -131,7 +131,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
    enum { IYV = 2016};
 
 /* Reference dates (MJD) and drift rates (s/day), pre leap seconds */
-   static const double drift[][2] = {
+   static const float drift[][2] = {
       { 37300.0, 0.0012960 },
       { 37300.0, 0.0012960 },
       { 37300.0, 0.0012960 },
@@ -149,12 +149,12 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
    };
 
 /* Number of Delta(AT) expressions before leap seconds were introduced */
-   enum { NERA1 = (int) (sizeof drift / sizeof (double) / 2) };
+   enum { NERA1 = (int) (sizeof drift / sizeof (float) / 2) };
 
 /* Dates and Delta(AT)s */
    static const struct {
       int iyear, month;
-      double delat;
+      float delat;
    } changes[] = {
       { 1960,  1,  1.4178180 },
       { 1961,  1,  1.4228180 },
@@ -205,7 +205,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 
 /* Miscellaneous local variables */
    int j, i, m;
-   double da, djm0, djm;
+   float da, djm0, djm;
 
 
 /* Initialize the result to zero. */

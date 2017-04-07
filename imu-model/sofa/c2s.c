@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauC2s(double p[3], double *theta, double *phi)
+void iauC2s(float p[3], float *theta, float *phi)
 /*
 **  - - - - - - -
 **   i a u C 2 s
@@ -14,11 +14,11 @@ void iauC2s(double p[3], double *theta, double *phi)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     p      double[3]    p-vector
+**     p      float[3]    p-vector
 **
 **  Returned:
-**     theta  double       longitude angle (radians)
-**     phi    double       latitude angle (radians)
+**     theta  float       longitude angle (radians)
+**     phi    float       latitude angle (radians)
 **
 **  Notes:
 **
@@ -35,7 +35,7 @@ void iauC2s(double p[3], double *theta, double *phi)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double x, y, z, d2;
+   float x, y, z, d2;
 
 
    x  = p[0];

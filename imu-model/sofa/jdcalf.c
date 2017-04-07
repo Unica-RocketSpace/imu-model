@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
+int iauJdcalf(int ndp, float dj1, float dj2, int iymdf[4])
 /*
 **  - - - - - - - - - -
 **   i a u J d c a l f
@@ -16,7 +16,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **
 **  Given:
 **     ndp       int      number of decimal places of days in fraction
-**     dj1,dj2   double   dj1+dj2 = Julian Date (Note 1)
+**     dj1,dj2   float   dj1+dj2 = Julian Date (Note 1)
 **
 **  Returned:
 **     iymdf     int[4]   year, month, day, fraction in Gregorian
@@ -68,7 +68,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 */
 {
    int j, js;
-   double denom, d1, d2, f1, f2, f;
+   float denom, d1, d2, f1, f2, f;
 
 
 /* Denominator of fraction (e.g. 100 for 2 decimal places). */

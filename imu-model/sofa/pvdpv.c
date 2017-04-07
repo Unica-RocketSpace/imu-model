@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPvdpv(double a[2][3], double b[2][3], double adb[2])
+void iauPvdpv(float a[2][3], float b[2][3], float adb[2])
 /*
 **  - - - - - - - - -
 **   i a u P v d p v
@@ -14,11 +14,11 @@ void iauPvdpv(double a[2][3], double b[2][3], double adb[2])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a        double[2][3]      first pv-vector
-**     b        double[2][3]      second pv-vector
+**     a        float[2][3]      first pv-vector
+**     b        float[2][3]      second pv-vector
 **
 **  Returned:
-**     adb      double[2]         a . b (see note)
+**     adb      float[2]         a . b (see note)
 **
 **  Note:
 **
@@ -37,7 +37,7 @@ void iauPvdpv(double a[2][3], double b[2][3], double adb[2])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double adbd, addb;
+   float adbd, addb;
 
 
 /* a . b = constant part of result. */

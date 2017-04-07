@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauEpv00(double date1, double date2,
-             double pvh[2][3], double pvb[2][3])
+int iauEpv00(float date1, float date2,
+             float pvh[2][3], float pvb[2][3])
 /*
 **  - - - - - - - - -
 **   i a u E p v 0 0
@@ -16,11 +16,11 @@ int iauEpv00(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double        TDB date (Note 1)
+**     date1,date2  float        TDB date (Note 1)
 **
 **  Returned:
-**     pvh          double[2][3]  heliocentric Earth position/velocity
-**     pvb          double[2][3]  barycentric Earth position/velocity
+**     pvh          float[2][3]  heliocentric Earth position/velocity
+**     pvb          float[2][3]  barycentric Earth position/velocity
 **
 **  Returned (function value):
 **                  int           status: 0 = OK
@@ -91,7 +91,7 @@ int iauEpv00(double date1, double date2,
 **              velocity error    1.4    4.9   mm/s
 **
 **     Comparisons with the JPL DE406 ephemeris show that by 1800 and
-**     2200 the position errors are approximately double their 1900-2100
+**     2200 the position errors are approximately float their 1900-2100
 **     size.  By 1500 and 2500 the deterioration is a factor of 10 and
 **     by 1000 and 3000 a factor of 60.  The velocity accuracy falls off
 **     at about half that rate.
@@ -118,7 +118,7 @@ int iauEpv00(double date1, double date2,
 ** These were obtained empirically, by comparisons with DE405 over
 ** 1900-2100.
 */
-   static const double am12 =  0.000000211284,
+   static const float am12 =  0.000000211284,
                        am13 = -0.000000091603,
                        am21 = -0.000000230286,
                        am22 =  0.917482137087,
@@ -169,7 +169,7 @@ int iauEpv00(double date1, double date2,
 */
 
 /* Sun-to-Earth, T^0, X */
-   static const double e0x[] = {
+   static const float e0x[] = {
       0.9998292878132e+00, 0.1753485171504e+01, 0.6283075850446e+01,
       0.8352579567414e-02, 0.1710344404582e+01, 0.1256615170089e+02,
       0.5611445335148e-02, 0.0000000000000e+00, 0.0000000000000e+00,
@@ -723,7 +723,7 @@ int iauEpv00(double date1, double date2,
       0.9015823460025e-10, 0.3807792942715e+01, 0.4171445043968e+03 };
 
 /* Sun-to-Earth, T^0, Y */
-   static const double e0y[] = {
+   static const float e0y[] = {
       0.9998921098898e+00, 0.1826583913846e+00, 0.6283075850446e+01,
      -0.2442700893735e-01, 0.0000000000000e+00, 0.0000000000000e+00,
       0.8352929742915e-02, 0.1395277998680e+00, 0.1256615170089e+02,
@@ -1277,7 +1277,7 @@ int iauEpv00(double date1, double date2,
       0.9015946748003e-10, 0.2236989966505e+01, 0.4171445043968e+03 };
 
 /* Sun-to-Earth, T^0, Z */
-   static const double e0z[] = {
+   static const float e0z[] = {
       0.2796207639075e-05, 0.3198701560209e+01, 0.8433466158131e+02,
       0.1016042198142e-05, 0.5422360395913e+01, 0.5507553240374e+01,
       0.8044305033647e-06, 0.3880222866652e+01, 0.5223693906222e+01,
@@ -1430,7 +1430,7 @@ int iauEpv00(double date1, double date2,
       0.1128229264847e-09, 0.2787457156298e+01, 0.3119028331842e+03 };
 
 /* Sun-to-Earth, T^1, X */
-   static const double e1x[] = {
+   static const float e1x[] = {
       0.1234046326004e-05, 0.0000000000000e+00, 0.0000000000000e+00,
       0.5150068824701e-06, 0.6002664557501e+01, 0.1256615170089e+02,
       0.1290743923245e-07, 0.5959437664199e+01, 0.1884922755134e+02,
@@ -1519,7 +1519,7 @@ int iauEpv00(double date1, double date2,
       0.2548395840944e-10, 0.2628351859400e-03, 0.1349867339771e+01 };
 
 /* Sun-to-Earth, T^1, Y */
-   static const double e1y[] = {
+   static const float e1y[] = {
       0.9304690546528e-06, 0.0000000000000e+00, 0.0000000000000e+00,
       0.5150715570663e-06, 0.4431807116294e+01, 0.1256615170089e+02,
       0.1290825411056e-07, 0.4388610039678e+01, 0.1884922755134e+02,
@@ -1609,7 +1609,7 @@ int iauEpv00(double date1, double date2,
       0.6348533267831e-11, 0.3220226560321e+01, 0.8433466158131e+02 };
 
 /* Sun-to-Earth, T^1, Z */
-   static const double e1z[] = {
+   static const float e1z[] = {
       0.2278290449966e-05, 0.3413716033863e+01, 0.6283075850446e+01,
       0.5429458209830e-07, 0.0000000000000e+00, 0.0000000000000e+00,
       0.1903240492525e-07, 0.3370592358297e+01, 0.1256615170089e+02,
@@ -1625,7 +1625,7 @@ int iauEpv00(double date1, double date2,
       0.3286995181628e-10, 0.4879512900483e+01, 0.1021328554739e+02 };
 
 /* Sun-to-Earth, T^2, X */
-   static const double e2x[] = {
+   static const float e2x[] = {
      -0.4143818297913e-10, 0.0000000000000e+00, 0.0000000000000e+00,
       0.2171497694435e-10, 0.4398225628264e+01, 0.1256615170089e+02,
       0.9845398442516e-11, 0.2079720838384e+00, 0.6283075850446e+01,
@@ -1633,7 +1633,7 @@ int iauEpv00(double date1, double date2,
       0.1022049384115e-12, 0.5381133195658e+01, 0.8399684731857e+02 };
 
 /* Sun-to-Earth, T^2, Y */
-   static const double e2y[] = {
+   static const float e2y[] = {
       0.5063375872532e-10, 0.0000000000000e+00, 0.0000000000000e+00,
       0.2173815785980e-10, 0.2827805833053e+01, 0.1256615170089e+02,
       0.1010231999920e-10, 0.4634612377133e+01, 0.6283075850446e+01,
@@ -1641,13 +1641,13 @@ int iauEpv00(double date1, double date2,
       0.1022202095812e-12, 0.3809562326066e+01, 0.8399684731857e+02 };
 
 /* Sun-to-Earth, T^2, Z */
-   static const double e2z[] = {
+   static const float e2z[] = {
       0.9722666114891e-10, 0.5152219582658e+01, 0.6283075850446e+01,
      -0.3494819171909e-11, 0.0000000000000e+00, 0.0000000000000e+00,
       0.6713034376076e-12, 0.6440188750495e+00, 0.1256615170089e+02 };
 
 /* SSB-to-Sun, T^0, X */
-   static const double s0x[] = {
+   static const float s0x[] = {
       0.4956757536410e-02, 0.3741073751789e+01, 0.5296909721118e+00,
       0.2718490072522e-02, 0.4016011511425e+01, 0.2132990797783e+00,
       0.1546493974344e-02, 0.2170528330642e+01, 0.3813291813120e-01,
@@ -1883,7 +1883,7 @@ int iauEpv00(double date1, double date2,
       0.9698639532817e-09, 0.1074134313634e+01, 0.7826370942180e+02 };
 
 /* SSB-to-Sun, T^0, Y */
-   static const double s0y[] = {
+   static const float s0y[] = {
       0.4955392320126e-02, 0.2170467313679e+01, 0.5296909721118e+00,
       0.2722325167392e-02, 0.2444433682196e+01, 0.2132990797783e+00,
       0.1546579925346e-02, 0.5992779281546e+00, 0.3813291813120e-01,
@@ -2120,7 +2120,7 @@ int iauEpv00(double date1, double date2,
       0.9757679038404e-09, 0.5796846023126e+01, 0.7826370942180e+02 };
 
 /* SSB-to-Sun, T^0, Z */
-   static const double s0z[] = {
+   static const float s0z[] = {
       0.1181255122986e-03, 0.4607918989164e+00, 0.2132990797783e+00,
       0.1127777651095e-03, 0.4169146331296e+00, 0.5296909721118e+00,
       0.4777754401806e-04, 0.4582657007130e+01, 0.3813291813120e-01,
@@ -2198,7 +2198,7 @@ int iauEpv00(double date1, double date2,
       0.7788777276590e-09, 0.1900569908215e+01, 0.5217580628120e+02 };
 
 /* SSB-to-Sun, T^1, X */
-   static const double s1x[] = {
+   static const float s1x[] = {
      -0.1296310361520e-07, 0.0000000000000e+00, 0.0000000000000e+00,
       0.8975769009438e-08, 0.1128891609250e+01, 0.4265981595566e+00,
       0.7771113441307e-08, 0.2706039877077e+01, 0.2061856251104e+00,
@@ -2255,7 +2255,7 @@ int iauEpv00(double date1, double date2,
       0.2853033744415e-10, 0.3948481024894e+01, 0.2118763888447e+01 };
 
 /* SSB-to-Sun, T^1, Y */
-   static const double s1y[] = {
+   static const float s1y[] = {
       0.8989047573576e-08, 0.5840593672122e+01, 0.4265981595566e+00,
       0.7815938401048e-08, 0.1129664707133e+01, 0.2061856251104e+00,
       0.7550926713280e-08, 0.6196589104845e+00, 0.2204125344462e+00,
@@ -2312,7 +2312,7 @@ int iauEpv00(double date1, double date2,
       0.2852714675471e-10, 0.2377659870578e+01, 0.2118763888447e+01 };
 
 /* SSB-to-Sun, T^1, Z */
-   static const double s1z[] = {
+   static const float s1z[] = {
       0.5444220475678e-08, 0.1803825509310e+01, 0.2132990797783e+00,
       0.3883412695596e-08, 0.4668616389392e+01, 0.5296909721118e+00,
       0.1334341434551e-08, 0.0000000000000e+00, 0.0000000000000e+00,
@@ -2330,7 +2330,7 @@ int iauEpv00(double date1, double date2,
       0.2586835212560e-10, 0.3019448001809e+01, 0.6398972393349e+00 };
 
 /* SSB-to-Sun, T^2, X */
-   static const double s2x[] = {
+   static const float s2x[] = {
       0.1603551636587e-11, 0.4404109410481e+01, 0.2061856251104e+00,
       0.1556935889384e-11, 0.4818040873603e+00, 0.2204125344462e+00,
       0.1182594414915e-11, 0.9935762734472e+00, 0.5225775174439e+00,
@@ -2342,7 +2342,7 @@ int iauEpv00(double date1, double date2,
       0.4478223877045e-12, 0.0000000000000e+00, 0.0000000000000e+00 };
 
 /* SSB-to-Sun, T^2, Y */
-   static const double s2y[] = {
+   static const float s2y[] = {
       0.1609114495091e-11, 0.2831096993481e+01, 0.2061856251104e+00,
       0.1560330784946e-11, 0.5193058213906e+01, 0.2204125344462e+00,
       0.1183535479202e-11, 0.5707003443890e+01, 0.5225775174439e+00,
@@ -2354,43 +2354,43 @@ int iauEpv00(double date1, double date2,
       0.3946122651015e-12, 0.4108265279171e+00, 0.1059381944224e+01 };
 
 /* SSB-to-Sun, T^2, Z */
-   static const double s2z[] = {
+   static const float s2z[] = {
       0.3749920358054e-12, 0.3230285558668e+01, 0.2132990797783e+00,
       0.2735037220939e-12, 0.6154322683046e+01, 0.5296909721118e+00 };
 
 /* Pointers to coefficient arrays, in x,y,z sets */
-   static const double *ce0[] = { e0x, e0y, e0z },
+   static const float *ce0[] = { e0x, e0y, e0z },
                        *ce1[] = { e1x, e1y, e1z },
                        *ce2[] = { e2x, e2y, e2z },
                        *cs0[] = { s0x, s0y, s0z },
                        *cs1[] = { s1x, s1y, s1z },
                        *cs2[] = { s2x, s2y, s2z };
-   const double *coeffs;
+   const float *coeffs;
 
 /* Numbers of terms for each component of the model, in x,y,z sets */
-   static const int ne0[3] = {(int)(sizeof e0x / sizeof (double) / 3),
-                              (int)(sizeof e0y / sizeof (double) / 3),
-                              (int)(sizeof e0z / sizeof (double) / 3) },
-                    ne1[3] = {(int)(sizeof e1x / sizeof (double) / 3),
-                              (int)(sizeof e1y / sizeof (double) / 3),
-                              (int)(sizeof e1z / sizeof (double) / 3) },
-                    ne2[3] = {(int)(sizeof e2x / sizeof (double) / 3),
-                              (int)(sizeof e2y / sizeof (double) / 3),
-                              (int)(sizeof e2z / sizeof (double) / 3) },
-                    ns0[3] = {(int)(sizeof s0x / sizeof (double) / 3),
-                              (int)(sizeof s0y / sizeof (double) / 3),
-                              (int)(sizeof s0z / sizeof (double) / 3) },
-                    ns1[3] = {(int)(sizeof s1x / sizeof (double) / 3),
-                              (int)(sizeof s1y / sizeof (double) / 3),
-                              (int)(sizeof s1z / sizeof (double) / 3) },
-                    ns2[3] = {(int)(sizeof s2x / sizeof (double) / 3),
-                              (int)(sizeof s2y / sizeof (double) / 3),
-                              (int)(sizeof s2z / sizeof (double) / 3) };
+   static const int ne0[3] = {(int)(sizeof e0x / sizeof (float) / 3),
+                              (int)(sizeof e0y / sizeof (float) / 3),
+                              (int)(sizeof e0z / sizeof (float) / 3) },
+                    ne1[3] = {(int)(sizeof e1x / sizeof (float) / 3),
+                              (int)(sizeof e1y / sizeof (float) / 3),
+                              (int)(sizeof e1z / sizeof (float) / 3) },
+                    ne2[3] = {(int)(sizeof e2x / sizeof (float) / 3),
+                              (int)(sizeof e2y / sizeof (float) / 3),
+                              (int)(sizeof e2z / sizeof (float) / 3) },
+                    ns0[3] = {(int)(sizeof s0x / sizeof (float) / 3),
+                              (int)(sizeof s0y / sizeof (float) / 3),
+                              (int)(sizeof s0z / sizeof (float) / 3) },
+                    ns1[3] = {(int)(sizeof s1x / sizeof (float) / 3),
+                              (int)(sizeof s1y / sizeof (float) / 3),
+                              (int)(sizeof s1z / sizeof (float) / 3) },
+                    ns2[3] = {(int)(sizeof s2x / sizeof (float) / 3),
+                              (int)(sizeof s2y / sizeof (float) / 3),
+                              (int)(sizeof s2z / sizeof (float) / 3) };
    int nterms;
 
 /* Miscellaneous */
    int jstat, i, j;
-   double t, t2, xyz, xyzd, a, b, c, ct, p, cp,
+   float t, t2, xyz, xyzd, a, b, c, ct, p, cp,
           ph[3], vh[3], pb[3], vb[3], x, y, z;
 
 /*--------------------------------------------------------------------*/

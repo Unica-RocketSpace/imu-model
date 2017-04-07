@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFaur03(double t)
+float iauFaur03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a u r 0 3
@@ -15,10 +15,10 @@ double iauFaur03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned  (function value):
-**           double    mean longitude of Uranus, radians (Note 2)
+**           float    mean longitude of Uranus, radians (Note 2)
 **
 **  Notes:
 **
@@ -43,7 +43,7 @@ double iauFaur03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of Uranus (IERS Conventions 2003). */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauTrxpv(double r[3][3], double pv[2][3], double trpv[2][3])
+void iauTrxpv(float r[3][3], float pv[2][3], float trpv[2][3])
 /*
 **  - - - - - - - - -
 **   i a u T r x p v
@@ -14,11 +14,11 @@ void iauTrxpv(double r[3][3], double pv[2][3], double trpv[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    r-matrix
-**     pv       double[2][3]    pv-vector
+**     r        float[3][3]    r-matrix
+**     pv       float[2][3]    pv-vector
 **
 **  Returned:
-**     trpv     double[2][3]    r * pv
+**     trpv     float[2][3]    r * pv
 **
 **  Note:
 **     It is permissible for pv and trpv to be the same array.
@@ -34,7 +34,7 @@ void iauTrxpv(double r[3][3], double pv[2][3], double trpv[2][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double tr[3][3];
+   float tr[3][3];
 
 
 /* Transpose of matrix r. */

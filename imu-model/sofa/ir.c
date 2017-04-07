@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauIr(double r[3][3])
+void iauIr(float r[3][3])
 /*
 **  - - - - - -
 **   i a u I r
@@ -14,7 +14,7 @@ void iauIr(double r[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Returned:
-**     r       double[3][3]    r-matrix
+**     r       float[3][3]    r-matrix
 **
 **  This revision:  2013 June 18
 **

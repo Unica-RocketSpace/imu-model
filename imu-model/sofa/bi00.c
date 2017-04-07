@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauBi00(double *dpsibi, double *depsbi, double *dra)
+void iauBi00(float *dpsibi, float *depsbi, float *dra)
 /*
 **  - - - - - - - -
 **   i a u B i 0 0
@@ -15,8 +15,8 @@ void iauBi00(double *dpsibi, double *depsbi, double *dra)
 **  Status:  canonical model.
 **
 **  Returned:
-**     dpsibi,depsbi  double  longitude and obliquity corrections
-**     dra            double  the ICRS RA of the J2000.0 mean equinox
+**     dpsibi,depsbi  float  longitude and obliquity corrections
+**     dra            float  the ICRS RA of the J2000.0 mean equinox
 **
 **  Notes:
 **
@@ -54,11 +54,11 @@ void iauBi00(double *dpsibi, double *depsbi, double *dra)
 */
 {
 /* The frame bias corrections in longitude and obliquity */
-   const double DPBIAS = -0.041775  * DAS2R,
+   const float DPBIAS = -0.041775  * DAS2R,
                 DEBIAS = -0.0068192 * DAS2R;
 
 /* The ICRS RA of the J2000.0 equinox (Chapront et al., 2002) */
-   const double DRA0 = -0.0146 * DAS2R;
+   const float DRA0 = -0.0146 * DAS2R;
 
 
 /* Return the results (which are fixed). */

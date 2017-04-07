@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauLdn(int n, iauLDBODY b[], double ob[3], double sc[3],
-            double sn[3])
+void iauLdn(int n, iauLDBODY b[], float ob[3], float sc[3],
+            float sn[3])
 /*+
 **  - - - - - - -
 **   i a u L d n
@@ -18,14 +18,14 @@ void iauLdn(int n, iauLDBODY b[], double ob[3], double sc[3],
 **  Given:
 **     n    int           number of bodies (note 1)
 **     b    iauLDBODY[n]  data for each of the n bodies (Notes 1,2):
-**      bm   double         mass of the body (solar masses, Note 3)
-**      dl   double         deflection limiter (Note 4)
+**      bm   float         mass of the body (solar masses, Note 3)
+**      dl   float         deflection limiter (Note 4)
 **      pv   [2][3]         barycentric PV of the body (au, au/day)
-**     ob   double[3]     barycentric position of the observer (au)
-**     sc   double[3]     observer to star coord direction (unit vector)
+**     ob   float[3]     barycentric position of the observer (au)
+**     sc   float[3]     observer to star coord direction (unit vector)
 **
 **  Returned:
-**     sn    double[3]      observer to deflected star (unit vector)
+**     sn    float[3]      observer to deflected star (unit vector)
 **
 **  1) The array b contains n entries, one for each body to be
 **     considered.  If n = 0, no gravitational light deflection will be
@@ -91,10 +91,10 @@ void iauLdn(int n, iauLDBODY b[], double ob[3], double sc[3],
 */
 {
 /* Light time for 1 AU (days) */
-   const double CR = AULT/DAYSEC;
+   const float CR = AULT/DAYSEC;
 
    int i;
-   double  v[3], dt, ev[3], em, e[3];
+   float  v[3], dt, ev[3], em, e[3];
 
 
 /* Star direction prior to deflection. */

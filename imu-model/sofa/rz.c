@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRz(double psi, double r[3][3])
+void iauRz(float psi, float r[3][3])
 /*
 **  - - - - - -
 **   i a u R z
@@ -14,10 +14,10 @@ void iauRz(double psi, double r[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     psi    double          angle (radians)
+**     psi    float          angle (radians)
 **
 **  Given and returned:
-**     r      double[3][3]    r-matrix, rotated
+**     r      float[3][3]    r-matrix, rotated
 **
 **  Notes:
 **
@@ -40,7 +40,7 @@ void iauRz(double psi, double r[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double s, c, a00, a01, a02, a10, a11, a12;
+   float s, c, a00, a01, a02, a10, a11, a12;
 
 
    s = sin(psi);

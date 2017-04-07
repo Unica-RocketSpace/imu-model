@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauEpj2jd(double epj, double *djm0, double *djm)
+void iauEpj2jd(float epj, float *djm0, float *djm)
 /*
 **  - - - - - - - - - -
 **   i a u E p j 2 j d
@@ -14,11 +14,11 @@ void iauEpj2jd(double epj, double *djm0, double *djm)
 **  Status:  support function.
 **
 **  Given:
-**     epj      double    Julian Epoch (e.g. 1996.8)
+**     epj      float    Julian Epoch (e.g. 1996.8)
 **
 **  Returned:
-**     djm0     double    MJD zero-point: always 2400000.5
-**     djm      double    Modified Julian Date
+**     djm0     float    MJD zero-point: always 2400000.5
+**     djm      float    Modified Julian Date
 **
 **  Note:
 **

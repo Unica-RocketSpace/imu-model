@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauPb06(double date1, double date2,
-             double *bzeta, double *bz, double *btheta)
+void iauPb06(float date1, float date2,
+             float *bzeta, float *bz, float *btheta)
 /*
 **  - - - - - - - -
 **   i a u P b 0 6
@@ -17,12 +17,12 @@ void iauPb06(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     bzeta        double   1st rotation: radians cw around z
-**     bz           double   3rd rotation: radians cw around z
-**     btheta       double   2nd rotation: radians ccw around y
+**     bzeta        float   1st rotation: radians cw around z
+**     bz           float   3rd rotation: radians cw around z
+**     btheta       float   2nd rotation: radians ccw around y
 **
 **  Notes:
 **
@@ -75,7 +75,7 @@ void iauPb06(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double r[3][3], r31, r32;
+   float r[3][3], r31, r32;
 
 
 /* Precession matrix via Fukushima-Williams angles. */

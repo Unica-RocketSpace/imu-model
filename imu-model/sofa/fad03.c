@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFad03(double t)
+float iauFad03(float t)
 /*
 **  - - - - - - - - -
 **   i a u F a d 0 3
@@ -15,10 +15,10 @@ double iauFad03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    D, radians (Note 2)
+**           float    D, radians (Note 2)
 **
 **  Notes:
 **
@@ -43,7 +43,7 @@ double iauFad03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean elongation of the Moon from the Sun (IERS Conventions 2003). */

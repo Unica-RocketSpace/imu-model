@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEe00(double date1, double date2, double epsa, double dpsi)
+float iauEe00(float date1, float date2, float epsa, float dpsi)
 /*
 **  - - - - - - - -
 **   i a u E e 0 0
@@ -15,12 +15,12 @@ double iauEe00(double date1, double date2, double epsa, double dpsi)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double    TT as a 2-part Julian Date (Note 1)
-**     epsa         double    mean obliquity (Note 2)
-**     dpsi         double    nutation in longitude (Note 3)
+**     date1,date2  float    TT as a 2-part Julian Date (Note 1)
+**     epsa         float    mean obliquity (Note 2)
+**     dpsi         float    nutation in longitude (Note 3)
 **
 **  Returned (function value):
-**                  double    equation of the equinoxes (Note 4)
+**                  float    equation of the equinoxes (Note 4)
 **
 **  Notes:
 **
@@ -72,7 +72,7 @@ double iauEe00(double date1, double date2, double epsa, double dpsi)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double ee;
+   float ee;
 
 
 /* Equation of the equinoxes. */

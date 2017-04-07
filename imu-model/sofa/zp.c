@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauZp(double p[3])
+void iauZp(float p[3])
 /*
 **  - - - - - -
 **   i a u Z p
@@ -14,7 +14,7 @@ void iauZp(double p[3])
 **  Status:  vector/matrix support function.
 **
 **  Returned:
-**     p        double[3]      p-vector
+**     p        float[3]      p-vector
 **
 **  This revision:  2013 June 18
 **

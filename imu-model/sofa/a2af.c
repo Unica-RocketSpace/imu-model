@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
+void iauA2af(int ndp, float angle, char *sign, int idmsf[4])
 /*
 **  - - - - - - - -
 **   i a u A 2 a f
@@ -15,7 +15,7 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 **
 **  Given:
 **     ndp     int     resolution (Note 1)
-**     angle   double  angle in radians
+**     angle   float  angle in radians
 **
 **  Returned:
 **     sign    char    '+' or '-'
@@ -44,7 +44,7 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 **      :            0 00 00.000...
 **
 **  2) The largest positive useful value for ndp is determined by the
-**     size of angle, the format of doubles on the target platform, and
+**     size of angle, the format of floats on the target platform, and
 **     the risk of overflowing idmsf[3].  On a typical platform, for
 **     angle up to 2pi, the available floating-point precision might
 **     correspond to ndp=12.  However, the practical limit is typically
@@ -64,7 +64,7 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 */
 {
 /* Hours to degrees * radians to turns */
-   const double F = 15.0 / D2PI;
+   const float F = 15.0 / D2PI;
 
 
 /* Scale then use days to h,m,s function. */

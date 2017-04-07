@@ -1,12 +1,12 @@
 #include "sofa.h"
 
-int iauAtco13(double rc, double dc,
-              double pr, double pd, double px, double rv,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *aob, double *zob, double *hob,
-              double *dob, double *rob, double *eo)
+int iauAtco13(float rc, float dc,
+              float pr, float pd, float px, float rv,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *aob, float *zob, float *hob,
+              float *dob, float *rob, float *eo)
 /*
 **  - - - - - - - - - -
 **   i a u A t c o 1 3
@@ -24,30 +24,30 @@ int iauAtco13(double rc, double dc,
 **  Status:  support function.
 **
 **  Given:
-**     rc,dc  double   ICRS right ascension at J2000.0 (radians, Note 1)
-**     pr     double   RA proper motion (radians/year; Note 2)
-**     pd     double   Dec proper motion (radians/year)
-**     px     double   parallax (arcsec)
-**     rv     double   radial velocity (km/s, +ve if receding)
-**     utc1   double   UTC as a 2-part...
-**     utc2   double   ...quasi Julian Date (Notes 3-4)
-**     dut1   double   UT1-UTC (seconds, Note 5)
-**     elong  double   longitude (radians, east +ve, Note 6)
-**     phi    double   latitude (geodetic, radians, Note 6)
-**     hm     double   height above ellipsoid (m, geodetic, Notes 6,8)
-**     xp,yp  double   polar motion coordinates (radians, Note 7)
-**     phpa   double   pressure at the observer (hPa = mB, Note 8)
-**     tc     double   ambient temperature at the observer (deg C)
-**     rh     double   relative humidity at the observer (range 0-1)
-**     wl     double   wavelength (micrometers, Note 9)
+**     rc,dc  float   ICRS right ascension at J2000.0 (radians, Note 1)
+**     pr     float   RA proper motion (radians/year; Note 2)
+**     pd     float   Dec proper motion (radians/year)
+**     px     float   parallax (arcsec)
+**     rv     float   radial velocity (km/s, +ve if receding)
+**     utc1   float   UTC as a 2-part...
+**     utc2   float   ...quasi Julian Date (Notes 3-4)
+**     dut1   float   UT1-UTC (seconds, Note 5)
+**     elong  float   longitude (radians, east +ve, Note 6)
+**     phi    float   latitude (geodetic, radians, Note 6)
+**     hm     float   height above ellipsoid (m, geodetic, Notes 6,8)
+**     xp,yp  float   polar motion coordinates (radians, Note 7)
+**     phpa   float   pressure at the observer (hPa = mB, Note 8)
+**     tc     float   ambient temperature at the observer (deg C)
+**     rh     float   relative humidity at the observer (range 0-1)
+**     wl     float   wavelength (micrometers, Note 9)
 **
 **  Returned:
-**     aob    double*  observed azimuth (radians: N=0,E=90)
-**     zob    double*  observed zenith distance (radians)
-**     hob    double*  observed hour angle (radians)
-**     dob    double*  observed declination (radians)
-**     rob    double*  observed right ascension (CIO-based, radians)
-**     eo     double*  equation of the origins (ERA-GST)
+**     aob    float*  observed azimuth (radians: N=0,E=90)
+**     zob    float*  observed zenith distance (radians)
+**     hob    float*  observed hour angle (radians)
+**     dob    float*  observed declination (radians)
+**     rob    float*  observed right ascension (CIO-based, radians)
+**     eo     float*  equation of the origins (ERA-GST)
 **
 **  Returned (function value):
 **            int      status: +1 = dubious year (Note 4)
@@ -165,7 +165,7 @@ int iauAtco13(double rc, double dc,
 {
    int j;
    iauASTROM astrom;
-   double ri, di;
+   float ri, di;
 
 
 /* Star-independent astrometry parameters. */

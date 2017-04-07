@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauP2s(double p[3], double *theta, double *phi, double *r)
+void iauP2s(float p[3], float *theta, float *phi, float *r)
 /*
 **  - - - - - - -
 **   i a u P 2 s
@@ -14,12 +14,12 @@ void iauP2s(double p[3], double *theta, double *phi, double *r)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     p        double[3]    p-vector
+**     p        float[3]    p-vector
 **
 **  Returned:
-**     theta    double       longitude angle (radians)
-**     phi      double       latitude angle (radians)
-**     r        double       radial distance
+**     theta    float       longitude angle (radians)
+**     phi      float       latitude angle (radians)
+**     r        float       radial distance
 **
 **  Notes:
 **

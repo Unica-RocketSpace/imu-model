@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauXy06(double date1, double date2, double *x, double *y)
+void iauXy06(float date1, float date2, float *x, float *y)
 /*
 **  - - - - - - - -
 **   i a u X y 0 6
@@ -15,10 +15,10 @@ void iauXy06(double date1, double date2, double *x, double *y)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double     TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float     TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     x,y          double     CIP X,Y coordinates (Note 2)
+**     x,y          float     CIP X,Y coordinates (Note 2)
 **
 **  Notes:
 **
@@ -102,7 +102,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
    enum { MAXPT = 5 };
 
 /* Polynomial coefficients (arcsec, X then Y). */
-   static const double xyp[2][MAXPT+1] = {
+   static const float xyp[2][MAXPT+1] = {
 
       {    -0.016617,
          2004.191898,
@@ -1871,7 +1871,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
    };
 
 /* Amplitude coefficients (microarcsec);  indexed using the nc array. */
-   static const double a[] = {
+   static const float a[] = {
 
    /* 1-105 */
          -6844318.44,     9205236.26,1328.67,1538.18,      205833.11,
@@ -2551,7 +2551,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
    };
 
 /* Number of amplitude coefficients */
-   static const int NA = (int) (sizeof a / sizeof (double));
+   static const int NA = (int) (sizeof a / sizeof (float));
 
 /* Amplitude usage: X or Y, sin or cos, power of T. */
    static const int jaxy[] = {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};
@@ -2559,7 +2559,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
    static const int japt[] = {0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4};
 
 /* Miscellaneous */
-   double t, w, pt[MAXPT+1], fa[14], xypr[2], xypl[2], xyls[2], arg,
+   float t, w, pt[MAXPT+1], fa[14], xypr[2], xypl[2], xyls[2], arg,
           sc[2];
    int jpt, i, j, jxy, ialast, ifreq, m, ia, jsc;
 
@@ -2636,7 +2636,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
       arg = 0.0;
       for (i = 0; i < 14; i++) {
          m = mfapl[ifreq][i];
-         if (m != 0) arg += (double)m * fa[i];
+         if (m != 0) arg += (float)m * fa[i];
       }
       sc[0] = sin(arg);
       sc[1] = cos(arg);
@@ -2674,7 +2674,7 @@ void iauXy06(double date1, double date2, double *x, double *y)
       arg = 0.0;
       for (i = 0; i < 5; i++) {
          m = mfals[ifreq][i];
-         if (m != 0) arg += (double)m * fa[i];
+         if (m != 0) arg += (float)m * fa[i];
       }
       sc[0] = sin(arg);
       sc[1] = cos(arg);

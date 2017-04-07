@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRxpv(double r[3][3], double pv[2][3], double rpv[2][3])
+void iauRxpv(float r[3][3], float pv[2][3], float rpv[2][3])
 /*
 **  - - - - - - - -
 **   i a u R x p v
@@ -14,11 +14,11 @@ void iauRxpv(double r[3][3], double pv[2][3], double rpv[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    r-matrix
-**     pv       double[2][3]    pv-vector
+**     r        float[3][3]    r-matrix
+**     pv       float[2][3]    pv-vector
 **
 **  Returned:
-**     rpv      double[2][3]    r * pv
+**     rpv      float[2][3]    r * pv
 **
 **  Note:
 **     It is permissible for pv and rpv to be the same array.

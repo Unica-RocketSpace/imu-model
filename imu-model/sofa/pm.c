@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauPm(double p[3])
+float iauPm(float p[3])
 /*
 **  - - - - - -
 **   i a u P m
@@ -14,10 +14,10 @@ double iauPm(double p[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     p      double[3]     p-vector
+**     p      float[3]     p-vector
 **
 **  Returned (function value):
-**            double        modulus
+**            float        modulus
 **
 **  This revision:  2013 August 7
 **

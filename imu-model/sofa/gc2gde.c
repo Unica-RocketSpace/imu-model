@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauGc2gde ( double a, double f, double xyz[3],
-                double *elong, double *phi, double *height )
+int iauGc2gde ( float a, float f, float xyz[3],
+                float *elong, float *phi, float *height )
 /*
 **  - - - - - - - - - -
 **   i a u G c 2 g d e
@@ -16,14 +16,14 @@ int iauGc2gde ( double a, double f, double xyz[3],
 **  Status:  support function.
 **
 **  Given:
-**     a       double     equatorial radius (Notes 2,4)
-**     f       double     flattening (Note 3)
-**     xyz     double[3]  geocentric vector (Note 4)
+**     a       float     equatorial radius (Notes 2,4)
+**     f       float     flattening (Note 3)
+**     xyz     float[3]  geocentric vector (Note 4)
 **
 **  Returned:
-**     elong   double     longitude (radians, east +ve)
-**     phi     double     latitude (geodetic, radians)
-**     height  double     height above ellipsoid (geodetic, Note 4)
+**     elong   float     longitude (radians, east +ve)
+**     phi     float     latitude (geodetic, radians)
+**     height  float     height above ellipsoid (geodetic, Note 4)
 **
 **  Returned (function value):
 **             int        status:  0 = OK
@@ -68,7 +68,7 @@ int iauGc2gde ( double a, double f, double xyz[3],
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double aeps2, e2, e4t, ec2, ec, b, x, y, z, p2, absz, p, s0, pn, zc,
+   float aeps2, e2, e4t, ec2, ec, b, x, y, z, p2, absz, p, s0, pn, zc,
                  c0, c02, c03, s02, s03, a02, a0, a03, d0, f0, b0, s1,
                  cc, s12, cc2;
 

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauCp(double p[3], double c[3])
+void iauCp(float p[3], float c[3])
 /*
 **  - - - - - -
 **   i a u C p
@@ -14,10 +14,10 @@ void iauCp(double p[3], double c[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     p        double[3]     p-vector to be copied
+**     p        float[3]     p-vector to be copied
 **
 **  Returned:
-**     c        double[3]     copy
+**     c        float[3]     copy
 **
 **  This revision:  2013 June 18
 **

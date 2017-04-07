@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauC2ibpn(double date1, double date2, double rbpn[3][3],
-               double rc2i[3][3])
+void iauC2ibpn(float date1, float date2, float rbpn[3][3],
+               float rc2i[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u C 2 i b p n
@@ -16,11 +16,11 @@ void iauC2ibpn(double date1, double date2, double rbpn[3][3],
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double       TT as a 2-part Julian Date (Note 1)
-**     rbpn        double[3][3] celestial-to-true matrix (Note 2)
+**     date1,date2 float       TT as a 2-part Julian Date (Note 1)
+**     rbpn        float[3][3] celestial-to-true matrix (Note 2)
 **
 **  Returned:
-**     rc2i        double[3][3] celestial-to-intermediate matrix (Note 3)
+**     rc2i        float[3][3] celestial-to-intermediate matrix (Note 3)
 **
 **  Notes:
 **
@@ -83,7 +83,7 @@ void iauC2ibpn(double date1, double date2, double rbpn[3][3],
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double x, y;
+   float x, y;
 
 
 /* Extract the X,Y coordinates. */

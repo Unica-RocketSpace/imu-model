@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPmp(double a[3], double b[3], double amb[3])
+void iauPmp(float a[3], float b[3], float amb[3])
 /*
 **  - - - - - - -
 **   i a u P m p
@@ -14,11 +14,11 @@ void iauPmp(double a[3], double b[3], double amb[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a        double[3]      first p-vector
-**     b        double[3]      second p-vector
+**     a        float[3]      first p-vector
+**     b        float[3]      second p-vector
 **
 **  Returned:
-**     amb      double[3]      a - b
+**     amb      float[3]      a - b
 **
 **  Note:
 **     It is permissible to re-use the same array for any of the

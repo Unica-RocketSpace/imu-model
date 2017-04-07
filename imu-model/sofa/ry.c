@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRy(double theta, double r[3][3])
+void iauRy(float theta, float r[3][3])
 /*
 **  - - - - - -
 **   i a u R y
@@ -14,10 +14,10 @@ void iauRy(double theta, double r[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     theta  double          angle (radians)
+**     theta  float          angle (radians)
 **
 **  Given and returned:
-**     r      double[3][3]    r-matrix, rotated
+**     r      float[3][3]    r-matrix, rotated
 **
 **  Notes:
 **
@@ -40,7 +40,7 @@ void iauRy(double theta, double r[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double s, c, a00, a01, a02, a20, a21, a22;
+   float s, c, a00, a01, a02, a20, a21, a22;
 
 
    s = sin(theta);

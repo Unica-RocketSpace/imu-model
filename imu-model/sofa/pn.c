@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPn(double p[3], double *r, double u[3])
+void iauPn(float p[3], float *r, float u[3])
 /*
 **  - - - - - -
 **   i a u P n
@@ -14,11 +14,11 @@ void iauPn(double p[3], double *r, double u[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     p        double[3]      p-vector
+**     p        float[3]      p-vector
 **
 **  Returned:
-**     r        double         modulus
-**     u        double[3]      unit vector
+**     r        float         modulus
+**     u        float[3]      unit vector
 **
 **  Notes:
 **
@@ -40,7 +40,7 @@ void iauPn(double p[3], double *r, double u[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double w;
+   float w;
 
 
 /* Obtain the modulus and test for zero. */

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauUtcut1(double utc1, double utc2, double dut1,
-              double *ut11, double *ut12)
+int iauUtcut1(float utc1, float utc2, float dut1,
+              float *ut11, float *ut12)
 /*
 **  - - - - - - - - - -
 **   i a u U t c u t 1
@@ -16,11 +16,11 @@ int iauUtcut1(double utc1, double utc2, double dut1,
 **  Status:  canonical.
 **
 **  Given:
-**     utc1,utc2  double   UTC as a 2-part quasi Julian Date (Notes 1-4)
-**     dut1       double   Delta UT1 = UT1-UTC in seconds (Note 5)
+**     utc1,utc2  float   UTC as a 2-part quasi Julian Date (Notes 1-4)
+**     dut1       float   Delta UT1 = UT1-UTC in seconds (Note 5)
 **
 **  Returned:
-**     ut11,ut12  double   UT1 as a 2-part Julian Date (Note 6)
+**     ut11,ut12  float   UT1 as a 2-part Julian Date (Note 6)
 **
 **  Returned (function value):
 **                int      status: +1 = dubious year (Note 3)
@@ -76,7 +76,7 @@ int iauUtcut1(double utc1, double utc2, double dut1,
 */
 {
    int iy, im, id, js, jw;
-   double w, dat, dta, tai1, tai2;
+   float w, dat, dta, tai1, tai2;
 
 
 /* Look up TAI-UTC. */

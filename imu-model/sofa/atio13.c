@@ -1,11 +1,11 @@
 #include "sofa.h"
 
-int iauAtio13(double ri, double di,
-              double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
-              double *aob, double *zob, double *hob,
-              double *dob, double *rob)
+int iauAtio13(float ri, float di,
+              float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
+              float *aob, float *zob, float *hob,
+              float *dob, float *rob)
 /*
 **  - - - - - - - - - -
 **   i a u A t i o 1 3
@@ -20,26 +20,26 @@ int iauAtio13(double ri, double di,
 **  Status:  support function.
 **
 **  Given:
-**     ri     double   CIRS right ascension (CIO-based, radians)
-**     di     double   CIRS declination (radians)
-**     utc1   double   UTC as a 2-part...
-**     utc2   double   ...quasi Julian Date (Notes 1,2)
-**     dut1   double   UT1-UTC (seconds, Note 3)
-**     elong  double   longitude (radians, east +ve, Note 4)
-**     phi    double   geodetic latitude (radians, Note 4)
-**     hm     double   height above ellipsoid (m, geodetic Notes 4,6)
-**     xp,yp  double   polar motion coordinates (radians, Note 5)
-**     phpa   double   pressure at the observer (hPa = mB, Note 6)
-**     tc     double   ambient temperature at the observer (deg C)
-**     rh     double   relative humidity at the observer (range 0-1)
-**     wl     double   wavelength (micrometers, Note 7)
+**     ri     float   CIRS right ascension (CIO-based, radians)
+**     di     float   CIRS declination (radians)
+**     utc1   float   UTC as a 2-part...
+**     utc2   float   ...quasi Julian Date (Notes 1,2)
+**     dut1   float   UT1-UTC (seconds, Note 3)
+**     elong  float   longitude (radians, east +ve, Note 4)
+**     phi    float   geodetic latitude (radians, Note 4)
+**     hm     float   height above ellipsoid (m, geodetic Notes 4,6)
+**     xp,yp  float   polar motion coordinates (radians, Note 5)
+**     phpa   float   pressure at the observer (hPa = mB, Note 6)
+**     tc     float   ambient temperature at the observer (deg C)
+**     rh     float   relative humidity at the observer (range 0-1)
+**     wl     float   wavelength (micrometers, Note 7)
 **
 **  Returned:
-**     aob    double*  observed azimuth (radians: N=0,E=90)
-**     zob    double*  observed zenith distance (radians)
-**     hob    double*  observed hour angle (radians)
-**     dob    double*  observed declination (radians)
-**     rob    double*  observed right ascension (CIO-based, radians)
+**     aob    float*  observed azimuth (radians: N=0,E=90)
+**     zob    float*  observed zenith distance (radians)
+**     hob    float*  observed hour angle (radians)
+**     dob    float*  observed declination (radians)
+**     rob    float*  observed right ascension (CIO-based, radians)
 **
 **  Returned (function value):
 **            int      status: +1 = dubious year (Note 2)

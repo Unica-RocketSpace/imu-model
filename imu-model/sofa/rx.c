@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauRx(double phi, double r[3][3])
+void iauRx(float phi, float r[3][3])
 /*
 **  - - - - - -
 **   i a u R x
@@ -14,10 +14,10 @@ void iauRx(double phi, double r[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     phi    double          angle (radians)
+**     phi    float          angle (radians)
 **
 **  Given and returned:
-**     r      double[3][3]    r-matrix, rotated
+**     r      float[3][3]    r-matrix, rotated
 **
 **  Notes:
 **
@@ -40,7 +40,7 @@ void iauRx(double phi, double r[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double s, c, a10, a11, a12, a20, a21, a22;
+   float s, c, a10, a11, a12, a20, a21, a22;
 
 
    s = sin(phi);

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLtpecl(double epj, double vec[3])
+void iauLtpecl(float epj, float vec[3])
 /*
 **  - - - - - - - - - -
 **   i a u L t p e c l
@@ -14,10 +14,10 @@ void iauLtpecl(double epj, double vec[3])
 **  Status:  support function.
 **
 **  Given:
-**     epj     double         Julian epoch (TT)
+**     epj     float         Julian epoch (TT)
 **
 **  Returned:
-**     vec     double[3]      ecliptic pole unit vector
+**     vec     float[3]      ecliptic pole unit vector
 **
 **  Notes:
 **
@@ -49,11 +49,11 @@ void iauLtpecl(double epj, double vec[3])
 */
 {
 /* Obliquity at J2000.0 (radians). */
-   static const double eps0 = 84381.406 * DAS2R;
+   static const float eps0 = 84381.406 * DAS2R;
 
 /* Polynomial coefficients */
    enum { NPOL = 4 };
-   static const double pqpol[2][NPOL] = {
+   static const float pqpol[2][NPOL] = {
       { 5851.607687,
           -0.1189000,
           -0.00028913,
@@ -65,7 +65,7 @@ void iauLtpecl(double epj, double vec[3])
    };
 
 /* Periodic coefficients */
-   static const double pqper[][5] = {
+   static const float pqper[][5] = {
       { 708.15,-5486.751211,-684.661560,  667.666730,-5523.863691},
       {2309.00,  -17.127623,2446.283880,-2354.886252, -549.747450},
       {1620.00, -617.517403, 399.671049, -428.152441, -310.998056},
@@ -75,11 +75,11 @@ void iauLtpecl(double epj, double vec[3])
       { 882.00,  -87.676083, 198.296701, -185.138669,  -34.744450},
       { 547.00,   46.140315, 101.135679, -120.972830,   22.885731}
    };
-   static const int NPER = (int) ( sizeof pqper / 5 / sizeof (double) );
+   static const int NPER = (int) ( sizeof pqper / 5 / sizeof (float) );
 
 /* Miscellaneous */
    int i;
-   double t, p, q, w, a, s, c;
+   float t, p, q, w, a, s, c;
 
 
 /* Centuries since J2000. */

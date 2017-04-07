@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEe00a(double date1, double date2)
+float iauEe00a(float date1, float date2)
 /*
 **  - - - - - - - - -
 **   i a u E e 0 0 a
@@ -14,10 +14,10 @@ double iauEe00a(double date1, double date2)
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                  double    equation of the equinoxes (Note 2)
+**                  float    equation of the equinoxes (Note 2)
 **
 **  Notes:
 **
@@ -70,7 +70,7 @@ double iauEe00a(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dpsipr, depspr, epsa, dpsi, deps, ee;
+   float dpsipr, depspr, epsa, dpsi, deps, ee;
 
 
 /* IAU 2000 precession-rate adjustments. */

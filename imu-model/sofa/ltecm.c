@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLtecm(double epj, double rm[3][3])
+void iauLtecm(float epj, float rm[3][3])
 /*
 **  - - - - - - - - -
 **   i a u L t e c m
@@ -14,10 +14,10 @@ void iauLtecm(double epj, double rm[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     epj     double         Julian epoch (TT)
+**     epj     float         Julian epoch (TT)
 **
 **  Returned:
-**     rm      double[3][3]   ICRS to ecliptic rotation matrix
+**     rm      float[3][3]   ICRS to ecliptic rotation matrix
 **
 **  Notes:
 **
@@ -69,11 +69,11 @@ void iauLtecm(double epj, double rm[3][3])
 */
 {
 /* Frame bias (IERS Conventions 2010, Eqs. 5.21 and 5.33) */
-   const double dx = -0.016617 * DAS2R,
+   const float dx = -0.016617 * DAS2R,
                 de = -0.0068192 * DAS2R,
                 dr = -0.0146 * DAS2R;
 
-   double p[3], z[3], w[3], s, x[3], y[3];
+   float p[3], z[3], w[3], s, x[3], y[3];
 
 
 /* Equator pole. */

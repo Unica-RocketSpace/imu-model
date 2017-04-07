@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPvu(double dt, double pv[2][3], double upv[2][3])
+void iauPvu(float dt, float pv[2][3], float upv[2][3])
 /*
 **  - - - - - - -
 **   i a u P v u
@@ -14,11 +14,11 @@ void iauPvu(double dt, double pv[2][3], double upv[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     dt       double           time interval
-**     pv       double[2][3]     pv-vector
+**     dt       float           time interval
+**     pv       float[2][3]     pv-vector
 **
 **  Returned:
-**     upv      double[2][3]     p updated, v unchanged
+**     upv      float[2][3]     p updated, v unchanged
 **
 **  Notes:
 **

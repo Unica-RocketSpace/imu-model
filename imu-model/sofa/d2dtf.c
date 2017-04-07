@@ -1,7 +1,7 @@
 #include "sofa.h"
 #include <string.h>
 
-int iauD2dtf(const char *scale, int ndp, double d1, double d2,
+int iauD2dtf(const char *scale, int ndp, float d1, float d2,
              int *iy, int *im, int *id, int ihmsf[4])
 /*
 **  - - - - - - - - -
@@ -19,7 +19,7 @@ int iauD2dtf(const char *scale, int ndp, double d1, double d2,
 **  Given:
 **     scale     char[]  time scale ID (Note 1)
 **     ndp       int     resolution (Note 2)
-**     d1,d2     double  time as a 2-part Julian Date (Notes 3,4)
+**     d1,d2     float  time as a 2-part Julian Date (Notes 3,4)
 **
 **  Returned:
 **     iy,im,id  int     year, month, day in Gregorian calendar (Note 5)
@@ -86,7 +86,7 @@ int iauD2dtf(const char *scale, int ndp, double d1, double d2,
    int leap;
    char s;
    int iy1, im1, id1, js, iy2, im2, id2, ihmsf1[4], i;
-   double a1, b1, fd, dat0, dat12, w, dat24, dleap;
+   float a1, b1, fd, dat0, dat12, w, dat24, dleap;
 
 
 /* The two-part JD. */

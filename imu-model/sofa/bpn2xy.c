@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauBpn2xy(double rbpn[3][3], double *x, double *y)
+void iauBpn2xy(float rbpn[3][3], float *x, float *y)
 /*
 **  - - - - - - - - - -
 **   i a u B p n 2 x y
@@ -15,10 +15,10 @@ void iauBpn2xy(double rbpn[3][3], double *x, double *y)
 **  Status:  support function.
 **
 **  Given:
-**     rbpn      double[3][3]  celestial-to-true matrix (Note 1)
+**     rbpn      float[3][3]  celestial-to-true matrix (Note 1)
 **
 **  Returned:
-**     x,y       double        Celestial Intermediate Pole (Note 2)
+**     x,y       float        Celestial Intermediate Pole (Note 2)
 **
 **  Notes:
 **

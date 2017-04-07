@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauNut00b(double date1, double date2, double *dpsi, double *deps)
+void iauNut00b(float date1, float date2, float *dpsi, float *deps)
 /*
 **  - - - - - - - - - -
 **   i a u N u t 0 0 b
@@ -14,10 +14,10 @@ void iauNut00b(double date1, double date2, double *dpsi, double *deps)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2   double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     dpsi,deps     double    nutation, luni-solar + planetary (Note 2)
+**     dpsi,deps     float    nutation, luni-solar + planetary (Note 2)
 **
 **  Notes:
 **
@@ -128,19 +128,19 @@ void iauNut00b(double date1, double date2, double *dpsi, double *deps)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, el, elp, f, d, om, arg, dp, de, sarg, carg,
+   float t, el, elp, f, d, om, arg, dp, de, sarg, carg,
           dpsils, depsls, dpsipl, depspl;
    int i;
 
 /* Units of 0.1 microarcsecond to radians */
-   static const double U2R = DAS2R / 1e7;
+   static const float U2R = DAS2R / 1e7;
 
 /* ---------------------------------------- */
 /* Fixed offsets in lieu of planetary terms */
 /* ---------------------------------------- */
 
-   static const double DPPLAN = -0.135 * DMAS2R;
-   static const double DEPLAN =  0.388 * DMAS2R;
+   static const float DPPLAN = -0.135 * DMAS2R;
+   static const float DEPLAN =  0.388 * DMAS2R;
 
 /* --------------------------------------------------- */
 /* Luni-solar nutation: argument and term coefficients */
@@ -151,8 +151,8 @@ void iauNut00b(double date1, double date2, double *dpsi, double *deps)
 
    static const struct {
       int nl,nlp,nf,nd,nom; /* coefficients of l,l',F,D,Om */
-      double ps,pst,pc;     /* longitude sin, t*sin, cos coefficients */
-      double ec,ect,es;     /* obliquity cos, t*cos, sin coefficients */
+      float ps,pst,pc;     /* longitude sin, t*sin, cos coefficients */
+      float ec,ect,es;     /* obliquity cos, t*cos, sin coefficients */
 
    } x[] = {
 
@@ -289,11 +289,11 @@ void iauNut00b(double date1, double date2, double *dpsi, double *deps)
    for (i = NLS-1; i >= 0; i--) {
 
    /* Argument and functions. */
-      arg = fmod( (double)x[i].nl  * el  +
-                  (double)x[i].nlp * elp +
-                  (double)x[i].nf  * f   +
-                  (double)x[i].nd  * d   +
-                  (double)x[i].nom * om, D2PI  );
+      arg = fmod( (float)x[i].nl  * el  +
+                  (float)x[i].nlp * elp +
+                  (float)x[i].nf  * f   +
+                  (float)x[i].nd  * d   +
+                  (float)x[i].nom * om, D2PI  );
       sarg = sin(arg);
       carg = cos(arg);
 

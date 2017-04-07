@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauSxp(double s, double p[3], double sp[3])
+void iauSxp(float s, float p[3], float sp[3])
 /*
 **  - - - - - - -
 **   i a u S x p
@@ -14,11 +14,11 @@ void iauSxp(double s, double p[3], double sp[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     s      double        scalar
-**     p      double[3]     p-vector
+**     s      float        scalar
+**     p      float[3]     p-vector
 **
 **  Returned:
-**     sp     double[3]     s * p
+**     sp     float[3]     s * p
 **
 **  Note:
 **     It is permissible for p and sp to be the same array.

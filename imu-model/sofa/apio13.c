@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-int iauApio13(double utc1, double utc2, double dut1,
-              double elong, double phi, double hm, double xp, double yp,
-              double phpa, double tc, double rh, double wl,
+int iauApio13(float utc1, float utc2, float dut1,
+              float elong, float phi, float hm, float xp, float yp,
+              float phpa, float tc, float rh, float wl,
               iauASTROM *astrom)
 /*
 **  - - - - - - - - - -
@@ -20,36 +20,36 @@ int iauApio13(double utc1, double utc2, double dut1,
 **  Status:  support function.
 **
 **  Given:
-**     utc1   double      UTC as a 2-part...
-**     utc2   double      ...quasi Julian Date (Notes 1,2)
-**     dut1   double      UT1-UTC (seconds)
-**     elong  double      longitude (radians, east +ve, Note 3)
-**     phi    double      geodetic latitude (radians, Note 3)
-**     hm     double      height above ellipsoid (m, geodetic Notes 4,6)
-**     xp,yp  double      polar motion coordinates (radians, Note 5)
-**     phpa   double      pressure at the observer (hPa = mB, Note 6)
-**     tc     double      ambient temperature at the observer (deg C)
-**     rh     double      relative humidity at the observer (range 0-1)
-**     wl     double      wavelength (micrometers, Note 7)
+**     utc1   float      UTC as a 2-part...
+**     utc2   float      ...quasi Julian Date (Notes 1,2)
+**     dut1   float      UT1-UTC (seconds)
+**     elong  float      longitude (radians, east +ve, Note 3)
+**     phi    float      geodetic latitude (radians, Note 3)
+**     hm     float      height above ellipsoid (m, geodetic Notes 4,6)
+**     xp,yp  float      polar motion coordinates (radians, Note 5)
+**     phpa   float      pressure at the observer (hPa = mB, Note 6)
+**     tc     float      ambient temperature at the observer (deg C)
+**     rh     float      relative humidity at the observer (range 0-1)
+**     wl     float      wavelength (micrometers, Note 7)
 **
 **  Returned:
 **     astrom iauASTROM*  star-independent astrometry parameters:
-**      pmt    double       unchanged
-**      eb     double[3]    unchanged
-**      eh     double[3]    unchanged
-**      em     double       unchanged
-**      v      double[3]    unchanged
-**      bm1    double       unchanged
-**      bpn    double[3][3] unchanged
-**      along  double       longitude + s' (radians)
-**      xpl    double       polar motion xp wrt local meridian (radians)
-**      ypl    double       polar motion yp wrt local meridian (radians)
-**      sphi   double       sine of geodetic latitude
-**      cphi   double       cosine of geodetic latitude
-**      diurab double       magnitude of diurnal aberration vector
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       refraction constant A (radians)
-**      refb   double       refraction constant B (radians)
+**      pmt    float       unchanged
+**      eb     float[3]    unchanged
+**      eh     float[3]    unchanged
+**      em     float       unchanged
+**      v      float[3]    unchanged
+**      bm1    float       unchanged
+**      bpn    float[3][3] unchanged
+**      along  float       longitude + s' (radians)
+**      xpl    float       polar motion xp wrt local meridian (radians)
+**      ypl    float       polar motion yp wrt local meridian (radians)
+**      sphi   float       sine of geodetic latitude
+**      cphi   float       cosine of geodetic latitude
+**      diurab float       magnitude of diurnal aberration vector
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       refraction constant A (radians)
+**      refb   float       refraction constant B (radians)
 **
 **  Returned (function value):
 **            int         status: +1 = dubious year (Note 2)
@@ -175,7 +175,7 @@ int iauApio13(double utc1, double utc2, double dut1,
 */
 {
    int j;
-   double tai1, tai2, tt1, tt2, ut11, ut12, sp, theta, refa, refb;
+   float tai1, tai2, tt1, tt2, ut11, ut12, sp, theta, refa, refb;
 
 
 /* UTC to other time scales. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauFk5hip(double r5h[3][3], double s5h[3])
+void iauFk5hip(float r5h[3][3], float s5h[3])
 /*
 **  - - - - - - - - - -
 **   i a u F k 5 h i p
@@ -14,8 +14,8 @@ void iauFk5hip(double r5h[3][3], double s5h[3])
 **  Status:  support function.
 **
 **  Returned:
-**     r5h   double[3][3]  r-matrix: FK5 rotation wrt Hipparcos (Note 2)
-**     s5h   double[3]     r-vector: FK5 spin wrt Hipparcos (Note 3)
+**     r5h   float[3][3]  r-matrix: FK5 rotation wrt Hipparcos (Note 2)
+**     s5h   float[3]     r-vector: FK5 spin wrt Hipparcos (Note 3)
 **
 **  Notes:
 **
@@ -48,11 +48,11 @@ void iauFk5hip(double r5h[3][3], double s5h[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double v[3];
+   float v[3];
 
 /* FK5 wrt Hipparcos orientation and spin (radians, radians/year) */
-   double epx, epy, epz;
-   double omx, omy, omz;
+   float epx, epy, epz;
+   float omx, omy, omz;
 
 
    epx = -19.9e-3 * DAS2R;

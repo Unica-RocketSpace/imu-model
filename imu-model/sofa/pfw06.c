@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauPfw06(double date1, double date2,
-              double *gamb, double *phib, double *psib, double *epsa)
+void iauPfw06(float date1, float date2,
+              float *gamb, float *phib, float *psib, float *epsa)
 /*
 **  - - - - - - - - -
 **   i a u P f w 0 6
@@ -15,13 +15,13 @@ void iauPfw06(double date1, double date2,
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     gamb         double   F-W angle gamma_bar (radians)
-**     phib         double   F-W angle phi_bar (radians)
-**     psib         double   F-W angle psi_bar (radians)
-**     epsa         double   F-W angle epsilon_A (radians)
+**     gamb         float   F-W angle gamma_bar (radians)
+**     phib         float   F-W angle phi_bar (radians)
+**     psib         float   F-W angle psi_bar (radians)
+**     epsa         float   F-W angle epsilon_A (radians)
 **
 **  Notes:
 **
@@ -85,7 +85,7 @@ void iauPfw06(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t;
+   float t;
 
 
 /* Interval between fundamental date J2000.0 and given date (JC). */

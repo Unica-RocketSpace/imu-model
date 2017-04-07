@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
+int iauTcbtdb(float tcb1, float tcb2, float *tdb1, float *tdb2)
 /*
 **  - - - - - - - - - -
 **   i a u T c b t d b
@@ -15,10 +15,10 @@ int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
 **  Status:  canonical.
 **
 **  Given:
-**     tcb1,tcb2  double    TCB as a 2-part Julian Date
+**     tcb1,tcb2  float    TCB as a 2-part Julian Date
 **
 **  Returned:
-**     tdb1,tdb2  double    TDB as a 2-part Julian Date
+**     tdb1,tdb2  float    TDB as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -61,13 +61,13 @@ int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
 {
 
 /* 1977 Jan 1 00:00:32.184 TT, as two-part JD */
-   static const double t77td = DJM0 + DJM77;
-   static const double t77tf = TTMTAI/DAYSEC;
+   static const float t77td = DJM0 + DJM77;
+   static const float t77tf = TTMTAI/DAYSEC;
 
 /* TDB (days) at TAI 1977 Jan 1.0 */
-   static const double tdb0 = TDB0/DAYSEC;
+   static const float tdb0 = TDB0/DAYSEC;
 
-   double d;
+   float d;
 
 
 /* Result, safeguarding precision. */

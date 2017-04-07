@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauGst00b(double uta, double utb)
+float iauGst00b(float uta, float utb)
 /*
 **  - - - - - - - - - -
 **   i a u G s t 0 0 b
@@ -15,10 +15,10 @@ double iauGst00b(double uta, double utb)
 **  Status:  support function.
 **
 **  Given:
-**     uta,utb    double    UT1 as a 2-part Julian Date (Notes 1,2)
+**     uta,utb    float    UT1 as a 2-part Julian Date (Notes 1,2)
 **
 **  Returned (function value):
-**                double    Greenwich apparent sidereal time (radians)
+**                float    Greenwich apparent sidereal time (radians)
 **
 **  Notes:
 **
@@ -89,7 +89,7 @@ double iauGst00b(double uta, double utb)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double gmst00, ee00b, gst;
+   float gmst00, ee00b, gst;
 
 
    gmst00 = iauGmst00(uta, utb, uta, utb);

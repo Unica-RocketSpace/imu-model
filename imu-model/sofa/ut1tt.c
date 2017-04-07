@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauUt1tt(double ut11, double ut12, double dt,
-             double *tt1, double *tt2)
+int iauUt1tt(float ut11, float ut12, float dt,
+             float *tt1, float *tt2)
 /*
 **  - - - - - - - - -
 **   i a u U t 1 t t
@@ -16,11 +16,11 @@ int iauUt1tt(double ut11, double ut12, double dt,
 **  Status:  canonical.
 **
 **  Given:
-**     ut11,ut12  double    UT1 as a 2-part Julian Date
-**     dt         double    TT-UT1 in seconds
+**     ut11,ut12  float    UT1 as a 2-part Julian Date
+**     dt         float    TT-UT1 in seconds
 **
 **  Returned:
-**     tt1,tt2    double    TT as a 2-part Julian Date
+**     tt1,tt2    float    TT as a 2-part Julian Date
 **
 **  Returned (function value):
 **                int       status:  0 = OK
@@ -46,7 +46,7 @@ int iauUt1tt(double ut11, double ut12, double dt,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dtd;
+   float dtd;
 
 
 /* Result, safeguarding precision. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLtpequ(double epj, double veq[3])
+void iauLtpequ(float epj, float veq[3])
 /*
 **  - - - - - - - - - -
 **   i a u L t p e q u
@@ -14,10 +14,10 @@ void iauLtpequ(double epj, double veq[3])
 **  Status:  support function.
 **
 **  Given:
-**     epj     double         Julian epoch (TT)
+**     epj     float         Julian epoch (TT)
 **
 **  Returned:
-**     veq     double[3]      equator pole unit vector
+**     veq     float[3]      equator pole unit vector
 **
 **  Notes:
 **
@@ -50,7 +50,7 @@ void iauLtpequ(double epj, double veq[3])
 {
 /* Polynomial coefficients */
    enum { NPOL = 4 };
-   static const double xypol[2][NPOL] = {
+   static const float xypol[2][NPOL] = {
       {  5453.282155,
             0.4252841,
            -0.00037173,
@@ -62,7 +62,7 @@ void iauLtpequ(double epj, double veq[3])
    };
 
 /* Periodic coefficients */
-   static const double xyper[][5] = {
+   static const float xyper[][5] = {
       { 256.75, -819.940624,75004.344875,81491.287984, 1558.515853},
       { 708.15,-8444.676815,  624.033993,  787.163481, 7774.939698},
       { 274.20, 2600.009459, 1251.136893, 1251.296102,-2219.534038},
@@ -78,11 +78,11 @@ void iauLtpequ(double epj, double veq[3])
       { 220.30,  179.516345, -165.405086, -210.157124, -171.330180},
       {1200.00,   -9.814756,    9.344131,  -44.919798,  -22.899655}
    };
-   static const int NPER = (int) ( sizeof xyper / 5 / sizeof (double) );
+   static const int NPER = (int) ( sizeof xyper / 5 / sizeof (float) );
 
 /* Miscellaneous */
    int i;
-   double t, x, y, w, a, s, c;
+   float t, x, y, w, a, s, c;
 
 
 /* Centuries since J2000. */

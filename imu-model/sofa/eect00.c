@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauEect00(double date1, double date2)
+float iauEect00(float date1, float date2)
 /*
 **  - - - - - - - - - -
 **   i a u E e c t 0 0
@@ -15,10 +15,10 @@ double iauEect00(double date1, double date2)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                  double   complementary terms (Note 2)
+**                  float   complementary terms (Note 2)
 **
 **  Notes:
 **
@@ -104,17 +104,17 @@ double iauEect00(double date1, double date2)
 */
 {
 /* Time since J2000.0, in Julian centuries */
-   double t;
+   float t;
 
 /* Miscellaneous */
    int i, j;
-   double a, s0, s1;
+   float a, s0, s1;
 
 /* Fundamental arguments */
-   double fa[14];
+   float fa[14];
 
 /* Returned value. */
-   double eect;
+   float eect;
 
 /* ----------------------------------------- */
 /* The series for the EE complementary terms */
@@ -122,7 +122,7 @@ double iauEect00(double date1, double date2)
 
    typedef struct {
       int nfa[8];      /* coefficients of l,l',F,D,Om,LVe,LE,pA */
-      double s, c;     /* sine and cosine coefficients */
+      float s, c;     /* sine and cosine coefficients */
    } TERM;
 
 /* Terms of order t^0 */
@@ -217,7 +217,7 @@ double iauEect00(double date1, double date2)
    for (i = NE0-1; i >= 0; i--) {
       a = 0.0;
       for (j = 0; j < 8; j++) {
-         a += (double)(e0[i].nfa[j]) * fa[j];
+         a += (float)(e0[i].nfa[j]) * fa[j];
       }
       s0 += e0[i].s * sin(a) + e0[i].c * cos(a);
    }
@@ -225,7 +225,7 @@ double iauEect00(double date1, double date2)
    for (i = NE1-1; i >= 0; i--) {
       a = 0.0;
       for (j = 0; j < 8; j++) {
-         a += (double)(e1[i].nfa[j]) * fa[j];
+         a += (float)(e1[i].nfa[j]) * fa[j];
       }
       s1 += e1[i].s * sin(a) + e1[i].c * cos(a);
    }

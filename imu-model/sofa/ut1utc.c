@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauUt1utc(double ut11, double ut12, double dut1,
-              double *utc1, double *utc2)
+int iauUt1utc(float ut11, float ut12, float dut1,
+              float *utc1, float *utc2)
 /*
 **  - - - - - - - - - -
 **   i a u U t 1 u t c
@@ -16,11 +16,11 @@ int iauUt1utc(double ut11, double ut12, double dut1,
 **  Status:  canonical.
 **
 **  Given:
-**     ut11,ut12  double   UT1 as a 2-part Julian Date (Note 1)
-**     dut1       double   Delta UT1: UT1-UTC in seconds (Note 2)
+**     ut11,ut12  float   UT1 as a 2-part Julian Date (Note 1)
+**     dut1       float   Delta UT1: UT1-UTC in seconds (Note 2)
 **
 **  Returned:
-**     utc1,utc2  double   UTC as a 2-part quasi Julian Date (Notes 3,4)
+**     utc1,utc2  float   UTC as a 2-part quasi Julian Date (Notes 3,4)
 **
 **  Returned (function value):
 **                int      status: +1 = dubious year (Note 5)
@@ -76,7 +76,7 @@ int iauUt1utc(double ut11, double ut12, double dut1,
 {
    int big1;
    int i, iy, im, id, js;
-   double duts, u1, u2, d1, dats1, d2, fd, dats2, ddats, us1, us2, du;
+   float duts, u1, u2, d1, dats1, d2, fd, dats2, ddats, us1, us2, du;
 
 
 /* UT1-UTC in seconds. */
@@ -96,7 +96,7 @@ int iauUt1utc(double ut11, double ut12, double dut1,
    d1 = u1;
    dats1 = 0;
    for ( i = -1; i <= 3; i++ ) {
-      d2 = u2 + (double) i;
+      d2 = u2 + (float) i;
       if ( iauJd2cal(d1, d2, &iy, &im, &id, &fd) ) return -1;
       js = iauDat(iy, im, id, 0.0, &dats2);
       if ( js < 0 ) return -1;

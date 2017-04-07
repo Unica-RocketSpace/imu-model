@@ -1,7 +1,7 @@
 #include "sofa.h"
 #include <stdlib.h>
 
-int iauTf2d(char s, int ihour, int imin, double sec, double *days)
+int iauTf2d(char s, int ihour, int imin, float sec, float *days)
 /*
 **  - - - - - - - -
 **   i a u T f 2 d
@@ -18,10 +18,10 @@ int iauTf2d(char s, int ihour, int imin, double sec, double *days)
 **     s         char    sign:  '-' = negative, otherwise positive
 **     ihour     int     hours
 **     imin      int     minutes
-**     sec       double  seconds
+**     sec       float  seconds
 **
 **  Returned:
-**     days      double  interval in days
+**     days      float  interval in days
 **
 **  Returned (function value):
 **               int     status:  0 = OK
@@ -49,8 +49,8 @@ int iauTf2d(char s, int ihour, int imin, double sec, double *days)
 
 /* Compute the interval. */
    *days  = ( s == '-' ? -1.0 : 1.0 ) *
-            ( 60.0 * ( 60.0 * ( (double) abs(ihour) ) +
-                              ( (double) abs(imin) ) ) +
+            ( 60.0 * ( 60.0 * ( (float) abs(ihour) ) +
+                              ( (float) abs(imin) ) ) +
                                          fabs(sec) ) / DAYSEC;
 
 /* Validate arguments and return status. */

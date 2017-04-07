@@ -1,11 +1,11 @@
 #include "sofa.h"
 
-void iauApco(double date1, double date2,
-             double ebpv[2][3], double ehp[3],
-             double x, double y, double s, double theta,
-             double elong, double phi, double hm,
-             double xp, double yp, double sp,
-             double refa, double refb,
+void iauApco(float date1, float date2,
+             float ebpv[2][3], float ehp[3],
+             float x, float y, float s, float theta,
+             float elong, float phi, float hm,
+             float xp, float yp, float sp,
+             float refa, float refb,
              iauASTROM *astrom)
 /*
 **  - - - - - - - -
@@ -24,39 +24,39 @@ void iauApco(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1  double       TDB as a 2-part...
-**     date2  double       ...Julian Date (Note 1)
-**     ebpv   double[2][3] Earth barycentric PV (au, au/day, Note 2)
-**     ehp    double[3]    Earth heliocentric P (au, Note 2)
-**     x,y    double       CIP X,Y (components of unit vector)
-**     s      double       the CIO locator s (radians)
-**     theta  double       Earth rotation angle (radians)
-**     elong  double       longitude (radians, east +ve, Note 3)
-**     phi    double       latitude (geodetic, radians, Note 3)
-**     hm     double       height above ellipsoid (m, geodetic, Note 3)
-**     xp,yp  double       polar motion coordinates (radians, Note 4)
-**     sp     double       the TIO locator s' (radians, Note 4)
-**     refa   double       refraction constant A (radians, Note 5)
-**     refb   double       refraction constant B (radians, Note 5)
+**     date1  float       TDB as a 2-part...
+**     date2  float       ...Julian Date (Note 1)
+**     ebpv   float[2][3] Earth barycentric PV (au, au/day, Note 2)
+**     ehp    float[3]    Earth heliocentric P (au, Note 2)
+**     x,y    float       CIP X,Y (components of unit vector)
+**     s      float       the CIO locator s (radians)
+**     theta  float       Earth rotation angle (radians)
+**     elong  float       longitude (radians, east +ve, Note 3)
+**     phi    float       latitude (geodetic, radians, Note 3)
+**     hm     float       height above ellipsoid (m, geodetic, Note 3)
+**     xp,yp  float       polar motion coordinates (radians, Note 4)
+**     sp     float       the TIO locator s' (radians, Note 4)
+**     refa   float       refraction constant A (radians, Note 5)
+**     refb   float       refraction constant B (radians, Note 5)
 **
 **  Returned:
 **     astrom iauASTROM*   star-independent astrometry parameters:
-**      pmt    double       PM time interval (SSB, Julian years)
-**      eb     double[3]    SSB to observer (vector, au)
-**      eh     double[3]    Sun to observer (unit vector)
-**      em     double       distance from Sun to observer (au)
-**      v      double[3]    barycentric observer velocity (vector, c)
-**      bm1    double       sqrt(1-|v|^2): reciprocal of Lorenz factor
-**      bpn    double[3][3] bias-precession-nutation matrix
-**      along  double       longitude + s' (radians)
-**      xpl    double       polar motion xp wrt local meridian (radians)
-**      ypl    double       polar motion yp wrt local meridian (radians)
-**      sphi   double       sine of geodetic latitude
-**      cphi   double       cosine of geodetic latitude
-**      diurab double       magnitude of diurnal aberration vector
-**      eral   double       "local" Earth rotation angle (radians)
-**      refa   double       refraction constant A (radians)
-**      refb   double       refraction constant B (radians)
+**      pmt    float       PM time interval (SSB, Julian years)
+**      eb     float[3]    SSB to observer (vector, au)
+**      eh     float[3]    Sun to observer (unit vector)
+**      em     float       distance from Sun to observer (au)
+**      v      float[3]    barycentric observer velocity (vector, c)
+**      bm1    float       sqrt(1-|v|^2): reciprocal of Lorenz factor
+**      bpn    float[3][3] bias-precession-nutation matrix
+**      along  float       longitude + s' (radians)
+**      xpl    float       polar motion xp wrt local meridian (radians)
+**      ypl    float       polar motion yp wrt local meridian (radians)
+**      sphi   float       sine of geodetic latitude
+**      cphi   float       cosine of geodetic latitude
+**      diurab float       magnitude of diurnal aberration vector
+**      eral   float       "local" Earth rotation angle (radians)
+**      refa   float       refraction constant A (radians)
+**      refb   float       refraction constant B (radians)
 **
 **  Notes:
 **
@@ -164,7 +164,7 @@ void iauApco(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double sl, cl, r[3][3], pvc[2][3], pv[2][3];
+   float sl, cl, r[3][3], pvc[2][3], pv[2][3];
 
 
 /* Longitude with adjustment for TIO locator s'. */

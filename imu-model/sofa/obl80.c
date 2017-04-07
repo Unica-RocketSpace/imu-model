@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauObl80(double date1, double date2)
+float iauObl80(float date1, float date2)
 /*
 **  - - - - - - - - -
 **   i a u O b l 8 0
@@ -14,10 +14,10 @@ double iauObl80(double date1, double date2)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2   double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2   float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                   double    obliquity of the ecliptic (radians, Note 2)
+**                   float    obliquity of the ecliptic (radians, Note 2)
 **
 **  Notes:
 **
@@ -56,7 +56,7 @@ double iauObl80(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, eps0;
+   float t, eps0;
 
 
 /* Interval between fundamental epoch J2000.0 and given date (JC). */

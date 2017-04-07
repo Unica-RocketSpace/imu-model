@@ -1,7 +1,7 @@
 #include "sofa.h"
 #include <stdlib.h>
 
-int iauAf2a(char s, int ideg, int iamin, double asec, double *rad)
+int iauAf2a(char s, int ideg, int iamin, float asec, float *rad)
 /*
 **  - - - - - - - -
 **   i a u A f 2 a
@@ -18,10 +18,10 @@ int iauAf2a(char s, int ideg, int iamin, double asec, double *rad)
 **     s         char    sign:  '-' = negative, otherwise positive
 **     ideg      int     degrees
 **     iamin     int     arcminutes
-**     asec      double  arcseconds
+**     asec      float  arcseconds
 **
 **  Returned:
-**     rad       double  angle in radians
+**     rad       float  angle in radians
 **
 **  Returned (function value):
 **               int     status:  0 = OK
@@ -49,8 +49,8 @@ int iauAf2a(char s, int ideg, int iamin, double asec, double *rad)
 
 /* Compute the interval. */
    *rad  = ( s == '-' ? -1.0 : 1.0 ) *
-           ( 60.0 * ( 60.0 * ( (double) abs(ideg) ) +
-                             ( (double) abs(iamin) ) ) +
+           ( 60.0 * ( 60.0 * ( (float) abs(ideg) ) +
+                             ( (float) abs(iamin) ) ) +
                                         fabs(asec) ) * DAS2R;
 
 /* Validate arguments and return status. */

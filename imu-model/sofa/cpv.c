@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauCpv(double pv[2][3], double c[2][3])
+void iauCpv(float pv[2][3], float c[2][3])
 /*
 **  - - - - - - -
 **   i a u C p v
@@ -14,10 +14,10 @@ void iauCpv(double pv[2][3], double c[2][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     pv     double[2][3]    position/velocity vector to be copied
+**     pv     float[2][3]    position/velocity vector to be copied
 **
 **  Returned:
-**     c      double[2][3]    copy
+**     c      float[2][3]    copy
 **
 **  Called:
 **     iauCp        copy p-vector

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-int iauGc2gd ( int n, double xyz[3],
-               double *elong, double *phi, double *height )
+int iauGc2gd ( int n, float xyz[3],
+               float *elong, float *phi, float *height )
 /*
 **  - - - - - - - - -
 **   i a u G c 2 g d
@@ -17,12 +17,12 @@ int iauGc2gd ( int n, double xyz[3],
 **
 **  Given:
 **     n       int        ellipsoid identifier (Note 1)
-**     xyz     double[3]  geocentric vector (Note 2)
+**     xyz     float[3]  geocentric vector (Note 2)
 **
 **  Returned:
-**     elong   double     longitude (radians, east +ve, Note 3)
-**     phi     double     latitude (geodetic, radians, Note 3)
-**     height  double     height above ellipsoid (geodetic, Notes 2,3)
+**     elong   float     longitude (radians, east +ve, Note 3)
+**     phi     float     latitude (geodetic, radians, Note 3)
+**     height  float     height above ellipsoid (geodetic, Notes 2,3)
 **
 **  Returned (function value):
 **            int         status:  0 = OK
@@ -64,7 +64,7 @@ int iauGc2gd ( int n, double xyz[3],
 */
 {
    int j;
-   double a, f;
+   float a, f;
 
 
 /* Obtain reference ellipsoid parameters. */

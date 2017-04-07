@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLtpb(double epj, double rpb[3][3])
+void iauLtpb(float epj, float rpb[3][3])
 /*
 **  - - - - - - - -
 **   i a u L t p b
@@ -14,10 +14,10 @@ void iauLtpb(double epj, double rpb[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     epj     double         Julian epoch (TT)
+**     epj     float         Julian epoch (TT)
 **
 **  Returned:
-**     rpb     double[3][3]   precession-bias matrix, J2000.0 to date
+**     rpb     float[3][3]   precession-bias matrix, J2000.0 to date
 **
 **  Notes:
 **
@@ -58,12 +58,12 @@ void iauLtpb(double epj, double rpb[3][3])
 */
 {
 /* Frame bias (IERS Conventions 2010, Eqs. 5.21 and 5.33) */
-   const double dx = -0.016617 * DAS2R,
+   const float dx = -0.016617 * DAS2R,
                 de = -0.0068192 * DAS2R,
                 dr = -0.0146 * DAS2R;
 
    int i;
-   double rp[3][3];
+   float rp[3][3];
 
 
 /* Precession matrix. */

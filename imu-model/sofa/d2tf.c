@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
+void iauD2tf(int ndp, float days, char *sign, int ihmsf[4])
 /*
 **  - - - - - - - -
 **   i a u D 2 t f
@@ -15,7 +15,7 @@ void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
 **
 **  Given:
 **     ndp     int     resolution (Note 1)
-**     days    double  interval in days
+**     days    float  interval in days
 **
 **  Returned:
 **     sign    char    '+' or '-'
@@ -41,7 +41,7 @@ void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
 **      :            0 00 00.000...
 **
 **  2) The largest positive useful value for ndp is determined by the
-**     size of days, the format of double on the target platform, and
+**     size of days, the format of float on the target platform, and
 **     the risk of overflowing ihmsf[3].  On a typical platform, for
 **     days up to 1.0, the available floating-point precision might
 **     correspond to ndp=12.  However, the practical limit is typically
@@ -61,7 +61,7 @@ void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
 */
 {
    int nrs, n;
-   double rs, rm, rh, a, w, ah, am, as, af;
+   float rs, rm, rh, a, w, ah, am, as, af;
 
 
 /* Handle sign. */
@@ -76,7 +76,7 @@ void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
       for (n = 1; n <= -ndp; n++) {
           nrs *= (n == 2 || n == 4) ? 6 : 10;
       }
-      rs = (double) nrs;
+      rs = (float) nrs;
       w = a / rs;
       a = rs * dnint(w);
    }
@@ -86,7 +86,7 @@ void iauD2tf(int ndp, double days, char *sign, int ihmsf[4])
    for (n = 1; n <= ndp; n++) {
       nrs *= 10;
    }
-   rs = (double) nrs;
+   rs = (float) nrs;
    rm = rs * 60.0;
    rh = rm * 60.0;
 

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauPap(double a[3], double b[3])
+float iauPap(float a[3], float b[3])
 /*
 **  - - - - - - -
 **   i a u P a p
@@ -14,11 +14,11 @@ double iauPap(double a[3], double b[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     a      double[3]  direction of reference point
-**     b      double[3]  direction of point whose PA is required
+**     a      float[3]  direction of reference point
+**     b      float[3]  direction of point whose PA is required
 **
 **  Returned (function value):
-**            double     position angle of b with respect to a (radians)
+**            float     position angle of b with respect to a (radians)
 **
 **  Notes:
 **
@@ -49,7 +49,7 @@ double iauPap(double a[3], double b[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double am, au[3], bm, st, ct, xa, ya, za, eta[3], xi[3], a2b[3], pa;
+   float am, au[3], bm, st, ct, xa, ya, za, eta[3], xi[3], a2b[3], pa;
 
 
 /* Modulus and direction of the a vector. */

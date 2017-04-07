@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauPrec76(double date01, double date02, double date11, double date12,
-               double *zeta, double *z, double *theta)
+void iauPrec76(float date01, float date02, float date11, float date12,
+               float *zeta, float *z, float *theta)
 /*
 **  - - - - - - - - - -
 **   i a u P r e c 7 6
@@ -19,13 +19,13 @@ void iauPrec76(double date01, double date02, double date11, double date12,
 **  Status:  canonical model.
 **
 **  Given:
-**     date01,date02   double    TDB starting date (Note 1)
-**     date11,date12   double    TDB ending date (Note 1)
+**     date01,date02   float    TDB starting date (Note 1)
+**     date11,date12   float    TDB ending date (Note 1)
 **
 **  Returned:
-**     zeta            double    1st rotation: radians cw around z
-**     z               double    3rd rotation: radians cw around z
-**     theta           double    2nd rotation: radians ccw around y
+**     zeta            float    1st rotation: radians cw around z
+**     z               float    3rd rotation: radians cw around z
+**     theta           float    2nd rotation: radians ccw around y
 **
 **  Notes:
 **
@@ -78,7 +78,7 @@ void iauPrec76(double date01, double date02, double date11, double date12,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t0, t, tas2r, w;
+   float t0, t, tas2r, w;
 
 
 /* Interval between fundamental epoch J2000.0 and start date (JC). */

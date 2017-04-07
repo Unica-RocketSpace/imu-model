@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauPmat76(double date1, double date2, double rmatp[3][3])
+void iauPmat76(float date1, float date2, float rmatp[3][3])
 /*
 **  - - - - - - - - - -
 **   i a u P m a t 7 6
@@ -14,10 +14,10 @@ void iauPmat76(double date1, double date2, double rmatp[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double       ending date, TT (Note 1)
+**     date1,date2 float       ending date, TT (Note 1)
 **
 **  Returned:
-**     rmatp       double[3][3] precession matrix, J2000.0 -> date1+date2
+**     rmatp       float[3][3] precession matrix, J2000.0 -> date1+date2
 **
 **  Notes:
 **
@@ -78,7 +78,7 @@ void iauPmat76(double date1, double date2, double rmatp[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double zeta, z, theta, wmat[3][3];
+   float zeta, z, theta, wmat[3][3];
 
 
 /* Precession Euler angles, J2000.0 to specified date. */

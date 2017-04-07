@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauS2p(double theta, double phi, double r, double p[3])
+void iauS2p(float theta, float phi, float r, float p[3])
 /*
 **  - - - - - - -
 **   i a u S 2 p
@@ -14,12 +14,12 @@ void iauS2p(double theta, double phi, double r, double p[3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     theta   double       longitude angle (radians)
-**     phi     double       latitude angle (radians)
-**     r       double       radial distance
+**     theta   float       longitude angle (radians)
+**     phi     float       latitude angle (radians)
+**     r       float       radial distance
 **
 **  Returned:
-**     p       double[3]    Cartesian coordinates
+**     p       float[3]    Cartesian coordinates
 **
 **  Called:
 **     iauS2c       spherical coordinates to unit vector
@@ -32,7 +32,7 @@ void iauS2p(double theta, double phi, double r, double p[3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double u[3];
+   float u[3];
 
 
    iauS2c(theta, phi, u);

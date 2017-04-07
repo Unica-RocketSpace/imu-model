@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauLteqec(double epj, double dr, double dd, double *dl, double *db)
+void iauLteqec(float epj, float dr, float dd, float *dl, float *db)
 /*
 **  - - - - - - - - - -
 **   i a u L t e q e c
@@ -16,11 +16,11 @@ void iauLteqec(double epj, double dr, double dd, double *dl, double *db)
 **  Status:  support function.
 **
 **  Given:
-**     epj     double     Julian epoch (TT)
-**     dr,dd   double     ICRS right ascension and declination (radians)
+**     epj     float     Julian epoch (TT)
+**     dr,dd   float     ICRS right ascension and declination (radians)
 **
 **  Returned:
-**     dl,db   double     ecliptic longitude and latitude (radians)
+**     dl,db   float     ecliptic longitude and latitude (radians)
 **
 **  1) No assumptions are made about whether the coordinates represent
 **     starlight and embody astrometric effects such as parallax or
@@ -63,7 +63,7 @@ void iauLteqec(double epj, double dr, double dd, double *dl, double *db)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rm[3][3], v1[3], v2[3], a, b;
+   float rm[3][3], v1[3], v2[3], a, b;
 
 
 /* Spherical to Cartesian. */

@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauEcm06(double date1, double date2, double rm[3][3])
+void iauEcm06(float date1, float date2, float rm[3][3])
 /*
 **  - - - - - - - - -
 **   i a u E c m 0 6
@@ -14,10 +14,10 @@ void iauEcm06(double date1, double date2, double rm[3][3])
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double         TT as a 2-part Julian date (Note 1)
+**     date1,date2  float         TT as a 2-part Julian date (Note 1)
 **
 **  Returned:
-**     rm           double[3][3]   ICRS to ecliptic rotation matrix
+**     rm           float[3][3]   ICRS to ecliptic rotation matrix
 **
 **  Notes:
 **
@@ -71,7 +71,7 @@ void iauEcm06(double date1, double date2, double rm[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double ob, bp[3][3], e[3][3];
+   float ob, bp[3][3], e[3][3];
 
 
 /* Obliquity, IAU 2006. */

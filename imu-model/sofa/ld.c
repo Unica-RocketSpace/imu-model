@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauLd(double bm, double p[3], double q[3], double e[3],
-           double em, double dlim, double p1[3])
+void iauLd(float bm, float p[3], float q[3], float e[3],
+           float em, float dlim, float p1[3])
 /*
 **  - - - - - -
 **   i a u L d
@@ -16,15 +16,15 @@ void iauLd(double bm, double p[3], double q[3], double e[3],
 **  Status:  support function.
 **
 **  Given:
-**     bm     double     mass of the gravitating body (solar masses)
-**     p      double[3]  direction from observer to source (unit vector)
-**     q      double[3]  direction from body to source (unit vector)
-**     e      double[3]  direction from body to observer (unit vector)
-**     em     double     distance from body to observer (au)
-**     dlim   double     deflection limiter (Note 4)
+**     bm     float     mass of the gravitating body (solar masses)
+**     p      float[3]  direction from observer to source (unit vector)
+**     q      float[3]  direction from body to source (unit vector)
+**     e      float[3]  direction from body to observer (unit vector)
+**     em     float     distance from body to observer (au)
+**     dlim   float     deflection limiter (Note 4)
 **
 **  Returned:
-**     p1     double[3]  observer to deflected source (unit vector)
+**     p1     float[3]  observer to deflected source (unit vector)
 **
 **  Notes:
 **
@@ -81,7 +81,7 @@ void iauLd(double bm, double p[3], double q[3], double e[3],
 */
 {
    int i;
-   double qpe[3], qdqpe, w, eq[3], peq[3];
+   float qpe[3], qdqpe, w, eq[3], peq[3];
 
 
 /* q . (q + e). */

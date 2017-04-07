@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauC2tpe(double tta, double ttb, double uta, double utb,
-              double dpsi, double deps, double xp, double yp,
-              double rc2t[3][3])
+void iauC2tpe(float tta, float ttb, float uta, float utb,
+              float dpsi, float deps, float xp, float yp,
+              float rc2t[3][3])
 /*
 **  - - - - - - - - -
 **   i a u C 2 t p e
@@ -17,13 +17,13 @@ void iauC2tpe(double tta, double ttb, double uta, double utb,
 **  Status:  support function.
 **
 **  Given:
-**     tta,ttb    double        TT as a 2-part Julian Date (Note 1)
-**     uta,utb    double        UT1 as a 2-part Julian Date (Note 1)
-**     dpsi,deps  double        nutation (Note 2)
-**     xp,yp      double        coordinates of the pole (radians, Note 3)
+**     tta,ttb    float        TT as a 2-part Julian Date (Note 1)
+**     uta,utb    float        UT1 as a 2-part Julian Date (Note 1)
+**     dpsi,deps  float        nutation (Note 2)
+**     xp,yp      float        coordinates of the pole (radians, Note 3)
 **
 **  Returned:
-**     rc2t       double[3][3]  celestial-to-terrestrial matrix (Note 4)
+**     rc2t       float[3][3]  celestial-to-terrestrial matrix (Note 4)
 **
 **  Notes:
 **
@@ -95,7 +95,7 @@ void iauC2tpe(double tta, double ttb, double uta, double utb,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double epsa, rb[3][3], rp[3][3], rbp[3][3], rn[3][3],
+   float epsa, rb[3][3], rp[3][3], rbp[3][3], rn[3][3],
           rbpn[3][3], gmst, ee, sp, rpom[3][3];
 
 

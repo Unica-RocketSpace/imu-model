@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauXys00a(double date1, double date2,
-               double *x, double *y, double *s)
+void iauXys00a(float date1, float date2,
+               float *x, float *y, float *s)
 /*
 **  - - - - - - - - - -
 **   i a u X y s 0 0 a
@@ -17,11 +17,11 @@ void iauXys00a(double date1, double date2,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2  double   TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float   TT as a 2-part Julian Date (Note 1)
 **
 **  Returned:
-**     x,y          double   Celestial Intermediate Pole (Note 2)
-**     s            double   the CIO locator s (Note 2)
+**     x,y          float   Celestial Intermediate Pole (Note 2)
+**     s            float   the CIO locator s (Note 2)
 **
 **  Notes:
 **
@@ -71,7 +71,7 @@ void iauXys00a(double date1, double date2,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double rbpn[3][3];
+   float rbpn[3][3];
 
 
 /* Form the bias-precession-nutation matrix, IAU 2000A. */

@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauAb(double pnat[3], double v[3], double s, double bm1,
-           double ppr[3])
+void iauAb(float pnat[3], float v[3], float s, float bm1,
+           float ppr[3])
 /*
 **  - - - - - -
 **   i a u A b
@@ -16,13 +16,13 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 **  Status:  support function.
 **
 **  Given:
-**    pnat    double[3]   natural direction to the source (unit vector)
-**    v       double[3]   observer barycentric velocity in units of c
-**    s       double      distance between the Sun and the observer (au)
-**    bm1     double      sqrt(1-|v|^2): reciprocal of Lorenz factor
+**    pnat    float[3]   natural direction to the source (unit vector)
+**    v       float[3]   observer barycentric velocity in units of c
+**    s       float      distance between the Sun and the observer (au)
+**    bm1     float      sqrt(1-|v|^2): reciprocal of Lorenz factor
 **
 **  Returned:
-**    ppr     double[3]   proper direction to source (unit vector)
+**    ppr     float[3]   proper direction to source (unit vector)
 **
 **  Notes:
 **
@@ -61,7 +61,7 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 */
 {
    int i;
-   double pdv, w1, w2, r2, w, p[3], r;
+   float pdv, w1, w2, r2, w, p[3], r;
 
 
    pdv = iauPdp(pnat, v);

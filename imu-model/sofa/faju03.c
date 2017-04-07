@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFaju03(double t)
+float iauFaju03(float t)
 /*
 **  - - - - - - - - - -
 **   i a u F a j u 0 3
@@ -15,10 +15,10 @@ double iauFaju03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    mean longitude of Jupiter, radians (Note 2)
+**           float    mean longitude of Jupiter, radians (Note 2)
 **
 **  Notes:
 **
@@ -46,7 +46,7 @@ double iauFaju03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of Jupiter (IERS Conventions 2003). */

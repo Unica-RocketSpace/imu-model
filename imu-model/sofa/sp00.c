@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauSp00(double date1, double date2)
+float iauSp00(float date1, float date2)
 /*
 **  - - - - - - - -
 **   i a u S p 0 0
@@ -15,10 +15,10 @@ double iauSp00(double date1, double date2)
 **  Status:  canonical model.
 **
 **  Given:
-**     date1,date2  double    TT as a 2-part Julian Date (Note 1)
+**     date1,date2  float    TT as a 2-part Julian Date (Note 1)
 **
 **  Returned (function value):
-**                  double    the TIO locator s' in radians (Note 2)
+**                  float    the TIO locator s' in radians (Note 2)
 **
 **  Notes:
 **
@@ -59,7 +59,7 @@ double iauSp00(double date1, double date2)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double t, sp;
+   float t, sp;
 
 
 /* Interval between fundamental epoch J2000.0 and current date (JC). */

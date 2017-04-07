@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauFaf03(double t)
+float iauFaf03(float t)
 /*
 **  - - - - - - - - -
 **   i a u F a f 0 3
@@ -16,10 +16,10 @@ double iauFaf03(double t)
 **  Status:  canonical model.
 **
 **  Given:
-**     t     double    TDB, Julian centuries since J2000.0 (Note 1)
+**     t     float    TDB, Julian centuries since J2000.0 (Note 1)
 **
 **  Returned (function value):
-**           double    F, radians (Note 2)
+**           float    F, radians (Note 2)
 **
 **  Notes:
 **
@@ -44,7 +44,7 @@ double iauFaf03(double t)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double a;
+   float a;
 
 
 /* Mean longitude of the Moon minus that of the ascending node */

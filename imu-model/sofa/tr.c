@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-void iauTr(double r[3][3], double rt[3][3])
+void iauTr(float r[3][3], float rt[3][3])
 /*
 **  - - - - - -
 **   i a u T r
@@ -14,10 +14,10 @@ void iauTr(double r[3][3], double rt[3][3])
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     r        double[3][3]    r-matrix
+**     r        float[3][3]    r-matrix
 **
 **  Returned:
-**     rt       double[3][3]    transpose
+**     rt       float[3][3]    transpose
 **
 **  Note:
 **     It is permissible for r and rt to be the same array.
@@ -32,7 +32,7 @@ void iauTr(double r[3][3], double rt[3][3])
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double wm[3][3];
+   float wm[3][3];
    int i, j;
 
 

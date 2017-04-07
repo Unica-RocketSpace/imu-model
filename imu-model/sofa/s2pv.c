@@ -1,8 +1,8 @@
 #include "sofa.h"
 
-void iauS2pv(double theta, double phi, double r,
-             double td, double pd, double rd,
-             double pv[2][3])
+void iauS2pv(float theta, float phi, float r,
+             float td, float pd, float rd,
+             float pv[2][3])
 /*
 **  - - - - - - - -
 **   i a u S 2 p v
@@ -16,15 +16,15 @@ void iauS2pv(double theta, double phi, double r,
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     theta    double          longitude angle (radians)
-**     phi      double          latitude angle (radians)
-**     r        double          radial distance
-**     td       double          rate of change of theta
-**     pd       double          rate of change of phi
-**     rd       double          rate of change of r
+**     theta    float          longitude angle (radians)
+**     phi      float          latitude angle (radians)
+**     r        float          radial distance
+**     td       float          rate of change of theta
+**     pd       float          rate of change of phi
+**     rd       float          rate of change of r
 **
 **  Returned:
-**     pv       double[2][3]    pv-vector
+**     pv       float[2][3]    pv-vector
 **
 **  This revision:  2013 June 18
 **
@@ -33,7 +33,7 @@ void iauS2pv(double theta, double phi, double r,
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double st, ct, sp, cp, rcp, x, y, rpd, w;
+   float st, ct, sp, cp, rcp, x, y, rpd, w;
 
 
    st = sin(theta);

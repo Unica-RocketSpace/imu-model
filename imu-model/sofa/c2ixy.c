@@ -1,7 +1,7 @@
 #include "sofa.h"
 
-void iauC2ixy(double date1, double date2, double x, double y,
-              double rc2i[3][3])
+void iauC2ixy(float date1, float date2, float x, float y,
+              float rc2i[3][3])
 /*
 **  - - - - - - - - -
 **   i a u C 2 i x y
@@ -16,11 +16,11 @@ void iauC2ixy(double date1, double date2, double x, double y,
 **  Status:  support function.
 **
 **  Given:
-**     date1,date2 double       TT as a 2-part Julian Date (Note 1)
-**     x,y         double       Celestial Intermediate Pole (Note 2)
+**     date1,date2 float       TT as a 2-part Julian Date (Note 1)
+**     x,y         float       Celestial Intermediate Pole (Note 2)
 **
 **  Returned:
-**     rc2i        double[3][3] celestial-to-intermediate matrix (Note 3)
+**     rc2i        float[3][3] celestial-to-intermediate matrix (Note 3)
 **
 **  Notes:
 **

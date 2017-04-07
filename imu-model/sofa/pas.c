@@ -1,6 +1,6 @@
 #include "sofa.h"
 
-double iauPas(double al, double ap, double bl, double bp)
+float iauPas(float al, float ap, float bl, float bp)
 /*
 **  - - - - - - -
 **   i a u P a s
@@ -14,13 +14,13 @@ double iauPas(double al, double ap, double bl, double bp)
 **  Status:  vector/matrix support function.
 **
 **  Given:
-**     al     double     longitude of point A (e.g. RA) in radians
-**     ap     double     latitude of point A (e.g. Dec) in radians
-**     bl     double     longitude of point B
-**     bp     double     latitude of point B
+**     al     float     longitude of point A (e.g. RA) in radians
+**     ap     float     latitude of point A (e.g. Dec) in radians
+**     bl     float     longitude of point B
+**     bp     float     latitude of point B
 **
 **  Returned (function value):
-**            double     position angle of B with respect to A
+**            float     position angle of B with respect to A
 **
 **  Notes:
 **
@@ -38,7 +38,7 @@ double iauPas(double al, double ap, double bl, double bp)
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   double dl, x, y, pa;
+   float dl, x, y, pa;
 
 
    dl = bl - al;
