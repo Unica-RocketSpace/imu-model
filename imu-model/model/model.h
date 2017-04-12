@@ -24,7 +24,7 @@ typedef struct model_t model_t;
 typedef struct
 {
 	//! то, что намоделила модель (истинное положение вещей)
-	struct {
+	struct TrueData {
 		float ri[3];		//!< Радиус вектора аппарата в ИСК
 		float vi[3];		//!< Скорость аппрата в ИСК
 		float ai[3];		//!< Ускорение аппрата в ИСК
@@ -32,7 +32,7 @@ typedef struct
 	} trueData;
 
 	//! моделируемые показания акселерометра и магнитометра
-	struct {
+	struct ObsData{
 		float af[3];	//!< Показания акселерометра (в ССК разумеется)
 		float wf[3];	//!< Показания гироскопа (тоже в ССК)
 	} obsData;

@@ -49,26 +49,22 @@ namespace Model
 
 			// по ориентации - сделаем два вращения.
 			// первое - будем качать аппарат относительно оси Y на циклический угор
-			const float first_rot_angle = _osc_magn * sin(2.0f * glm::pi<float>() * _osc_freq * tsince);
+			const float first_rot_angle = _osc_magn * sin( _osc_freq / 2.0f / glm::pi<float>() * tsince);
 			glm::quat first_rot = glm::angleAxis(first_rot_angle , glm::vec3(0.0f, 1.0f, 0.0f));
 
 			// второе - будем равномерно вращать аппарат вокруг его оси Z
 			// вычтем из tsince прошедшие полные периоды оборота
-			const float cyclic_freq = 2 * glm::pi<float>() * _rot_freq;
-			const float tsince_cropped = (cyclic_freq < std::numeric_limits<float>::epsilon())
-					? 0.0f
-					: tsince - tsince / cyclic_freq; // FIXME: тут что-то не правильно
-
-			// теперь можно считать угол не опасаясь его черезмерного заворота за 2*pi
-			const float second_rot_angle = (cyclic_freq * tsince_cropped);
+			const float second_rot_angle = (_rot_freq * 2 * glm::pi<float>() * tsince);
 			glm::quat second_rot = glm::angleAxis(second_rot_angle, glm::vec3(0.0f, 0.0f, 1.0f));
 
 
 			// комбинируем вращения
 			retval.f_to_i = second_rot * first_rot;
 
+			/*
 			std::cout << second_rot_angle << "...."
 					<< retval.f_to_i * glm::vec3(1, 0, 0) * glm::conjugate(retval.f_to_i) << std::endl;
+            */
 
 			return retval;
 		}

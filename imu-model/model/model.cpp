@@ -10,6 +10,8 @@ extern "C" {
 #include "model.h"
 }
 
+#include <stdlib.h>
+
 
 #include "cpp/glm/glm.hpp"
 #include "cpp/glm/gtc/type_ptr.hpp"
@@ -56,7 +58,7 @@ data_point_t model_evaluate(model_t * self, float tsince)
 	// а вот тут делаем грязный хак.
 	// предполагаем что в сишной матрице строки и столбцы расположены так же как glm
 	// и тупо копируем блок памяти матрицы
-	std::memcpy(retval.trueData.f_to_i, glm::value_ptr(f_to_i), 3*sizeof(glm::mat3::value_type));
+	std::memcpy(retval.trueData.f_to_i, glm::value_ptr(f_to_i), 3*3*sizeof(glm::mat3::value_type));
 
 	return retval;
 }

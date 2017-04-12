@@ -29,17 +29,16 @@ namespace Model
 
 		std::tuple<InertialData, ObservedData> evaluate(time_t tsince)
 		{
-
 			// инерциалку считает модель
 			InertialData idata = _do_evaluate(tsince);
 
 			// а остальное мы пересчитываем из инерциалки
 			ObservedData odata;
-			// с ускорениями все просто - добавляем к ним g, которое обеспечивается гравитацией в нашей системе
+			// с ускорениями все просто - добавляем к ним мнимое g, которое обеспечивается гравитацией в нашей системе
 			const glm::vec3 g(0.0f, 0.0f, -9.81f);
-			odata.af = idata.f_to_i * (idata.ai + g) * glm::conjugate(idata.f_to_i);
+			odata.af = glm::conjugate(idata.f_to_i) * (idata.ai - g) * idata.f_to_i;
 
-			// с уголвыми скоростями - её сперва требуется найти
+			// с угловыми скоростями - её сперва требуется найти
 			// согласно https://fgiesen.wordpress.com/2012/08/24/quaternion-differentiation/
 			// её можно найти по формуле
 			// w = 2 * dq/dt * 1/q = 2 * dq/dt * ~q;
@@ -53,7 +52,6 @@ namespace Model
 			glm::vec3 w = glm::vec3(wq.x, wq.y, wq.z);
 
 			odata.wf = w; // FIXME: нужено  ли тут *(-1)? поидее это скорость с которой движется ССК относитель ИСК
-
 
 			// все, расчет закончен
 			return std::make_pair(idata, odata);

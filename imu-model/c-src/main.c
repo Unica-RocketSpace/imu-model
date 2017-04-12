@@ -20,16 +20,17 @@ int main()
 
 	float rstart[3] = {0,0,100};
 	float vstart[3] = {0,0,0};
-	float a[3]		= {0,0,-9.8};
+	float a[3]		= {0,0,-9.81};
 	float oscfreq = 0; //0.02;
 	float oscmagn = DD2R * 45.0f;
-	float rotfreq = 0.1;
+	float rotfreq = 0.5;
 
 	model_t * model = model_init_freefal(rstart, vstart, a, oscfreq, oscmagn, rotfreq);
 
 	for (float tsince = 0.f ; tsince < 10.f; tsince += 1.0f)
 	{
 		data_point_t dp = model_evaluate(model, tsince);
+        printf("t = %6.4f ", tsince);
 		/*
 		printf("tri[% 10.4f, %10.4f, %10.4f]", dp.trueData.ri[0], dp.trueData.ri[1], dp.trueData.ri[2]);
 		printf(" ");
